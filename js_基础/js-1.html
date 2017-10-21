@@ -17,17 +17,65 @@
 //        var result=getMath(num1,num2);
 //        document.write("产生的随机数"+num1+"和"+num2+"   "+"最大的数是："+result);
 
-        function getLeapYear(year) {
-        if(year%4==0&&year%100!=0||year%400!=0){
-        return true;
+//        function getLeapYear(year) {
+//        if(year%4==0&&year%100!=0||year%400!=0){
+//        return true;
+//        }
+//        return false;
+//        }
+//        var now = new Date();
+//        var year=now.getFullYear();
+//        var isLeapYear=getLeapYear(year);
+//        var str=isLeapYear?"是":"不是";
+//        document.write(year+""+str+"闰年");
+        var arr=[1,2,3,4];
+        var arr2 = new Array(5,6,7,8);
+//        for(i=0;i<arr2.length;i++){
+//            console.log(arr2);
+//        }
+        console.log(arr2);
+//        var arr3 = new Array(5);
+//        console.log(arr3);
+//        arr2.push(9);
+//        console.log(arr2);
+//        arr2.pop(8);
+//        console.log(arr2);
+//    var obj={
+//        name:"zhangsan",
+//        age:18,
+//        coding:function () {
+//            alert("coding..");
+//        }
+//    };
+//    console.log(obj);
+//    console.log(coding)
+//1.编写程序．通过用户输入的年龄判断是哪个年龄段的人
+//（儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40;
+//中年：40＜=年龄＜60;
+//老年：年龄>=60），并在页面上输出判断结果。
+
+    var age=prompt("Please enter your age","");
+   if(age>=60){
+       console.log("老年");
+   }
+   else{
+    if (age >= 40) {
+        console.log("中年")
+    }
+    else {
+        if (age >= 24) {
+            console.log("青年")
         }
-        return false;
+        else {
+            if (age >= 14) {
+                console.log("青少年")
+            }
+            else{console.log("儿童")}
+
         }
-        var now = new Date();
-        var year=now.getFullYear();
-        var isLeapYear=getLeapYear(year);
-        var str=isLeapYear?"是":"不是";
-        document.write(year+""+str+"闰年");
+    }
+}
+
 
 </script>
 </body>
