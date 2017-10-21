@@ -28,12 +28,12 @@
 //        var isLeapYear=getLeapYear(year);
 //        var str=isLeapYear?"是":"不是";
 //        document.write(year+""+str+"闰年");
-        var arr=[1,2,3,4];
-        var arr2 = new Array(5,6,7,8);
+//        var arr=[1,2,3,4];
+//        var arr2 = new Array(5,6,7,8);
 //        for(i=0;i<arr2.length;i++){
 //            console.log(arr2);
 //        }
-        console.log(arr2);
+//        console.log(arr2);
 //        var arr3 = new Array(5);
 //        console.log(arr3);
 //        arr2.push(9);
@@ -53,30 +53,127 @@
 //（儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40;
 //中年：40＜=年龄＜60;
 //老年：年龄>=60），并在页面上输出判断结果。
+//
+//    var age=prompt("Please enter your age","");
+//   if(age>=60){
+//       console.log("老年");
+//   }
+//   else{
+//    if (age >= 40) {
+//        console.log("中年")
+//    }
+//    else {
+//        if (age >= 24) {
+//            console.log("青年")
+//        }
+//        else {
+//            if (age >= 14) {
+//                console.log("青少年")
+//            }
+//            else{console.log("儿童")}
+//
+//        }
+//    }
+//}
+//2.编写程序，艰据用户输入的一个数字(0~6)．
+//通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。
+//    var num=prompt("请输入一个数","");
+//    var result=parseInt(num);
+//    switch (result){
+//        case 0:
+//        alert("0:星期日");
+//            break;
+//        case 1:
+//            alert("1:星期一");
+//            break;
+//        case 2:
+//            alert("2:星期二");
+//            break;
+//        case 3:
+//            alert("3:星期三");
+//            break;
+//        case 4:
+//            alert("4:星期四");
+//            break;
+//        case 5:
+//            alert("5:星期五");
+//            break;
+//        case 6:
+//            alert("6：星期六");
+//            break;
+//        default:
+//            alert("格式错误，请重新输入！");
+//            break;
+//    }
+//编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+//    var a=1*2*3*4*5*6*7*8*9*10;
+//    var num=function (a) {
+//        console.log(a);
+//    };
+//    num(a);
 
-    var age=prompt("Please enter your age","");
-   if(age>=60){
-       console.log("老年");
+//编写程序，计算 1!+2!+3!+…..＋10！的结果。
+    var n=10;
+    var sum=0;
+    var a=1;
+    for(i=1;i<=n;i++) {
+        a = a * i;
+        sum = sum + a;
+    }
+console.log(sum);
+
+5.在页面上输出如下数字图案。
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+document.write("1");
+document.write("</br>");
+document.write("1 2");
+document.write("</br>");
+document.write("1 2 3");
+document.write("</br>");
+document.write("1 2 3 4");
+document.write("</br>");
+document.write("1 2 3 4 5");
+document.write("</br>");
+
+
+document.write("    *");
+document.write("</br>");
+document.write("   * *");
+document.write("</br>");
+document.write("  * * *");
+document.write("</br>");
+document.write(" * * * *");
+document.write("</br>");
+document.write("* * * * *");
+document.write("</br>");
+
+7.有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+   function a() {
+       for(i=100;i<1000;i++){
+           if(i%4==2&&i%7==3&&i%9==5){
+               console.log(i);
+           }
+       }
    }
-   else{
-    if (age >= 40) {
-        console.log("中年")
-    }
-    else {
-        if (age >= 24) {
-            console.log("青年")
-        }
-        else {
-            if (age >= 14) {
-                console.log("青少年")
+   a();
+8.求所有满足条件的四位数ABCD，它是13的倍数，
+且第3位数加上第2位数等于第4位数（即：A=B+C）。
+（提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似）
+    function a() {
+        for (i = 1000; i < 10000; i++) {
+            var num3 = Math.floor(i / 1000);
+            var num2 = Math.floor((i % 1000) / 100);
+            var num1 = Math.floor((i % 100) / 10);
+            if (i % 13 == 0 && (num3 == num1 + num2)) {
+                console.log(i);
             }
-            else{console.log("儿童")}
-
         }
+        a();
     }
-}
-
-
 </script>
 </body>
 </html>
