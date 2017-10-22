@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    var arr=[1,2,3,4];
+    var arr2 = new Array(5,6,7,8);
+    for(i=0;i<arr2.length;i++){
+        console.log(arr2[i]);
+    }
+    var arr3 = new Array(5);
+    console.log(arr3);
+
+
+
+var num=prompt("Please enter a number","");
+var i=5678;
+var num3=Math.floor(i/1000);
+
+var num2=Math.floor(i/100);
+var num2 = Math.floor((i % 1000) / 100);
+var num1 = Math.floor((i % 100) / 10);
+
+console.log(num1,num2);
+document.write(Math.PI)
+var a=Math.floor(Math.random()*8);
+console.log(a);
+var s="1234567890";
+    s=s.substr(5,2);
+    console.log(s);
+var myarray =new Array;
+console.log(myarray);
+
+
+//关于Math
+var i=4567;
+var num1 = Math.floor(i / 1000);
+var num2 = Math.floor(i / 100)%10;
+var num3 = Math.floor(i/10);
+var num4 = Math.floor(i%10);
+console.log(num1,num2,num3,num4);
+console.log(num3);
+
+
+//编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。
+var num=prompt("请输入一个数");
+var num1=Math.sqrt(num);
+var num2=Math.pow(num,2);
+var num3=Math.log(num);
+console.log(num1,num2,num3);
+
+//2.使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数。
+function foo() {
+    var a=Math.ceil(Math.random()*100+1);
+    console.log(a);
+}
+foo();
+//设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！“。
+var today=new Date();
+document.write("现在是"+today.getFullYear()+"年"+(today.getMonth()+1)+"月"+today.getDate()+"日"+
+    today.getHours()+"点"+today.getMinutes()+"分"+today.getSeconds()+"秒"
+    +"("+"星期"+(today.getDay()+1)+")"+",欢迎你的到访");
+/*4.编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+ '它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+ '例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。
+ '4.编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+ 它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+ 例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。*/
+var arr=[1,2,3];
+console.log(arr.sort(function(a,b){
+    return b-a;
+}))
+
+</script>
+</body>
+</html>
