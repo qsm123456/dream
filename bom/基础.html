@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    *{
+      margin：0;
+      padding：0;
+    }
+    li{
+      list-stly:none;
+    }
+
+</head>
+<body>
+
+<ul id="menu">
+    <li >打开</li>
+    <li >下载</li>
+    <li >推送到设备</li>
+    <li >分享</li>
+    <li>删除</li>
+</ul>
+
+
+<script>
+    var oMenu=document.getElementById("menu");//绑定右键事件
+    var aLi=
+    document.oncontestmenu=function () {
+        e=e||window.event;//事件对象，兼容性问题
+        oMenu.style
+
+    };
+    document.onclick=function () {
+      oMenu.style.display="none";
+    };//给menu里的每一个都绑定onclik事件；
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function () {
+//            console.log(i);//i=5,点的时候for已经循环了
+            console.log(this);//this对于当前对象的引用
+            alert(this.innerHTML);
+        };
+    };
+</script>
+</body>
+</html>
