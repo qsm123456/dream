@@ -59,21 +59,31 @@
         var aUl=oContainer.getElementsByTagName("ul");
 
         for(var i=0;i<aH3.length;i++){
-            aH3[i].index=i;
+//            aH3[i].index=i;
+            aH3[i].blag=false;
             aH3[i].onclick = function(){
-                var oUl=next(this);
-                if(oUl.style.display=='none'){
-                    oUl.style.display='block';
-                }
-                else {
+
+             /*   var oUl=next(this);
+                if(oUl.style.display=='block'){
                     oUl.style.display='none';
                 }
+                else {
+                    oUl.style.display='block';
+                }*/
+                var oUl=next(this);
+
+                if(this.blag){//打开（默认是关闭）所以设计shi打开
+                    oUl.style.display='none';
+                }
+                else {//关闭
+                    oUl.style.display='block';
+                }
+                this.blag=!this.blag;
             };
         };
 
 
 
-//        判断（对象.属性）非
     </script>
 </body>
 </html>
