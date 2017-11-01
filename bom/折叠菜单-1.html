@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单-1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+           list-style: none;
+        }
+       #container{
+           border: 1px solid;
+           width: 100px;
+           margin: 100px auto;
+       }
+        #container h3{
+            background: black;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #foldmenu{
+            text-align: center;
+        }
+        #foldmenu li:hover{
+            background: #cccccc;
+        }
+        #container #foldmenu ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="container">
+        <li id="foldmenu">
+            <h3>管理区</h3>
+            <ul>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li id="foldmenu">
+            <h3>交流区</h3>
+            <ul>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <script src="jslib.js"></script>
+    <script>
+        var oContainer=document.getElementById("container");
+        var aH3=oContainer.getElementsByTagName("h3");
+        var aUl=oContainer.getElementsByTagName("ul");
+
+        for(var i=0;i<aH3.length;i++){
+            aH3[i].index=i;
+            aH3[i].onclick = function(){
+                var oUl=next(this);
+                if(oUl.style.display=='none'){
+                    oUl.style.display='block';
+                }
+                else {
+                    oUl.style.display='none';
+                }
+            };
+        };
+
+
+
+//        判断（对象.属性）非
+    </script>
+</body>
+</html>
