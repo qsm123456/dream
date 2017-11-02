@@ -11,12 +11,6 @@
         img{
             border:0;
         }
-        #imgs img{
-            display: none;
-        }
-        #imgs .select{
-            display: block;
-        }
         #tab{
             height: 20px;
             position: absolute;
@@ -42,11 +36,21 @@
             width: 520px;
             position: relative;
             margin: 100px auto;
+            /*overflow: hidden;*/
         }
         #arrows{
             position: absolute;
             left: 10px;
             bottom: 10px;
+        }
+        #imgs{
+            width: 2080px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #imgs img{
+            float: left;
         }
 
     </style>
@@ -55,7 +59,7 @@
 
     <div id="container">
         <div id="imgs">
-            <img src="img/1.jpg" alt="" class="select">
+            <img src="img/1.jpg" alt="">
             <img src="img/2.jpg" alt="">
             <img src="img/3.jpg" alt="">
             <img src="img/4.jpg" alt="">
@@ -67,18 +71,19 @@
             <li>4</li>
         </div>
         <div id="arrows">
-            <span id="prev">&lt;</span>
-            <span id="next">&gt;</span>
+            <span id="prev">&lt</span>
+            <span id="next">&gt</span>
         </div>
     </div>
+    <script src="wichung-1.0.js"></script>
     <script>
-        var oContainer=document.getElementById("container");
-        var oImgs=document.getElementById("imgs");
+        var oContainer=id("container");
+        var oImgs=id("imgs");
         var aImg=oImgs.getElementsByTagName("img");
-        var oTab=document.getElementById("tab");
+        var oTab=id("tab");
         var aLi=oTab.getElementsByTagName("li");
-        var oPrev=document.getElementById("prev");
-        var oNext=document.getElementById("next");
+        var oPrev=id("prev");
+        var oNext=id("next");
         var iNowIndex=0;
         var timer;
         for(i=0;i<aLi.length;i++){
