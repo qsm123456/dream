@@ -19,7 +19,7 @@
             border: 1px solid;
             margin: 100px auto;
             position: relative;
-            /*overflow: hidden;*/
+            overflow: hidden;
         }
         #tab{
             width: 440px;
@@ -82,18 +82,24 @@
         var aLi=oTab.getElementsByTagName("li");
         var oLeft=document.getElementById('left');
         var oRight=document.getElementById('right');
+        var direction=10;
 
-        oTab.innerHTML+=oTab.innerHTML;
-        oTab.style.width=oTab.offsetWidth*2+'px';
+        oTab.innerHTML+=oTab.innerHTML;//自己加上自己。js中加元素
+        oTab.style.width=oTab.offsetWidth*2+'px';//js中加宽度
+        setInterval(function () {
+            oTab.style.left=oTab.offsetLeft-direction+'px';
+            if(-oTab.offsetLeft>=oTab.offsetWidth/2){
+                oTab.style.left=0;
+            }
+            if (oTab.offsetLeft>0){
+                oTab.style.left=-oTab.offsetWidth/2+'px';
+            }
+        },100);
 
-        oLeft.onmouseover=oRight.onmouseover=setInterval(function () {
-            if(oLeft.style.width>=oLeft.offsetWidth/2)
-            {oLeft.style.left=oLeft.offsetWidth-10+'px';}
-            else()
-                {oRight.style.width=oRight.offsetWidth+10+'px';}
-        },100)
-
-
+        oLeft.onmouseover=oRight.onmouseover=function () {
+            if(this===oLeft){direction=10;}
+            else{direction=-10;}
+        }
     </script>
 </body>
 </html>
