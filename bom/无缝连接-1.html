@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝连接练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+         li {
+             list-style: none;
+         }
+
+        #container{
+            width: 320px;
+            height: 200px;
+            background: #fff;
+            border: 1px solid;
+            margin: 100px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        #tab{
+            width: 440px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #tab li{
+            width: 100px;
+            height: 100px;
+            background: black;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+        ul{
+            height: 100px;
+        }
+        #span-arrows{
+            width: 140px;
+            height: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 45px;
+            /*left: 90px;*/
+            left: 50%;
+            margin-left:-60px;
+        }
+        #span-arrows span{
+            display: block;
+            float: left;
+            background: #b0b0b0;
+            width: 60px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="tab">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="span-arrows">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+        var oTab=document.getElementById("tab");
+        var aLi=oTab.getElementsByTagName("li");
+        var oLeft=document.getElementById('left');
+        var oRight=document.getElementById('right');
+
+        oTab.innerHTML+=oTab.innerHTML;
+        oTab.style.width=oTab.offsetWidth*2+'px';
+
+        oLeft.onmouseover=oRight.onmouseover=setInterval(function () {
+            if(oLeft.style.width>=oLeft.offsetWidth/2)
+            {oLeft.style.left=oLeft.offsetWidth-10+'px';}
+            else()
+                {oRight.style.width=oRight.offsetWidth+10+'px';}
+        },100)
+
+
+    </script>
+</body>
+</html>
