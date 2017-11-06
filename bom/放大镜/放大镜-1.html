@@ -18,7 +18,13 @@
         }
         #big{
             overflow:hidden;
-            /*display: none;*/
+            display: none;
+            position: relative;
+        }
+        #big-p{
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         #small{
             position: relative;
@@ -31,9 +37,20 @@
             top: 0;
             left: 0;
             opacity: 0.5;
-            filter: alpha(opacity=0.5);
+            filter: alpha(opacity=50);
             /*display: none;*/
         }
+        /*#mask{*/
+            /*width: 400px;*/
+            /*height: 400px;*/
+            /*background: #ff0000;*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*opacity: 0;*/
+            /*filter: alpha(opacity=0);*/
+        /*}*/
+
     </style>
 </head>
 <body>
@@ -41,6 +58,7 @@
     <div id="small">
         <img src="1.jpg" alt="">
         <div id="drag"></div>
+        <div id="mask"></div>
     </div>
 
     <div id="big">
@@ -51,6 +69,9 @@
         var oSmall=document.getElementById('small');
         var oBig=document.getElementById('big');
         var oBigp=document.getElementById('big-p');
+//        var left;
+//        var MaxX;
+//        var MaxY;
 
         oSmall.onmouseover=function () {
             oDrag.style.display='block';
@@ -67,19 +88,23 @@
             var top=e.clientY-oDrag.offsetHeight/2;
             if(left<0){left=0;}
             if(top<0){top=0;}
-            MaxX=oSmall.offsetWidth-oDrag.offsetWidth;
+            var MaxX=oSmall.offsetWidth-oDrag.offsetWidth;
             if(left>MaxX){left=MaxX;}
-            MaxY=oSmall.offsetHeight-oDrag.offsetHeight;
+            var MaxY=oSmall.offsetHeight-oDrag.offsetHeight;
             if(top>MaxY){top=MaxY;}
             oDrag.style.left = left + 'px';
             oDrag.style.top = top + 'px';
+
+
+            // left/MaxX
+            // top/MaxY
+            var fX = left/MaxX;
+            var fY = top/MaxY;
+            oBigp.style.left=-fX * (oBigp.offsetWidth-oBig.offsetWidth)+'px';
+            oBigp.style.top=-fY * (oBigp.offsetHeight-oBig.offsetHeight)+'px';
         };
-        // left/MaxX
-        // top/MaxY
-        var fX=left/MaxX;
-        var fY=top/MaxY;
-        oBig.style.left=-fX * (oBig.offsetWidth-oBigp.offsetWidth)+'px';
-        oBig.style.top=-fY * (oBig.offsetHeight-oBigp.offsetHeight)+'px';
+
+
     </script>
 </body>
 </html>
