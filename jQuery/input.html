@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search">
+    <ul id="list">
+        <li>iphonex</li>
+        <li>iphone8</li>
+        <li>xiaomi</li>
+        <li>huawei</li>
+    </ul>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            var $lis = $('#list li');
+            console.log($lis);
+            $('#search').on('keyup', function () {
+                $lis.css('background', 'transparent');
+                if (this.value != '') {
+                    $('#list li:contains(' + this.value + ')').css('background', 'red');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
