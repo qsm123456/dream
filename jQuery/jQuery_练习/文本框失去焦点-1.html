@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框失去焦点-2</title>
+    <style>
+        .focus{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<form action  id="text">
+    <fieldset>
+        <legend>个人信息</legend>
+        <div>
+            <label for="name">名称：</label>
+            <input id="name" type="text">
+        </div>
+        <div>
+            <label for="pass">密码：</label>
+            <input id="pass" type="text" >
+        </div>
+        <div>
+            <label for="msg">详细信息：</label>
+            <input id="msg" type="text" >
+        </div>
+    </fieldset>
+</form>
+</body>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+//    $(function(){
+//        $(":input").focus(function(){
+//            $(this).addClass("_focus");
+//        }).blur(function(){
+//            $(this).removeClass("_focus");
+//        });
+//    })
+    var focus;
+    $('input').on('focus',function () {
+        $(this).addClass("focus");
+    }).blur(function () {
+        $(this).removeClass("focus");
+    })
+
+</script>
+</html>
