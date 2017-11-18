@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框高度变化-3</title>
+    <style>
+        body{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        span{
+            display: block;
+            float: left;
+            margin-right: 20px;
+            background: #b0b0b0;
+            width: 44px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <span id="up">向上</span>
+    <span id="down">向下</span>
+</div>
+<div>
+    <textarea id="context" cols="30" rows="10">
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+    </textarea>
+</div>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    var $context=$('#context');
+    $('#down').on('click',function () {
+        if(!$context.is(':animated')){
+            if($context.height()<500){
+                !$context.animate({scrollTop: '+=50' },400)
+            }
+        }
+//        $context.height($context.height()<500?$context.height()+50:$context.height())
+    });
+    $('#up').on('click',function () {
+//        $context.height($context.height()>50?$context.height()-50:$context.height())
+        if(!$context.is(':animated')){
+            if($context.height()>50){
+                !$context.animate({scrollTop: '-=50' },400)
+            }
+        }
+    })
+</script>
+</body>
+</html>
