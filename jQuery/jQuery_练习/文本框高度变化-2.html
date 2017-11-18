@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>文本框高度变化-1</title>
+    <title>文本框高度变化-2</title>
     <style>
         body{
             position: absolute;
@@ -39,10 +39,20 @@
 <script>
     var $context=$('#context');
     $('#big').on('click',function () {
-        $context.height($context.height()<500?$context.height()+50:$context.height())
+        if(!$context.is(':animated')){
+            if($context.height()<500){
+                !$context.animate({height: '+=50' },400)
+            }
+        }
+//        $context.height($context.height()<500?$context.height()+50:$context.height())
     });
     $('#small').on('click',function () {
-        $context.height($context.height()>50?$context.height()-50:$context.height())
+//        $context.height($context.height()>50?$context.height()-50:$context.height())
+        if(!$context.is(':animated')){
+            if($context.height()>50){
+                !$context.animate({height: '-=50' },400)
+            }
+        }
     })
 </script>
 </body>
