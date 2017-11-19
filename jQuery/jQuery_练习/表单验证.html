@@ -3,30 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>表单验证</title>
+    <style>
+        label{
+            font-size: 10px;
+        }
+        #sign{
+            color: red;
+        }
+        #sub input{
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
 <form action="" id="table">
-    <div id="name_">
+    <div id="int">
         <label for="name">用户名：</label>
         <input type="text" id="name">
     </div>
 
-    <div id="email_">
+    <div id="int">
         <label for="email">邮件：</label>
         <input type="text" id="email">
     </div>
 
-    <div id="msg_">
+    <div id="int">
         <label for="msg">个人资料：</label>
         <input type="text" id="msg">
     </div>
+    <div id="sub">
+        <input type="submit" value="提交"><input type="reset" value="重置">
+    </div>
+
 </form>
 <script src="../jquery-3.2.1.js"></script>
 <script>
-    //获取第一个框
-    $('#name').on('click',function () {
+    //
 
-    })
+    $('form #name,#email').each(function () {
+        var $q = $('<strong id="sign">*</strong>');
+        $(this).after($q);
+    });
+
+   $('form #name').on('click',function () {
+       var $erro=$('<span>请输入至少6位的用户名.</span>');
+       $(this).after($erro);
+   })
 </script>
 </body>
 </html>
