@@ -13,7 +13,7 @@
 
         select{
             width: 100px;
-            height: 160px;
+            height: 260px;
             font-size: 15px;
         }
 
@@ -60,8 +60,28 @@
     //移到右边
     $('#all').on('click',function () {
             $('#select1 option:selected').appendTo ($('#select2'));
+    });
+    //双击移到右边
+    $('#select1').on('dblclick',function () {
+        $('#select1 option:selected').appendTo ($('#select2'));
+    });
 
-    })
+    //移到左边
+    $('#remove').on('click',function () {
+        $('#select2 option:selected').appendTo ($('#select1'));
+    });
+    //双击移到左边
+    $('#select2').on('dblclick',function () {
+        $('#select2 option:selected').appendTo ($('#select1'));
+    });
+    //全部到右边
+    $('#all_').on('click',function () {
+        $('#select1 option').appendTo ($('#select2'));
+    });
+    //全部到左边
+    $('#remove_').on('click',function () {
+        $('#select2 option').appendTo ($('#select1'));
+    });
 </script>
 </body>
 </html>
