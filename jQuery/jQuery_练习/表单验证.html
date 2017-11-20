@@ -34,23 +34,24 @@
         <input type="text" id="msg">
     </div>
     <div id="sub">
-        <input type="submit" value="提交"><input type="reset" value="重置">
+        <input type="submit" value="提交" id="sub_"><input type="reset" value="重置" id="res_">
     </div>
 
 </form>
 <script src="../jquery-3.2.1.js"></script>
 <script>
-    //
-
+    //插星号
     $('form #name,#email').each(function () {
         var $q = $('<strong id="sign">*</strong>');
         $(this).after($q);
     });
-
-   $('form #name').on('click',function () {
-       var $erro=$('<span>请输入至少6位的用户名.</span>');
-       $(this).after($erro);
-   })
+    //验证用户名
+    if($(this).is($('name')){
+        if($('sub_').val()==''||$('sub_').val().length<6){
+            ('<span>请输入至少六位的用户名.</span>'
+                $(this).next()
+        }
+    }
 </script>
 </body>
 </html>
