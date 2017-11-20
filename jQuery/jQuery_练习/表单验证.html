@@ -44,14 +44,52 @@
     $('form #name,#email').each(function () {
         var $q = $('<strong id="sign">*</strong>');
         $(this).after($q);
-    });
-    //验证用户名
-    if($(this).is($('name')){
-        if($('sub_').val()==''||$('sub_').val().length<6){
-            ('<span>请输入至少六位的用户名.</span>'
-                $(this).next()
+    }).blur(function () {
+        $(this).nextAll('.formtips').remove();
+
+        //验证用户名
+        if( $(this).is('#name') ){
+            if( this.value=="" || this.value.length < 6 ){
+                var errorMsg = '请输入至少6位的用户名.';
+                $(this).next().after('<span class="formtips onError">'+errorMsg+'</span>');
+            }else{
+                var okMsg = '输入正确.';
+                $(this).next().after('<span class="formtips onSuccess">'+okMsg+'</span>');
+            }
         }
-    }
+
+
+        if( $(this).is('#email') ){
+            if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) ){
+                var errorMsg = '请输入正确的E-Mail地址.';
+                $(this).next().after('<span class="formtips onError">'+errorMsg+'</span>');
+            }else{
+                var okMsg = '输入正确.';
+                $(this).next().after('<span class="formtips onSuccess">'+okMsg+'</span>');
+            }
+        }
+
+    }).on('keyup',function(){
+        $(this).triggerHandler("blur");
+    }).on('focus',function(){
+        $(this).triggerHandler("blur");
+    });//end blur
+
+
+    $('#sub_').on('click',function(){
+        $("form :input.required").trigger('blur');
+        var numError = $('form .onError').length;
+        if(numError){
+            return false;
+        }
+        alert("注册成功,密码已发到你的邮箱,请查收.");
+    });
+
+    //重置
+    $('#res_').on('click',function(){
+        $(".formtips").remove();
+    });
+
 </script>
 </body>
 </html>
