@@ -16,15 +16,25 @@
     //
 
 
+     //以天为单位
+    //加一条cookie
+    function addCookie(key,value,expries) {
+        var str=key+'='+value;
+        if(expries!=undefined){//判断过期时间是否定义（赋值）
+            var date = new data();
+            date.setData(date.getData()+expries);
+            str=str+';expries'+date.toUTCString();
+        }
+    };
 
-    //addCookie
-    $(function () {
 
-    });
+
+
+
     //getCookie
     function getCookie() {
-        var arr = document.cookie.split(';');
-        for(var i=0;i<arr.length;i++){
+        var arr = document.cookie.split(';');//split：
+        for(var i=0;i<arr.length;i++)//遍历数组
             var temp = arr[i].split('=');
             if(temp[0].trim()===key){
                 return temp[1];
