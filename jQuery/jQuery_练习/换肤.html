@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>换肤</title>
+</head>
+<body>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+
+    //cookie:注意问题
+    //不安全 不能存密码
+    //  大小有限制，不能大于4K
+    // 有些浏览器 cookie不能超过20条
+    //cookie会随着每次请求从客户端发送到服务端
+    //
+
+
+
+    //addCookie
+    $(function () {
+
+    });
+    //getCookie
+    function getCookie() {
+        var arr = document.cookie.split(';');
+        for(var i=0;i<arr.length;i++){
+            var temp = arr[i].split('=');
+            if(temp[0].trim()===key){
+                return temp[1];
+            }
+        }
+    }
+
+    // 无效 把当前规定时间提前
+    function delCookie() {
+        var date=new
+    }
+</script>
+</body>
+</html>
