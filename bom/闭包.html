@@ -9,34 +9,45 @@
 <!--闭包：外部函数里面定义内部函数，内部函数引用外部函数的变量，外部变量不收回-->
 
 
-<ul>
-    <li>001</li>
-    <li>002</li>
-    <li>003</li>
-    <li>004</li>
-    <li>005</li>
-</ul>
+<!--<ul>-->
+    <!--<li>001</li>-->
+    <!--<li>002</li>-->
+    <!--<li>003</li>-->
+    <!--<li>004</li>-->
+    <!--<li>005</li>-->
+<!--</ul>-->
 
     <script>
-        var oUl=document.getElementById('ul');
-        var aLi=oUl.getElementsByTagName('li');
-        for(var i=0;i<aLi.length;i++){
+//        var oUl=document.getElementById('ul');
+//        var aLi=oUl.getElementsByTagName('li');
+//        for(var i=0;i<aLi.length;i++){
+//
+//            for(var p in oUl){
+//            }
+//        }
 
-            for(var p in oUl){
+
+
+
+//        function fn1() {
+//            function fn2() {
+//                var a = 5;
+//                return a;
+//            }
+//            return fn2;
+//        }
+//        console.log(fn1()());
+
+
+        function outer() {
+            var a=5;
+            function inner() {
+                return a;//给inner
             }
+            return inner;//给outer
         }
-
-
-
-
-        function fn1() {
-            function fn2() {
-                var a=5;
-                return a;
-            }
-            return fn2
-        }
-        console.log(fn1()())
+        var b = outer();//b是一个方法
+        console.log( b() );//调用b方法
     </script>
 </body>
 </html>
