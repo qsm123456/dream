@@ -21,7 +21,7 @@
     function addCookie(key,value,expries) {
         var str=key+'='+value;
         if(expries!=undefined){//判断过期时间是否定义（赋值）
-            var date = new data();
+            var date = new Data();
             date.setData(date.getData()+expries);
             str=str+';expries'+date.toUTCString();
         }
@@ -32,7 +32,7 @@
 
 
     //getCookie
-    function getCookie() {
+    function getCookie(key) {
         var arr = document.cookie.split(';');//split：
         for(var i=0;i<arr.length;i++)//遍历数组
             var temp = arr[i].split('=');
@@ -43,9 +43,11 @@
     }
 
     // 无效 把当前规定时间提前
-    function delCookie() {
-        var date=new
-    }
+    function delCookie(key) {
+        var date=new Data();
+        date.setData(date.getData()-100);
+        document.cookie = key +'=abc;expries'+date.toUTCString();
+    };
 </script>
 </body>
 </html>
