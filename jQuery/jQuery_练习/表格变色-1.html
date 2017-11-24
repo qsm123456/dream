@@ -7,7 +7,6 @@
         table {
             border-collapse: collapse;
         }
-
         tbody .even{
             background: papayawhip;
         }
@@ -23,7 +22,10 @@
             padding: 2px;
             width: 100px;
         }
-
+        tbody .selected{
+            background: tomato;
+            color: white;
+        }
 
     </style>
 </head>
@@ -33,17 +35,56 @@
     <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
     </thead>
     <tbody>
-    <tr class="even"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
-    <tr class="odd"><td>李四</td><td>女</td><td>浙江杭州</td></tr>
-    <tr class="even"><td>王五</td><td>男</td><td>湖南长沙</td></tr>
-    <tr class="odd"><td>找六</td><td>男</td><td>浙江温州</td></tr>
-    <tr class="even"><td>Rain</td><td>男</td><td>浙江杭州</td></tr>
-    <tr class="odd"><td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
+    <tr class="even">
+        <td><input type="radio" value="" ></td>
+        <td>张山</td><td>男</td><td>浙江宁波</td>
+    </tr>
+    <tr class="odd">
+        <td><input type="radio" value=""></td>
+        <td>李四</td><td>女</td><td>浙江杭州</td>
+    </tr>
+    <tr class='even selected'>
+        <td><input type="radio" value="" checked=""></td>
+        <td>王五</td><td>男</td><td>湖南长沙</td>
+    </tr>
+    <tr class='odd'>
+        <td><input type="radio" value=""></td>
+        <td>找六</td><td>男</td><td>浙江温州</td>
+    </tr>
+    <tr class='even'>
+        <td><input type="radio" value=""></td>
+        <td>Rain</td><td>男</td><td>浙江杭州</td>
+    </tr>
+    <tr class="odd">
+        <td><input type="radio" value=""></td>
+        <td>MAXMAN</td><td>女</td><td>浙江杭州</td>
+    </tr>
     </tbody>
 </table>
 <script src="../jquery-3.2.1.js"></script>
 <script>
+    $('tbody tr').on('click',function () {
+        $(this).addClass('selected');
+        $(this).siblings().removeClass('selected');
+        $(this).find(':radio').prop('checked',true);
+        $(this).siblings().find(':radio').prop('checked',false);
+    });
 
+
+
+
+//    $('input').on('click',function () {
+//        $(this)
+//            .siblings().remove('checked')
+//    });
+//    $('tbody tr input').addClass('selected').siblings().removeClass('selected');
+//    $('table :radio:checked').parents("tr").addClass('selected');
+//    $('tbody tr input').on('click',function () {
+//        $(this)
+//            .addClass('selected')
+//            .siblings().removeClass('selected')
+//            .find('input').prop('checked',true)
+//    })
 </script>
 </body>
 </html>
