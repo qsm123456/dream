@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可编辑表格</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border:1px solid black;
+            font:normal 15px ;
+        }
+        tbody th{
+            background: #abc;
+        }
+
+        td,th{
+
+            width: 200px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th colspan="2"> 鼠标点击表格就可以编辑</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td class="editable">张三</td>
+    </tr>
+    <tr id="odd">
+        <td>2</td>
+        <td class="editable" >李四</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td class="editable">王五</td>
+    </tr>
+    <tr id="odd">
+        <td>4</td>
+        <td class="editable">赵六</td>
+    </tr>
+    </tbody>
+</table>
+<script src="../jquery-3.2.1.js"></script>
+<script>
+    $('tbody tr#odd').css('background-color','#999');
+    $('table tbody td.editable').
+</script>
+</body>
+</html>
