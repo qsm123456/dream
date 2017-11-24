@@ -6,60 +6,87 @@
     <style>
         *{
             margin: 0;
-            padding: 0;
         }
-        .container{
-            height: 500px;
-            width: 600px;
-            background:#b0b0b0;
-        }
-        .tab li{
-            height: 30px;
-            width: 100px;
-            list-style: none;
-            display:block;
-            float:left;
-            margin: 0 50px;
-            background: orange;
-            text-align: center;
-            cursor:pointer;
-        }
-        .tab{
-            display:block;
-            width:600px;
-            height:30px;
+        #container{
+            height: 300px;
+            width: 400px;
             background: #cccccc;
+            border: 1px solid;
+            margin: 100px auto;
+
         }
-       .content{
+       #container li{
            list-style: none;
-           position:absolute;
-           overflow: hidden;
        }
+       #tab{
+           height: 40px;
+           width: 400px;
+           display: block;
+           /*background: #ccc;*/
+       }
+        #tab li{
+            display: block;
+            height: 40px;
+            width: 100px;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            background: #999;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        #tab .select{
+            background: black;
+            color: white;
+        }
+        #content div{
+            display: none;
+        }
+        #content .select{
+            display:block;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-         <ul class="tab">
+    <div id="container">
+         <ul id="tab">
                 <li class="select">js</li>
                 <li>css</li>
                 <li>html</li>
          </ul>
-         <div class="content">
-             <li>11</li>
-             <li>22</li>
-             <li>33</li>
+         <div id="content">
+                 <div class="select">11</div>
+                 <div>22</div>
+                 <div>33</div>
          </div>
     </div>
 
 
     <script>
-     /*   var oTab = document.getElementById("tab");
-        var aLi = oTab.getElementsByTagName("li");
-        for(var i=0;i<aLi.length;i++){function () {
-            }
-        }
+        var OTab=document.getElementById('tab') ;
+        var aLi=OTab.getElementsByTagName('li');
+        var OContent=document.getElementById('content');
+        var aDiv=OContent.getElementsByTagName('div') ;
+
+
         for(var i=0;i<aLi.length;i++){
-        }*/
+            aLi[i].index=i;
+
+            aLi[i].onclick = function () {
+                //清空所有的classname
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].className='';
+                    aDiv[i].className='';
+                }
+                //切换
+                this.className='select';
+                aDiv[this.index].className='select';
+
+            };
+
+        }
+
     </script>
 </body>
 </html>
