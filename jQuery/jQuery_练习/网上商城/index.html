@@ -30,12 +30,18 @@
             color: white;
             font-size: 15px;
         }
+        .nav a:hover{
+            text-decoration: underline;
+        }
         .nav li{
 
             list-style: none;
             float: left;
             line-height: 37px;
             margin-right: 20px;
+        }
+        .nav li:hover{
+            text-decoration: underline;
         }
         #nav{
             height: 37px;
@@ -85,6 +91,7 @@
             overflow: hidden;
 
         }
+
         #jnCatalog .jnCatainfo a{
             text-decoration: none;
             font-size: 10px;
@@ -338,7 +345,6 @@
 //        })
         $('#header ul li').hover(function () {
             var index = $('#header ul li').index(this);
-
             $('#header ul li').eq(index).find('.jnNav').addClass('sel');
             $('#header ul li').eq(index).siblings().find('.jnNav').removeClass('sel')
         })
