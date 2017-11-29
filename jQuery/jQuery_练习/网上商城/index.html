@@ -49,9 +49,12 @@
             border: 1px solid black;
             position: absolute;
             top: 37px;
+            background: white;
             display: none;
         }
-
+        .sel{
+            display: block;
+        }
         .jnNav a{
             color: black;
             font-size: 12px;
@@ -333,10 +336,12 @@
 //            this.value=this.defaultValue
 //        }
 //        })
-        $('.nav li').hover(function () {
+        $('#header ul li').hover(function () {
             $(this)
-                .find('.jnNav ').css('display','block')
-                .find('.jnNav').siblings('.jnNav').remove('.jnNav')
+                .find('.jnNav').addClass('.sel');
+//                .siblings('.jnNav').removeClass('.sel')
+
+
         })
 </script>
 </body>
