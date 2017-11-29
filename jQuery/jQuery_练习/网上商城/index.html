@@ -337,11 +337,10 @@
 //        }
 //        })
         $('#header ul li').hover(function () {
-            $(this)
-                .find('.jnNav').addClass('.sel');
-//                .siblings('.jnNav').removeClass('.sel')
+            var index = $('#header ul li').index(this);
 
-
+            $('#header ul li').eq(index).find('.jnNav').addClass('sel');
+            $('#header ul li').eq(index).siblings().find('.jnNav').removeClass('sel')
         })
 </script>
 </body>
