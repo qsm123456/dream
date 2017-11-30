@@ -23,7 +23,8 @@
             var $lis = $('#list li');
             console.log($lis);
             $('#search').on('keyup', function () {
-                $lis.css('background', 'transparent');
+                $lis.css('background', 'transparent')
+                ;
                 if (this.value != '') {
                     $('#list li:contains(' + this.value + ')').css('background', 'red');
                 }
