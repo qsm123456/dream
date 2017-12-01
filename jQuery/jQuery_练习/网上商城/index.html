@@ -104,6 +104,23 @@
             width: 160px;
             font-size: 13px;
         }
+        #content{
+            /*position: relative;*/
+        }
+        #JS_imgWrap {
+            position: absolute;
+            top: 95px;
+            left: 182px;
+            margin: 10px;
+
+        }
+        #JS_imgWrap img{
+            border: 0;
+            display: none;
+        }
+        .chos{
+            display: block;
+        }
 
     </style>
 </head>
@@ -321,6 +338,25 @@
         </div>
     </div>
 </div>
+<!-- 大屏广告 start -->
+<div id="jnImageroll">
+    <a href="#" id="JS_imgWrap">
+        <img src="img/1.jpg" alt="相约情人节"  class="chos"/>
+        <img src="img/2.jpg" alt="新款上线"/>
+        <img src="img/3.jpg" alt="愤怒小鸟特卖"/>
+        <img src="img/4.jpg" alt="男鞋促销第一波"/>
+        <img src="img/5.jpg" alt="春季新品发布"/>
+    </a>
+    <!--<div>-->
+        <!--<a href="###1"><em>相约情人节</em><em>全场119元起</em></a>-->
+        <!--<a href="###2"><em>新款上线</em><em>全场357元起</em></a>-->
+        <!--<a href="###3"><em>愤怒小鸟特卖</em><em>全场89元</em></a>-->
+        <!--<a href="###4"><em>男鞋促销第一波</em><em>全场3.1折起</em></a>-->
+        <!--<a href="###5" class="last"><em>春季新品发布</em><em>全场4.1折起</em></a>-->
+    <!--</div>-->
+</div>
+<!-- 大屏广告 end -->
+
         <!-- 商品分类 end -->
 
 <!--主体结束-->
@@ -337,7 +373,7 @@
     }).on('blur',function () {
 //        if(this.value==''){
 //            this.value=this.defaultValue
-        $(this).val(this.value==''?this.value=this.defaultValue:this.value)
+        $(this).val(this.value == '' ? this.value = this.defaultValue : this.value)
     });
 //        if(this.value==''){
 //            this.value=this.defaultValue
@@ -347,7 +383,11 @@
             var index = $('#header ul li').index(this);
             $('#header ul li').eq(index).find('.jnNav').addClass('sel');
             $('#header ul li').eq(index).siblings().find('.jnNav').removeClass('sel')
-        })
+        });
+        $('#JS_imgWrap img'){
+            $(this).eq(this).addClass('chos')
+                .siblings().removeClass('chos')
+    }
 </script>
 </body>
 </html>
