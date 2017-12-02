@@ -60,6 +60,7 @@
         }
         .sel{
             display: block;
+            z-index: 1;
         }
         .jnNav a{
             color: black;
@@ -107,12 +108,11 @@
         #content{
             /*position: relative;*/
         }
-        #JS_imgWrap {
+        #jnImageroll {
             position: absolute;
             top: 95px;
             left: 182px;
             margin: 10px;
-
         }
         #JS_imgWrap img{
             border: 0;
@@ -121,6 +121,33 @@
         #JS_imgWrap .chos{
             display: block;
         }
+        #jnImageroll em{
+            display: block;
+            width: 99px;
+            height: 20px;
+            font-size: 12px;
+        }
+        #jnImageroll .second{
+            height: 50px;
+            width: 550px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #424242;
+            opacity: 0.8;
+        }
+        #jnImageroll .second a{
+            display: block;
+            float: left;
+            text-decoration: none;
+            padding: 5px;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 1px;
+            color: white;
+        }
+
+
 
     </style>
 </head>
@@ -347,19 +374,37 @@
         <img src="img/4.jpg" alt="男鞋促销第一波"/>
         <img src="img/5.jpg" alt="春季新品发布"/>
     </a>
-    <!--<div>-->
-        <!--<a href="###1"><em>相约情人节</em><em>全场119元起</em></a>-->
-        <!--<a href="###2"><em>新款上线</em><em>全场357元起</em></a>-->
-        <!--<a href="###3"><em>愤怒小鸟特卖</em><em>全场89元</em></a>-->
-        <!--<a href="###4"><em>男鞋促销第一波</em><em>全场3.1折起</em></a>-->
-        <!--<a href="###5" class="last"><em>春季新品发布</em><em>全场4.1折起</em></a>-->
-    <!--</div>-->
+    <div class="second">
+        <a href="###1" >
+            <em>相约情人节</em>
+            <em>全场119元起</em>
+        </a>
+        <a href="###2">
+            <em>新款上线</em>
+            <em>全场357元起</em>
+        </a>
+        <a href="###3">
+            <em>愤怒小鸟特卖</em>
+            <em>全场89元</em>
+        </a>
+        <a href="###4">
+            <em>男鞋促销第一波</em>
+            <em>全场3.1折起</em>
+        </a>
+        <a href="###5" class="last">
+            <em>春季新品发布</em>
+            <em>全场4.1折起</em>
+        </a>
+    </div>
 </div>
+
 <!-- 大屏广告 end -->
 
         <!-- 商品分类 end -->
 
 <!--主体结束-->
+
+
 <!--底部开始-->
 
 <!--底部结束-->
@@ -379,13 +424,22 @@
 //            this.value=this.defaultValue
 //        }
 //        })
-        $('#header ul li').hover(function () {
-            var index = $('#header ul li').index(this);
-            $('#header ul li').eq(index).find('.jnNav').addClass('sel');
-            $('#header ul li').eq(index).siblings().find('.jnNav').removeClass('sel')
-        });
-        $('#JS_imgWrap img').eq(this).addClass('chos');
 
+    $('#header .nav li').hover(function () {
+        $(this).find('.jnNav').addClass('sel')
+            $(this).siblings().find('.jnNav').removeClass('sel')
+    });
+//   $('#jnImageroll .second a').on('mouseover',function () {
+//       $(this).css('background','url(img/adindex.gif) no-repeat center 45px blue');
+//   }).on('mouseleave',function () {
+//       $(this).siblings('a').css('background','#424242')
+//   })
+    $('#jnImageroll .second a').hover(function () {
+        $(this).css('background','url(img/adindex.gif) no-repeat center 45px blue');
+        $(this).siblings().css('background','#424242')
+    }).on('mouseleave',function () {
+        $('#jnImageroll .second a').css('background','#424242')
+    })
 </script>
 </body>
 </html>
