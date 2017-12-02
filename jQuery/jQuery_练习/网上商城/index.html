@@ -8,6 +8,9 @@
             margin: 0;
             padding: 0;
         }
+        li{
+            list-style: none;
+        }
         .contWidth{
             /*background: orange;*/
             width: 990px;
@@ -106,17 +109,22 @@
             font-size: 13px;
         }
         #content{
-            /*position: relative;*/
+            position: absolute;
+            left: 118px;
+            top: 110px;
         }
         #jnImageroll {
             position: absolute;
-            top: 95px;
+            top: -10px;
             left: 182px;
             margin: 10px;
         }
         #JS_imgWrap img{
             border: 0;
             display: none;
+        }
+        img{
+            border: 0;
         }
         .chos{
             display: block;
@@ -137,7 +145,7 @@
             bottom: 0;
             left: 0;
             background: #424242;
-            opacity: 0.8;
+            opacity: 0.75;
         }
         #jnImageroll .second a{
             display: block;
@@ -150,7 +158,43 @@
             color: white;
         }
 
-
+        #jnMiaosha{
+            background: orange;
+            width: 230px;
+            height: 176px;
+            position: absolute;
+            top: 0;
+            left: 760px;
+        }
+        #jnNoticeInfo{
+            border: 1px solid #cccccc;
+            font-size: 10px;
+            position: absolute;
+            height: 128px;
+            width: 230px;
+            background: white;
+            top: 190px;
+            left: 760px;
+        }
+        #jnNoticeInfo h2{
+            border-bottom: 1px solid #cccccc;
+            font-size: 13px;
+            text-indent: 10px;
+        }
+        #jnNoticeInfo li{
+            text-indent: 10px;
+            margin: 2px;
+        }
+        #jnNoticeInfo li a{
+            text-decoration: none;
+            color: black;
+        }
+        #jnNoticeInfo li a:hover{
+            color: cornflowerblue;
+        }
+        #jnNoticeInfo li a:hover .tooltip{
+            background: orange;
+        }
 
 
     </style>
@@ -368,7 +412,7 @@
             </div>
         </div>
     </div>
-</div>
+        <!-- 商品分类 end -->
 <!-- 大屏广告 start -->
 <div id="jnImageroll">
     <a href="#" id="JS_imgWrap">
@@ -401,11 +445,32 @@
         </a>
     </div>
 </div>
-
 <!-- 大屏广告 end -->
+<!-- 最新动态 start -->
+<div id="jnNotice">
+    <div id="jnMiaosha">
+        <a href="#nogo" class="JS_css3"><img src="img/2017.12.2.jpg" alt="冬品清仓"  /></a>
+    </div>
+    <div id="jnNoticeInfo">
+        <h2 title="最新动态">最新动态</h2>
+        <ul>
+            <li><a href="###1" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+            <li><a href="###2" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+            <li><a href="###3" class="tooltip" title="[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a></li>
+            <li><a href="###4" class="tooltip" title="[活动] 伊伴春鞋迎春大促">[活动] 伊伴春鞋迎春大促</a></li>
+            <li><a href="###5" class="tooltip" title="[活动] 千百度冬靴新品火热让利">[活动] 千百度冬靴新品火热让利</a></li>
+            <li><a href="###6" class="tooltip" title="[活动] COEY秋冬新品全场2.3折起">[活动] COEY秋冬新品全场2.3折起</a></li>
+        </ul>
+        <br class="clear" />
+    </div>
+</div>
+<!-- 最新动态 end -->
 
-        <!-- 商品分类 end -->
 
+
+
+
+</div>
 <!--主体结束-->
 
 
@@ -439,7 +504,7 @@
 //       $(this).siblings('a').css('background','#424242')
 //   })
     $('#jnImageroll .second a').hover(function () {
-        $(this).css('background','url(img/adindex.gif) no-repeat center 45px blue');
+        $(this).css('background','url(img/adindex.gif) no-repeat center 47px blue');
         $(this).siblings().css('background','#424242');
 
         var index=$('#jnImageroll .second a').index(this);
@@ -449,7 +514,9 @@
     }).on('mouseleave',function () {
         $('#jnImageroll .second a').css('background','#424242')
     })
+    $('#jnNoticeInfo li').hover(function () {
 
+    })
 </script>
 </body>
 </html>
