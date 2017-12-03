@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+//AMD：requeireJS 异步模块定义（）
+提前执行（可延迟）
+依赖前置
+
+//CMD：seaJS 通用模块定义（）延迟执行
+依赖就近书写
+
+例子 Array
+/requirejs  AMD
+// require(['sort'], function (sortArr) {
+//     var arr = [5, 3, 11, 2, 1];
+//     // var arr = '12313';
+//     //...
+//     console.log(sortArr(arr));
+// });
+
+
+//seajs  CMD
+define(function(require){
+var arr = [5, 3, 11, 2, 1];
+//...
+var sortArr = require('sort');
+console.log(sortArr(arr));
+});
+
+
+
+script
+图片
+以下两者都能进行异步加载
+defer：
+async：
+
+
+</body>
+</html>
