@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pop-up win</title>
+    <title>PopUpWin</title>
 </head>
 <body>
 <button id="btn">btn</button>
@@ -11,8 +11,9 @@
 
     oBtn.onclick = function () {
             var oScript = document.createElement('script');
-            oScript.src= '弹出层.js'
+            oScript.src= 'PopUpWin.js';
             document.body.appendChild(oScript);
         }
+</script>
 </body>
 </html>
