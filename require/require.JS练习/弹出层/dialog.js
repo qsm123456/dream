@@ -27,6 +27,14 @@ define(['jquery'],function ($) {
             $('.box').css({
                 width:defaultSettings.width,
                 height:defaultSettings.height
+            });
+            if(defaultSettings.content.indexOf('.html')!=-1){
+                $('.content').load(defaultSettings.content)
+            }else{
+                $('.content').html(defaultSettings.content)
+            }
+            $('.close').on('click',function () {
+                $(this).closest('.container').remove();
             })
 
         }

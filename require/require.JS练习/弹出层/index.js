@@ -7,7 +7,7 @@ require(['jquery','dialog'],function ($,dialog) {
             width:300,
             height:200,
             title:'注册',
-            content:''
+            content:'table.html'
         };
         dialog.open(settings);
     })
