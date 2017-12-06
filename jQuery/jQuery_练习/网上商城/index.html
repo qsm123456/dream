@@ -3,201 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>广告商城首页</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        li{
-            list-style: none;
-        }
-        .contWidth{
-            /*background: orange;*/
-            width: 990px;
-            height: 105px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .logo{
-            height: 59px;
-            width: 158px;
-        }
-        .contWidth input{
-            position: absolute;
-            top: 20px;
-            margin-left: 40px;
-            padding: 3px;
-        }
-        .nav a{
-            text-decoration: none;
-            color: white;
-            font-size: 15px;
-        }
-        .nav a:hover{
-            text-decoration: underline;
-        }
-        .nav li{
-
-            list-style: none;
-            float: left;
-            line-height: 37px;
-            margin-right: 20px;
-        }
-        .nav li:hover{
-            text-decoration: underline;
-        }
-        #nav{
-            height: 37px;
-            background: black;
-            position: relative;
-        }
-
-        .jnNav{
-            height: 150px;
-            /*width: 300px;*/
-            border: 1px solid black;
-            position: absolute;
-            top: 37px;
-            background: white;
-            display: none;
-        }
-        .sel{
-            display: block;
-            z-index: 1;
-        }
-        .jnNav a{
-            color: black;
-            font-size: 12px;
-        }
-
-        #jnCatalog h2{
-            background: #b0b0b0;
-            color: white;
-            font-size: 12px;
-            width: 182px;
-            height: 25px;
-            line-height: 25px;
-        }
-        #jnCatalog .jnCatainfo{
-            width: 160px;
-            border: 1px solid black;
-            padding: 10px;
-            height: 570px;
-        }
-        .jnCatainfo ul{
-            height: 104px;
-            width: 160px;
-        }
-        .jnCatainfo ul li{
-            width: 79px;
-            height: 24px;
-            float: left;
-            overflow: hidden;
-
-        }
-
-        #jnCatalog .jnCatainfo a{
-            text-decoration: none;
-            font-size: 10px;
-            color: black;
-        }
-        #jnCatalog .jnCatainfo h3{
-            border-bottom: 1px solid #EEEEEE;
-            height: 24px;
-            line-height: 24px;
-            width: 160px;
-            font-size: 13px;
-        }
-        #content{
-            position: absolute;
-            left: 118px;
-            top: 110px;
-        }
-        #jnImageroll {
-            position: absolute;
-            top: -10px;
-            left: 182px;
-            margin: 10px;
-        }
-        #JS_imgWrap img{
-            border: 0;
-            display: none;
-        }
-        img{
-            border: 0;
-        }
-        .chos{
-            display: block;
-        }
-        #JS_imgWrap .chos{
-            display: block;
-        }
-        #jnImageroll em{
-            display: block;
-            width: 99px;
-            height: 20px;
-            font-size: 12px;
-        }
-        #jnImageroll .second{
-            height: 50px;
-            width: 550px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: #424242;
-            opacity: 0.75;
-        }
-        #jnImageroll .second a{
-            display: block;
-            float: left;
-            text-decoration: none;
-            padding: 5px;
-            text-align: center;
-            line-height: 25px;
-            margin-right: 1px;
-            color: white;
-        }
-
-        #jnMiaosha{
-            background: orange;
-            width: 230px;
-            height: 176px;
-            position: absolute;
-            top: 0;
-            left: 760px;
-        }
-        #jnNoticeInfo{
-            border: 1px solid #cccccc;
-            font-size: 10px;
-            position: absolute;
-            height: 128px;
-            width: 230px;
-            background: white;
-            top: 190px;
-            left: 760px;
-        }
-        #jnNoticeInfo h2{
-            border-bottom: 1px solid #cccccc;
-            font-size: 13px;
-            text-indent: 10px;
-        }
-        #jnNoticeInfo li{
-            text-indent: 10px;
-            margin: 2px;
-        }
-        #jnNoticeInfo li a{
-            text-decoration: none;
-            color: black;
-        }
-        #jnNoticeInfo li a:hover{
-            color: cornflowerblue;
-        }
-        #jnNoticeInfo li a:hover .tooltip{
-            background: orange;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <!--头部开始-->
@@ -423,7 +229,7 @@
         <img src="img/5.jpg" alt="春季新品发布"/>
     </a>
     <div class="second">
-        <a href="###1" >
+        <a href="###1" class="first">
             <em>相约情人节</em>
             <em>全场119元起</em>
         </a>
@@ -439,7 +245,7 @@
             <em>男鞋促销第一波</em>
             <em>全场3.1折起</em>
         </a>
-        <a href="###5" class="last">
+        <a href="###5" >
             <em>春季新品发布</em>
             <em>全场4.1折起</em>
         </a>
@@ -466,10 +272,89 @@
 </div>
 <!-- 最新动态 end -->
 
-
-
-
-
+    <!-- 品牌活动 start -->
+    <div id="jnBrand">
+        <div id="jnBrandTab">
+            <h2 title="品牌活动">品牌活动</h2>
+            <ul>
+                <li><a title="运动" href="#nogo">运动</a></li>
+                <li><a title="女鞋" href="#nogo">女鞋</a></li>
+                <li><a title="男鞋" href="#nogo">男鞋</a></li>
+                <li><a title="Applife" href="#nogo">童鞋</a></li>
+            </ul>
+        </div>
+        <div id="jnBrandContent">
+            <div id="jnBrandList">
+                <ul>
+                    <li>
+                        <a href="###1" class="JS_live"><img alt="耐克" src="img/2017.12.6.01.jpg" /></a>
+                        <span><a href="###1">耐克</a></span>
+                    </li>
+                    <li>
+                        <a href="###2" class="JS_live"><img alt="阿迪达斯" src="img/2017.12.6.02.jpg" /></a>
+                        <span><a href="###2">阿迪达斯</a></span>
+                    </li>
+                    <li>
+                        <a href="###3" class="JS_live"><img alt="李宁" src="img/2017.12.6.03.png" /></a>
+                        <span><a href="###3">李宁</a></span>
+                    </li>
+                    <li>
+                        <a href="###4" class="JS_live"><img alt="安踏" src="img/2017.12.6.04.png" /></a>
+                        <span><a href="###4">安踏</a></span>
+                    </li>
+                    <li>
+                        <a href="###1" class="JS_live"><img alt="耐克" src="img/2017.12.6.01.jpg" /></a>
+                        <span><a href="###1">耐克</a></span>
+                    </li>
+                    <li>
+                        <a href="###2" class="JS_live"><img alt="阿迪达斯" src="img/2017.12.6.02.jpg" /></a>
+                        <span><a href="###2">阿迪达斯</a></span>
+                    </li>
+                    <li>
+                        <a href="###3" class="JS_live"><img alt="李宁" src="img/2017.12.6.03.png" /></a>
+                        <span><a href="###3">李宁</a></span>
+                    </li>
+                    <li>
+                        <a href="###4" class="JS_live"><img alt="安踏" src="img/2017.12.6.04.png" /></a>
+                        <span><a href="###4">安踏</a></span>
+                    </li>
+                    <li>
+                        <a href="###1" class="JS_live"><img alt="耐克" src="img/2017.12.6.01.jpg" /></a>
+                        <span><a href="###1">耐克</a></span>
+                    </li>
+                    <li>
+                        <a href="###2" class="JS_live"><img alt="阿迪达斯" src="img/2017.12.6.02.jpg" /></a>
+                        <span><a href="###2">阿迪达斯</a></span>
+                    </li>
+                    <li>
+                        <a href="###3" class="JS_live"><img alt="李宁" src="img/2017.12.6.03.png" /></a>
+                        <span><a href="###3">李宁</a></span>
+                    </li>
+                    <li>
+                        <a href="###4" class="JS_live"><img alt="安踏" src="img/2017.12.6.04.png" /></a>
+                        <span><a href="###4">安踏</a></span>
+                    </li>
+                    <li>
+                        <a href="###1" class="JS_live"><img alt="耐克" src="img/2017.12.6.01.jpg" /></a>
+                        <span><a href="###1">耐克</a></span>
+                    </li>
+                    <li>
+                        <a href="###2" class="JS_live"><img alt="阿迪达斯" src="img/2017.12.6.02.jpg" /></a>
+                        <span><a href="###2">阿迪达斯</a></span>
+                    </li>
+                    <li>
+                        <a href="###3" class="JS_live"><img alt="李宁" src="img/2017.12.6.03.png" /></a>
+                        <span><a href="###3">李宁</a></span>
+                    </li>
+                    <li>
+                        <a href="###4" class="JS_live"><img alt="安踏" src="img/2017.12.6.04.png" /></a>
+                        <span><a href="###4">安踏</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 品牌活动 end -->
 </div>
 <!--主体结束-->
 
@@ -478,6 +363,7 @@
 
 <!--底部结束-->
 <script src="../../jquery-3.2.1.js"></script>
+<script src="tooltip.js"></script>
 <script>
     $('input').on('focus',function () {
 //        if(this.value==this.defaultValue){
@@ -511,10 +397,21 @@
 
         $('#jnImageroll img').eq(index).addClass('chos').siblings().removeClass('chos')
 
-    })
-    $('#jnNoticeInfo li').hover(function () {
+        tooltip('#jnImageroll a');
+
+
+
+
+
+
+
+
+
+
 
     })
+
 </script>
+
 </body>
 </html>

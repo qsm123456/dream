@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.contWidth{
+    /*background: orange;*/
+    width: 990px;
+    height: 105px;
+    margin: 0 auto;
+    position: relative;
+}
+.logo{
+    height: 59px;
+    width: 158px;
+}
+.contWidth input{
+    position: absolute;
+    top: 20px;
+    margin-left: 40px;
+    padding: 3px;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.nav a:hover{
+    text-decoration: underline;
+}
+.nav li{
+
+    list-style: none;
+    float: left;
+    line-height: 37px;
+    margin-right: 20px;
+}
+.nav li:hover{
+    text-decoration: underline;
+}
+#nav{
+    height: 37px;
+    background: black;
+    position: relative;
+}
+
+.jnNav{
+    height: 150px;
+    /*width: 300px;*/
+    border: 1px solid black;
+    position: absolute;
+    top: 37px;
+    background: white;
+    display: none;
+}
+.sel{
+    display: block;
+    z-index: 1;
+}
+.jnNav a{
+    color: black;
+    font-size: 12px;
+}
+
+#jnCatalog h2{
+    background: #b0b0b0;
+    color: white;
+    font-size: 12px;
+    width: 182px;
+    height: 25px;
+    line-height: 25px;
+}
+#jnCatalog .jnCatainfo{
+    width: 160px;
+    border: 1px solid black;
+    padding: 10px;
+    height: 570px;
+}
+.jnCatainfo ul{
+    height: 104px;
+    width: 160px;
+}
+.jnCatainfo ul li{
+    width: 79px;
+    height: 24px;
+    float: left;
+    overflow: hidden;
+
+}
+
+#jnCatalog .jnCatainfo a{
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+}
+#jnCatalog .jnCatainfo h3{
+    border-bottom: 1px solid #EEEEEE;
+    height: 24px;
+    line-height: 24px;
+    width: 160px;
+    font-size: 13px;
+}
+#content{
+    position: absolute;
+    left: 118px;
+    top: 110px;
+}
+#jnImageroll {
+    position: absolute;
+    top: -10px;
+    left: 182px;
+    margin: 10px;
+}
+#JS_imgWrap img{
+    border: 0;
+    display: none;
+}
+img{
+    border: 0;
+}
+.chos{
+    display: block;
+}
+#JS_imgWrap .chos{
+    display: block;
+}
+#jnImageroll em{
+    display: block;
+    width: 99px;
+    height: 20px;
+    font-size: 12px;
+}
+#jnImageroll .second{
+    height: 50px;
+    width: 550px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #424242;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+#jnImageroll .second a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 1px;
+    color: white;
+}
+#jnImageroll .second .first{
+    background: blue;
+    color: white;
+}
+
+#jnMiaosha{
+    background: orange;
+    width: 230px;
+    height: 176px;
+    position: absolute;
+    top: 0;
+    left: 760px;
+}
+#jnNoticeInfo{
+    border: 1px solid #cccccc;
+    font-size: 10px;
+    position: absolute;
+    height: 128px;
+    /*width: 230px;*/
+    background: white;
+    top: 190px;
+    left: 760px;
+}
+#jnNoticeInfo h2{
+    border-bottom: 1px solid #cccccc;
+    font-size: 13px;
+    text-indent: 10px;
+}
+#jnNoticeInfo li{
+    text-indent: 10px;
+    margin: 2px;
+}
+#jnNoticeInfo li a{
+    text-decoration: none;
+    color: black;
+}
+#jnNoticeInfo li a:hover{
+    color: cornflowerblue;
+}
+#jnNoticeInfo li a:hover .tooltip{
+    background: orange;
+}
+
+
+/*品牌活动start*/
+#jnBrandTab{
+    background: orange;
+    width: 500px;
+    height: 200px;
+    border: 1px solid;
+}
+#jnBrand #jnBrandTab h2{
+
+}
+
+
+
+
+/*品牌活动end */
