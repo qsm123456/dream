@@ -1,0 +1,45 @@
+/*公共样式*/
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+img{
+    border: 0;
+}
+
+/*公共样式*/
+.cars-container{
+    width: 520px;
+    height: 280px;
+    position: relative;
+}
+.cars-container img{
+    display: none;
+}
+.cars-container .sel{
+    display: block;
+}
+.tab{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.tab li,span{
+    width: 20px;
+    height: 20px;
+    background: black;
+    color: white;
+    float: left;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.arrows{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
