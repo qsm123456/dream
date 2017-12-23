@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局-左侧固定-右侧自适应</title>
+    <style>
+        #container{
+            display: flex;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        #div2{
+            height: 100px;
+            background: red;
+            flex-grow:1;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="div1"></div>
+    <div id="div2"></div>
+</div>
+
+</body>
+</html>
