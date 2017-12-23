@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三行布局-头尾固定-中间自适应</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body,#container{
+            height: 100%;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+        }
+        #center{
+            flex-grow:1;
+
+        }
+        #bottom,#top{
+            height:40px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="top"></div>
+    <div id="center"></div>
+    <div id="bottom"></div>
+</div>
+
+</body>
+</html>
