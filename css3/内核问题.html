@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css中内核问题</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            -webkit-border-radius: 20px;/*chrome safari*/
+            -moz-border-radius: 20px;/*firefox*/
+            -ms-border-radius: 20px;/*ie*/
+            -o-border-radius: 20px;
+            border-radius: 20px;/*标准*/
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
