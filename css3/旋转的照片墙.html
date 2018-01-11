@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>rotating photo wall</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+            background: url(img/bg.jpg)
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+
+        }
+    </style>
 </head>
 <body>
 <div id='container'></div>
 
 
 <script>
-    for(let i=0;i<NUM;i++){
+    const ROW=4,COL=6,NUM = ROW *COL;
+    let oContainer = document.getElementById('container');
+    let count = 0;
+
+
+    for(let i=0;i < NUM;i++){
         //图片预加载
 
     }
-    function success() {
+    function loadsuccess() {
         //把图片放到容器中
         for(let i=0;i<NUM;i++){
-            let oDiv = document.createElement('div')
+            let oDiv = document.createElement('div');
+            oDiv.style.backdround = 'url(img/thumbs)'+(i+1)+''
         }
+        //计算照片间的间隙
+        let aImg = oContainer.getElementsByTagName('div');
+        let colGap = (oContainer.offsetWidth - aImg[0].offsetWidth*COL)/(COL +1);//列
+        let rowGap = (oContainer.offsetHeight - aImg[0].offsetHeight*ROW)/(ROW+1);//行
+
+        //计算小照片的位置
+
+
     }
 </script>
 </body>
