@@ -15,13 +15,18 @@
         #container{
             width: 100%;
             height: 100%;
-            background: url(img/bg.jpg)
+            background: url(img/bg.jpg);
+            position: relative;
         }
         #container .img{
             width: 125px;
             height: 125px;
-
+            box-shadow: ;
+            position: absolute;
+            /*top:-200px;*/
+            /*left:-200px;*/
         }
+
     </style>
 </head>
 <body>
@@ -36,8 +41,65 @@
 
     for(let i=0;i < NUM;i++){
         //图片预加载
+        let oThumbImg = new Image();
+        oThumbImg.onload = function () {
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        };
+        oThumbImg.src = 'img/thumbs/'+(i + 1)+'.jpg';
+
+        let oBigImg = new Image();
+        oBigImg.onload = function () {
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        };
+        oBigImg.src = 'img/'+(i + 1)+'.jpg';
+
+
+        function loadSuccess() {
+            //图片加载成功 将图片放到container中
+            for(let i = 0;i<ROW;i++)
+                for(let j = 0;j<COL;j++){
+                    let oDiv = document.createElement('div');
+                    oDiv.style.background = 'url(img/thumbs/' +( i * COL + j + 1 )+ '.jpg)  no-repeat';
+                    oDiv.className  = 'img';
+               oDiv.pos = {
+                 x:i,
+                 y:j
+               };
+                oDiv.innerHTML  = '<span></span>';
+                oContainer.appendChild(oDiv)
+                }
+        }
+   /*    for(let i=0;i<ROW;i++){
+           for(let i=0;i<COL;i++){
+
+           }
+        }*/
+
+
+
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
     function loadsuccess() {
         //把图片放到容器中
         for(let i=0;i<NUM;i++){
