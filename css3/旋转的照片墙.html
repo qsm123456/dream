@@ -21,11 +21,20 @@
         #container .img{
             width: 125px;
             height: 125px;
+            border: 5px solid #fff;
             box-shadow:2px 2px 2px 2px rgba(0,0,0,0.5);
             position: absolute;
             top:-200px;
             left:-200px;
             cursor: pointer;
+            transition: all 1s ease;
+        }
+        #container span {
+            width: 100%;
+            height: 100%;
+            display: block;
+            opacity: 0;
+            position: absolute;
         }
     </style>
 </head>
@@ -34,7 +43,9 @@
 
 
 <script>
-    const ROW=4,COL=6,NUM = ROW *COL;
+    const ROW=4,COL=6,NUM = ROW *COL,
+          BIG_HEIGHT = 500,BIG_WIDTH =750,
+          THUMB_HEIGHT = 125,THUMB_WIDTH　=125;
     let oContainer = document.getElementById('container');
     let count = 0;
     let aThumb = null;
@@ -72,13 +83,14 @@
                  x:j,
                  y:i
                };
+                oDiv.index =   i * COL + j + 1;
                 oDiv.innerHTML  = '<span></span>';
                 oContainer.appendChild(oDiv)
                 }
             //计算小图片的间隙
             aThumb = oContainer.getElementsByTagName('div');//24
-            let colgap = (oContainer.offsetWidth-aThumb[0].offsetWidth*COL)/(COL+1);
-            let rowgap = (oContainer.offsetHeight - aThumb[0].offsetHeight*ROW)/(ROW+1);
+            colgap = (oContainer.offsetWidth-aThumb[0].offsetWidth*COL)/(COL+1);
+            rowgap = (oContainer.offsetHeight - aThumb[0].offsetHeight*ROW)/(ROW+1);
 
 
             //计算小图片的位置 （飞出来)
@@ -90,9 +102,57 @@
             }
         }
 
+        let bFlag = true; //true 表示散开要合并  false表示合并要散开
+        let BigImg_colgap = (oContainer.offsetWidth - BIG_WIDTH)/2;
+        let BigImg_rowgap = (oContainer.offsetHeight - BIG_HEIGHT)/2;
 
 
+        oContainer.onclick = function (e) {
 
+            //e.target  =>container/div/span
+            if(e.currentTarget != e.target){
+                if(bFlag){
+                    for(let i = 0;i<NUM;i++){
+                        aThumb[i].style.top = BigImg_rowgap + THUMB_HEIGHT * aThumb[i].pos.y + 'px';
+                        aThumb[i].style.left = BigImg_colgap + THUMB_WIDTH * aThumb[i].pos.x + 'px';
+                        aThumb[i].style.transform = 'rotate(0deg)';
+                        aThumb[i].style.borderWidth= '1px ';
+                        aThumb[i].style.transitionDelay = '0ms';
+
+
+                        let oSpan = aThumb[i].getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 1;
+
+                        let ImgUrl;
+                        if(e.target.tagName == 'DIV'){
+                            ImgUrl = e.target.index;
+                        }else{
+                            ImgUrl = e.target.parentNode.index;
+                        }
+
+                        oSpan.style.backgroundImage = 'url(img/'+ImgUrl+'.jpg)';
+                        oSpan.style.backgroundPosition = -THUMB_WIDTH * aThumb[i].pos.x + 'px  '+
+                            (-THUMB_HEIGHT * aThumb[i].pos.y)+'px';
+                        oSpan.style.transitionDelay = '0ms';
+                }
+
+            }else{
+
+                    for(let i = 0;i<NUM;i++){
+                    aThumb[i].style.transform = 'rotate('+Math.floor(Math.random()*40 - 20)+'deg)';
+                    aThumb[i].style.transitionDelay = '0ms';
+                    aThumb[i].style.top = rowgap + (aThumb[0].offsetHeight+ rowgap) * aThumb[i].pos.y + 'px';
+                    aThumb[i].style.left = colgap + (aThumb[0].offsetWidth + colgap) * aThumb[i].pos.x + 'px';
+
+                    let oSpan = aThumb[i].getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 0;
+                    oSpan.style.transitionDelay = '0ms';
+                     }
+
+                }
+                bFlag = !bFlag;
+
+        }
 
 
 
@@ -110,18 +170,7 @@
 
 
 
-    function loadsuccess() {
-        //把图片放到容器中
-        for(let i=0;i<NUM;i++){
-            let oDiv = document.createElement('div');
-            oDiv.style.backdround = 'url(img/thumbs)'+(i+1)+''
-        }
-        //计算照片间的间隙
-        let aImg = oContainer.getElementsByTagName('div');
-        let colGap = (oContainer.offsetWidth - aImg[0].offsetWidth*COL)/(COL +1);//列
-        let rowGap = (oContainer.offsetHeight - aImg[0].offsetHeight*ROW)/(ROW+1);//行
 
-        //计算小照片的位置
 
 
     }
