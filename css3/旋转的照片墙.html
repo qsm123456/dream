@@ -21,12 +21,12 @@
         #container .img{
             width: 125px;
             height: 125px;
-            box-shadow: ;
+            box-shadow:2px 2px 2px 2px rgba(0,0,0,0.5);
             position: absolute;
-            /*top:-200px;*/
-            /*left:-200px;*/
+            top:-200px;
+            left:-200px;
+            cursor: pointer;
         }
-
     </style>
 </head>
 <body>
@@ -37,6 +37,7 @@
     const ROW=4,COL=6,NUM = ROW *COL;
     let oContainer = document.getElementById('container');
     let count = 0;
+    let aThumb = null;
 
 
     for(let i=0;i < NUM;i++){
@@ -68,18 +69,27 @@
                     oDiv.style.background = 'url(img/thumbs/' +( i * COL + j + 1 )+ '.jpg)  no-repeat';
                     oDiv.className  = 'img';
                oDiv.pos = {
-                 x:i,
-                 y:j
+                 x:j,
+                 y:i
                };
                 oDiv.innerHTML  = '<span></span>';
                 oContainer.appendChild(oDiv)
                 }
-        }
-   /*    for(let i=0;i<ROW;i++){
-           for(let i=0;i<COL;i++){
+            //计算小图片的间隙
+            aThumb = oContainer.getElementsByTagName('div');//24
+            let colgap = (oContainer.offsetWidth-aThumb[0].offsetWidth*COL)/(COL+1);
+            let rowgap = (oContainer.offsetHeight - aThumb[0].offsetHeight*ROW)/(ROW+1);
 
-           }
-        }*/
+
+            //计算小图片的位置 （飞出来)
+            for(let i = 0;i<NUM;i++){
+                aThumb[i].style.transform = 'rotate('+Math.floor(Math.random()*40 - 20)+'deg)';
+                aThumb[i].style.transitionDelay = (NUM - i) * 100 + 'ms';
+                aThumb[i].style.top = rowgap + rowgap * aThumb[i].pos.y + aThumb[0].offsetHeight *aThumb[i].pos.y+ 'px';
+                aThumb[i].style.left = colgap + colgap * aThumb[i].pos.x + aThumb[0].offsetWidth * aThumb[i].pos.x + 'px';
+            }
+        }
+
 
 
 
