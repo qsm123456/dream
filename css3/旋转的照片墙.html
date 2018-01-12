@@ -35,6 +35,7 @@
             display: block;
             opacity: 0;
             position: absolute;
+            transition: all 1s ease;
 
         }
         #prev,#next{
@@ -52,10 +53,12 @@
         #prev{
             background-image: url(img/prev.png);
             left: 0;
+            border-radius: 0 10px 10px 0;
         }
         #next{
             background-image: url(img/next.png);
             right: 0;
+            border-radius:  10px 0 0 10px ;
         }
     </style>
 </head>
@@ -71,8 +74,8 @@
     let oContainer = document.getElementById('container');
     let count = 0;
     let aThumb = null;
-    let oPrev = document.getElementById('prev');
-    let oNext = document.getElementById('next');
+    let NowIndex = 1;
+
 
 
     for(let i=0;i < NUM;i++){
@@ -179,11 +182,39 @@
         }
 
     };
+        let oPrev = document.getElementById('prev');
+        let oNext = document.getElementById('next');
 
-    oPrev.onclick = oNext.onclick = function () {
-         if(this==prev){
+        oPrev.onclick = oNext.onclick = function () {
+
+         if(this === oPrev){
+             NowIndex--;
+            if(NowIndex < 1){
+                NowIndex = NUM;
+            }
+
+         }else{
+             NowIndex++;
+             if(NowIndex>NUM){
+                 NowIndex = 1;
+             }
+        }
+            let arr = [];
+            for(let i = 0;i<NUM;i++) {
+                arr.push(i);
+            }
+            arr.sort(function () {
+                return Math.random();
+            });
+
+            for(let i = 0;i<NUM;i++){
+             let oSpan = aThumb[arr[i]].getElementsByTagName('span')[0];
+                oSpan.style.transitionDelay = (i+1)*40+'ms';
+             oSpan.style.backgroundImage = 'url(img/' + NowIndex +'.jpg)';
+
 
          }
+
     };
 
 
