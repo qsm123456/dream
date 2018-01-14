@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      body{
+          background: #000;
+      }
+        #cvs{
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs" width = 600px height = 500px></canvas>
+<script>
+    window.onload = function () {
+        let oCvs = document.getElementById('cvs');
+        let ctx = oCvs.getContext('2d');
+        //鼠标在dom结构按下 ，onmousedown
+        oCvs.onmousedown  = function (e) {
+            ctx.beginPath();
+            ctx.moveTo = (e.clientX,e.clientY);
+
+            oCvs.onmousemove = function (e) {
+                ctx.lineTo(e.clientX,e.clientY);
+                ctx.stroke();
+            };
+        };
+
+        oCvs.onmouseup = function () {
+            oCvs.onmousedown = null;
+        }
+
+    };
+</script>
+</body>
+</html>
