@@ -13,24 +13,35 @@
     </style>
 </head>
 <body>
-<canvas id="cvs" width="500px" height="400px"></canvas>
+<canvas id="cvs" width="500px" height="500px"></canvas>
 <script>
+    //绘出直线
     let oCvs = document.getElementById('cvs');
     let ctx = oCvs.getContext('2d');
-        ctx.beginPath();
-        ctx.moveTo(100,100);
-        ctx.lineTo(300,300);
-        ctx.strokeStyle = '#596';
-        ctx.lineWidth  = 5;
-        ctx.stroke();
-
-        ctx.beginPath();
+     /*   ctx.beginPath();//重新起笔  若有两个则必须写
+        ctx.moveTo(100,100);//起点
+        ctx.lineTo(300,300);// 结束点
+        ctx.strokeStyle = '#596';//描绘的线的颜色
+        ctx.lineWidth  = 5;//线的粗细
+        ctx.stroke();//必须有 是描绘函数
+*/
+      /*  ctx.beginPath();
         ctx.moveTo(120,150);
         ctx.lineTo(260,290);
         ctx.strokeStyle = '#000';
         ctx.lineWidth  = 5;
+        ctx.stroke();*/
+       let x = oCvs.width /2;
+       let y = oCvs.height/2;
+       let radius = 100;//
+       let startAngle = 0 ;
+       let endAngle = 1.5* Math.PI;
+       let counterClockwise = false ;// false取到曲线
+        ctx.beginPath();
+        ctx.arc(x,y,radius,startAngle,endAngle,counterClockwise);//6个参数
+        ctx.lineWidth = 15;
+        ctx.strokeStyle = '#500';
         ctx.stroke();
-
 
 </script>
 </body>
