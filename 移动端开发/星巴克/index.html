@@ -4,23 +4,49 @@
     <meta charset="UTF-8">
     <title>星巴克</title>
     <link rel="shortcut icon" href=" img/favicon.ico" />
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 <header>
     <div id="menu">
-        <img src="img/logo.jpg" alt="">
+        <img src="img/logo.jpg" alt="" id="menu_logo">
         <span id="menu_text">菜单</span>
+        <div id="sec_menu">
+            <ul id="f_list">
+                <li><a href="">English</a></li>
+                <li><a href="">星巴克门店</a></li>
+                <li><a href="">上海烘培工坊</a></li>
+                <li><a href="">天猫旗舰店</a></li></ul>
+            <ul id="s_list">
+                <li><a href="">首页</a></li>
+                <li>新品推荐 <span><img src="img/adindex.gif" alt=""></span></li>
+                <li><a href="">星享俱乐部</a></li>
+                <li>星巴克移动应用<span><img src="img/adindex.gif" alt=""></span></li>
+                <li><a href="">星礼卡</a></li>
+                <li>咖啡文化<span><img src="img/adindex.gif" alt=""></span></li>
+                <li>饮品美食<span><img src="img/adindex.gif" alt=""></span></li>
+                <li>关于我们<span><img src="img/adindex.gif" alt=""></span></li>
+                <li>帮助中心<span><img src="img/adindex.gif" alt=""></span></li>
+            </ul>
+        </div>
     </div>
     <div id="index_logo">
         <img src="img/index-logo.jpg" alt="">
     </div>
     <div id="right_part">
         星享俱乐部
-        <a href="">登录</a> 或 <a href="">注册</a>
+        <div id="need"><a href="">登录</a> 或 <a href="">注册</a></div>
     </div>
 </header>
+<!--<script src="js/jquery-3.2.1.js" data-main="index"></script>-->
+<script>
+    oMenuLogo = document.querySelector('#menu_logo');
 
+    oMenuLogo.onclick = function () {
+    $(this).siblings().eq(1).addClass('.chos');
+};
+</script>
 </body>
 </html>
