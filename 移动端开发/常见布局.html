@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h3{
+            height: 100px;
+            width: 960px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 100px;
+            margin:0 auto;
+            margin-top:10px ;
+        }
+
+            /*padding-top 等于父元素宽度   百分比等于图片高度/宽度*/
+        figure{
+            margin: 0 auto;
+        }
+        figure,figure img{
+            width: 960px;
+        }
+        figure img{
+            margin-top: 10px;
+            display: block;
+           /* 可用float: left;*/
+        }
+
+        article{
+            width: 960px;
+            margin: 0 auto;
+        }
+        #left,#right{
+            height: 300px;
+            display: table;
+        }
+        #left {
+            width: 67%;
+            background: orange;
+            float: left;
+        }
+        #right{
+            width: 30%;
+            background: #00ff00;
+            float: right;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        section{
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        @media(max-width: 959px){
+            h3{
+                width: 100%;
+            }
+            #left{
+                width: 67%;
+            }
+            #right{
+                width: 30%;
+            }
+            article,figure{
+                width: 100%;
+            }
+            figure img{
+                width: 100%;
+            }
+        }
+        @media(max-width: 599px){
+            article,figure{
+                width: 100%;
+            }
+            #left{
+                width: 100%;
+            }
+            #right{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--div id="header">
+    <div class="wrapper">
+        头部
+    </div>
+</div>
+<div id="nav">
+    <div class="wrapper">
+        导航
+    </div>
+</div>
+<div id="ad">
+    <div class="wrapper"></div>
+</div>
+<div id="ctx">
+    <div class="wrapper">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</div>
+<div id=""></div>-->
+
+<header><h3>头部</h3></header>
+<nav><h3>导航</h3></nav>
+<figure>
+    <img src="img/bao.jpg" alt="">
+</figure>
+<article class="clearfix">
+    <section id="left"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+        vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+        quis magna facilisis, eget feugiat nisi lacinia.</p></section>
+    <section id="right"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+        vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+        quis magna facilisis, eget feugiat nisi lacinia.</p></section>
+</article>
+                    <!--多行文本居中 子元素设置table  父元素设置table-cell -->
+<footer><h3>页脚</h3></footer>
+</body>
+</html>
