@@ -6,13 +6,12 @@
     <link rel="shortcut icon" href=" img/favicon.ico" />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-
 </head>
 <body>
 <header>
     <div id="menu">
         <img src="img/logo.jpg" alt="" id="menu_logo">
-        <span id="menu_text">菜单</span>
+        <span>菜单</span>
         <div id="sec_menu">
             <ul id="f_list">
                 <li><a href="">English</a></li>
@@ -36,17 +35,27 @@
         <img src="img/index-logo.jpg" alt="">
     </div>
     <div id="right_part">
-        星享俱乐部
-        <div id="need"><a href="">登录</a> 或 <a href="">注册</a></div>
+        <div id="need"><p>星享俱乐部</p><a href="">登录</a> 或 <a href="">注册</a></div>
     </div>
 </header>
-<!--<script src="js/jquery-3.2.1.js" data-main="index"></script>-->
-<script>
-    oMenuLogo = document.querySelector('#menu_logo');
-
-    oMenuLogo.onclick = function () {
-    $(this).siblings().eq(1).addClass('.chos');
-};
-</script>
+<figure>
+    <span>广告</span>
+    <img src="img/Big_ad.jpg" alt="" id="Big_ad">
+    <img src="img/Small_ad.jpg" alt="" id="Small_ad">
+</figure>
+<div id="mes">
+    <div id="mid"></div>
+    <div id="left"><span>星享卡</span><img src="img/mes_img.jpg" alt=""></div>
+    <div id="right">
+                <p><h2>星享俱乐部</h2></p>
+                <p><h5>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富</h5></p>
+                <ul>
+                    <li><a href="">注册</a></li>
+                    <li><a href="">登录</a></li>
+                    <li id="last"><a href="">了解更多>></a></li>
+                </ul>
+    </div>
+</div>
+<script src="js/jquery-3.2.1.js" data-main="index"></script>
 </body>
 </html>
