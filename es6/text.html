@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  let xmlhttp;
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+    }else{
+        xmlhttp = new ActiveXObject();
+    }
+    let json = JSON.parse(xmlhttp.responseText);
+    console.log(json)*/
+
+/*  let obj = {
+      username:'zs',
+      age:'18',
+      school:'nongda'
+  };
+  let str = JSON.stringify(obj);
+  console.log(str);*/
+/*
+  let  aa = '{"username":"zs","age":"18","school":"nongda"}';
+  let obj = JSON.parse(aa);
+  console.log(obj);*/
+/*    let obj1 = {
+        name:'lisi',
+        age:'18'
+    };
+    let obj2 = obj1;
+    obj1.name = 'zs';
+    console.log(obj2);//name变成zs，因为obj2，obj1都指向一个内存空间*/
+/*
+    let obj1 = {
+      name:'lisi',
+      age:'18'
+    };
+    let obj3 = {};
+    obj3.name =  obj1.name;
+    obj3.age =  obj1.age;
+    obj1.name = 'zs';
+    console.log(obj3);//obj3还是lisi，因为obj3指向了一个新的内存空间
+*/
+   let obj1 = {
+      name:'lisi',
+      age:'18',
+      dad:{
+          name:'lisan',
+          age:'40',
+      }
+  };
+ /* let obj4 = clone(obj1);
+  /!*obj1.name = 'zs';*!/
+  console.log(obj4);//深拷贝
+
+  let obj6 = clone(obj1);
+  obj1.dad.age = 50;
+  console.log(obj6);//年龄不改变，因为obj4，obj5指向不同一个内存地址空间dad
+
+  function clone(obj) {
+      let  newObj = {};
+      for(var  p in obj){
+          if(typeof(obj[p]) == 'object'){//typeof 返回的是字符串
+              newObj[p]= clone(obj[p])
+          }else{
+      newObj[p] = obj[p];
+  }
+  }
+  return newObj;
+  };*/
+let str = JSON.stringify(obj1);
+let obj2 = JSON.parse(str);
+obj1.name = 'haha';
+console.log(obj1);
+console.log(obj2);
+
+</script>
+
+</body>
+</html>
