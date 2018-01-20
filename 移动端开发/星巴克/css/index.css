@@ -192,16 +192,17 @@ figure #Big_ad{
     display: flex;
 }
 #mes #mid{
-    flex-grow:3;
+    flex-grow:2;
 }
 #mes #left{
-    flex-grow:1;
+    flex-grow:2;
     /*width: 50%;*/
     /*background-color: red;*/
     padding-top: 80px;
     /*padding-bottom:80px;*/
     color: white;
-
+    background-image: url(../img/left_bg_img.png);
+    background-size: contain;
 }
 #mes #left span{
     display: block;
@@ -209,7 +210,7 @@ figure #Big_ad{
 }
 #mes #right{
     /*width: 50%;*/
-    flex-grow:3;
+    flex-grow:2;
     /*background: green;*/
     padding-top: 60px;
     color: white;
@@ -222,7 +223,9 @@ figure #Big_ad{
     margin: 5px;
 }
 #mes #right li:nth-child(3){
-    border:2px solid #000;
+    /*border:2px solid #000;*/
+    /*border: transparent;*/
+    border: 0;
 }
 #mes #right li a{
     color: #b89f7a;
@@ -254,6 +257,7 @@ figure #Big_ad{
     }
     #mes #right li{
         float: none;
+        width:70%;
     }
     #mes #right #last{
         border: 2px solid black;
