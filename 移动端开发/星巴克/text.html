@@ -4,22 +4,60 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        html{
+     /*   border-left: 5px solid transparent;
+        } html{
             background: black;
         }
         #div2{
             width: 0;
             height:0;
-            /*border-style: solid;*/
+            !*border-style: solid;*!
             border-top:5px solid transparent;
             border-right:5px solid transparent;
             border-bottom: 5px solid white;
-            border-left: 5px solid transparent;
-        }
+          */
+    body{
+        position: relative;
+    }
+     #div1{
+         width: 1024px;
+         height: 980px;
+         /*background: #000; */
+         position: absolute;
+         top: 0;
+         right: 0;
+         background-color: #999;
+         z-index: 199;
+         margin: 0;
+         display: none;
+     }
+     #btn{
+         width: 20px;
+         height: 20px;
+     }
+
     </style>
 </head>
 <body>
-<div id="div1"></div>
-<div id="div2"></div>
+<button id="btn"></button>
+<div id="div1">
+</div>
 </body>
+<script src="jquery.js"></script>
+<script>
+    let oBtn = document.getElementById('btn');
+//    let oHtml = document.getElementById
+    let oDiv = document.getElementById('div1');
+    let bflag = 1;
+    oBtn.onclick = function () {
+        if(bflag == 1){
+            $('#div1').css('display','block');
+        }
+        if(bflag == 0){
+            $('#div1').css('display','none');
+        }
+        bflag = !bflag;
+    }
+
+</script>
 </html>
