@@ -7,50 +7,83 @@ header{
 header #menu{
     flex-grow: 1;
     margin:20px;
-    background: white;
+    /*background: white;*/
 }
 header #menu{
     width: 40px;
     height: 25px;
     position: relative;
 }
-header span {
+header #text {
     font-size: 5px;
     position: absolute;
     top: 25px;
     left: 0;
 }
-header #menu #sec_menu{
+header #menu #sec_menu {
     background: black;
     width: 270px;
-    height: 662px;
+    height: 730px;
     position: absolute;
-    top:-33px;
-    left: -33px;
-    display: none;
+    top:-45px;
+    left: -20px;
+    /*display: none;*/
+    z-index: 1;
+    /*transition:all 5s ease;*/
+    /*position: relative;*/
 }
+
+
 header #menu #sec_menu li{
     width: 250px;
-    height: 47px;
+    /*height: 45px;*/
     padding-left: 20px;
     font-size: 14px;
     cursor: pointer;
     line-height: 47px;
+    position: relative
 }
-header #menu #sec_menu span{
-    display: block;
+header #menu #sec_menu #s_list li span{
     position: absolute;
-    right: 5px;
+    right: 20px;
+    top: 22px;
 }
+header #menu #sec_menu li ul {
+    width: 250px;
+    height: 50px;
+    background: #6D84B4;
+    /*display: none;*/
+}
+header #menu #sec_menu li ul li{
+    width: 270px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 30px;
+    text-indent: 40px;
+}
+
 header #menu #f_list a,
 header #menu #s_list li:hover,
 header #menu #s_list li a:hover{
     color: #b89f7a;
 }
+header #menu #s_list li:hover .chos{
+    border-top:5px solid  #b89f7a;
+}
 header #menu #s_list li,
 header #menu #s_list li a,
 header #menu #f_list a:hover{
     color: white;
+}
+#big{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    display: none;
 }
 
 header #index_logo{
