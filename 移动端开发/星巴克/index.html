@@ -8,55 +8,87 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<header>
-    <div id="menu">
-        <img src="img/logo.jpg" alt="" id="menu_logo">
-        <span>菜单</span>
-        <div id="sec_menu">
-            <ul id="f_list">
-                <li><a href="">English</a></li>
-                <li><a href="">星巴克门店</a></li>
-                <li><a href="">上海烘培工坊</a></li>
-                <li><a href="">天猫旗舰店</a></li></ul>
-            <ul id="s_list">
-                <li><a href="">首页</a></li>
-                <li>新品推荐 <span><img src="img/adindex.gif" alt=""></span></li>
-                <li><a href="">星享俱乐部</a></li>
-                <li>星巴克移动应用<span><img src="img/adindex.gif" alt=""></span></li>
-                <li><a href="">星礼卡</a></li>
-                <li>咖啡文化<span><img src="img/adindex.gif" alt=""></span></li>
-                <li>饮品美食<span><img src="img/adindex.gif" alt=""></span></li>
-                <li>关于我们<span><img src="img/adindex.gif" alt=""></span></li>
-                <li>帮助中心<span><img src="img/adindex.gif" alt=""></span></li>
+    <header>
+        <div id="menu">
+            <img src="img/logo.jpg" alt="" id="menu_logo">
+            <div id="text">菜单</div>
+            <div id="sec_menu">
+                <ul id="f_list">
+                    <li><a href="">English</a></li>
+                    <li><a href="">星巴克门店</a></li>
+                    <li><a href="">上海烘培工坊</a></li>
+                    <li><a href="">天猫旗舰店</a></li></ul>
+                <ul id="s_list">
+                    <li><a href="">首页</a></li>
+                    <li >新品推荐<span class="chos"></span>
+                        <ul id="fold1">
+                            <li>当季新品</li>
+                            <li>咖啡融合冰淇淋</li>
+                        </ul>
+                    </li>
+                    <li><a href="">星享俱乐部</a></li>
+                    <li >星巴克移动应用<span class="chos"></span>
+                        <ul id="fold2">
+                            <li>星巴克移动应用</li>
+                            <li>星巴克 Apple Watch</li>
+                        </ul>
+                    </li>
+                    <li><a href="">星礼卡</a></li>
+                    <li>咖啡文化<span class="chos"></span>
+                        <ul id="fold3">
+                            <li>咖啡文化</li>
+                            <li>如何冲泡咖啡</li>
+                        </ul>
+                    </li>
+                    <li>饮品美食<span class="chos"></span>
+                        <ul id="fold4">
+                            <li>饮品</li>
+                            <li>星巴克美食</li>
+                        </ul>
+                    </li>
+                    <li>关于我们<span class="chos"></span>
+                        <ul id="fold5">
+                            <li>企业文化</li>
+                            <li>星巴克责任</li>
+                        </ul>
+                    </li>
+                    <li>帮助中心<span class="chos"></span>
+                        <ul id="fold6">
+                            <li>常见问题</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="index_logo">
+            <img src="img/index-logo.jpg" alt="">
+        </div>
+        <div id="right_part">
+            <div id="need"><p>星享俱乐部</p><a href="">登录</a> 或 <a href="">注册</a></div>
+        </div>
+    </header>
+    <figure>
+        <span>广告</span>
+        <img src="img/Big_ad.jpg" alt="" id="Big_ad">
+        <img src="img/Small_ad.jpg" alt="" id="Small_ad">
+    </figure>
+    <div id="mes">
+        <div id="mid"></div>
+        <div id="left"><span>星享卡</span><img src="img/mes_img.jpg" alt=""></div>
+        <div id="right">
+            <p><h2>星享俱乐部</h2></p>
+            <p><h5>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富</h5></p>
+            <ul>
+
+                <li><a href="">注册</a></li>
+                <li><a href="">登录</a></li>
+                <li><a href="" id="last">了解更多>></a></li>
             </ul>
         </div>
     </div>
-    <div id="index_logo">
-        <img src="img/index-logo.jpg" alt="">
-    </div>
-    <div id="right_part">
-        <div id="need"><p>星享俱乐部</p><a href="">登录</a> 或 <a href="">注册</a></div>
-    </div>
-</header>
-<figure>
-    <span>广告</span>
-    <img src="img/Big_ad.jpg" alt="" id="Big_ad">
-    <img src="img/Small_ad.jpg" alt="" id="Small_ad">
-</figure>
-<div id="mes">
-    <div id="mid"></div>
-    <div id="left"><span>星享卡</span><img src="img/mes_img.jpg" alt=""></div>
-    <div id="right">
-                <p><h2>星享俱乐部</h2></p>
-                <p><h5>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富</h5></p>
-                <ul>
-
-                    <li><a href="">注册</a></li>
-                    <li><a href="">登录</a></li>
-                    <li><a href="" id="last">了解更多>></a></li>
-                </ul>
-    </div>
-</div>
-<script src="js/jquery-3.2.1.js" data-main="index"></script>
+    <div id="big"></div>
+<script src="require.js" data-main="index"></script>
+<script src="jquery.js"></script>
 </body>
 </html>
