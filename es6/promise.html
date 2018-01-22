@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./jquery-3.2.1.js"></script>
+<script>
+    //callback hell
+    $.get('a.json',{},function (res) {
+        console.log(res);
+        $.get('b.json',{},function (res);
+        console.log(res);
+
+    },'json');
+
+        },'json')
+
+
+
+/*$.get('',{},function (res) {
+
+},'json');*/
+    //解决层层嵌套问题 then(resolve，reject)  (实例化对象).then()
+    //只有最后一个不用promise
+    //promise.all()都完成以后
+    //promise.
+
+
+
+    //generator 返回遍历器对象 所以得用.next()
+   /* function* helloWorldGenerator() {
+       yield 'h';//返回对象  无返回值
+       yield 'w';
+       return 'end';
+    }
+    var O = helloWorldGenerator();
+    consol.log(O.next());//next 参数是上一个yield的返回值
+*/
+  /*  consol.log(123);
+      consol.log(O.next());*/
+
+    //数值例子
+    //resquest例子  yield
+
+</script>
+
+</body>
+</html>
