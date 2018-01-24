@@ -5,12 +5,12 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    //入口
+    //入口设置
     entry: {
         // entry1:'./src/entry.js',
         index: './src/entry.js',
     },
-    //出口
+    //设置出口
     output: {
         path: path.resolve(__dirname, 'dist'), //路径
         filename: '[name].js', //name对应上面的entry1
