@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+   <!-- 创建、摧毁元素-->
+    <!--<span v-if = 'islogin'>{{msg}}</span>-->
+    <!--<span v-else>请登录</span>-->
+
+    <!-- 改变元素的display的值-->
+    <span v-show="islogin">{{msg}}</span>
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#div1',
+        data:{
+            islogin:false,
+            msg:'welcome'
+        }
+    })
+</script>
+</body>
+</html>
