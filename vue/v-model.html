@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <form action="">
+        用户名: <input type="text" v-model="username">
+        <h4> 用户名:{{username}}</h4>
+        用户名lazy：
+        <input type="text" v-model.lazy="username">
+        <!--改变值-->
+        <br>
+
+        用户名trim：<!--  啥意思？？？-->
+        <input type="text" v-model.trim="username">
+        <br>
+
+        <h4>用户名是：{{ username }</h4>}
+        <br>
+        年龄：<input type="text" v-model="age">
+        <br>
+        性别:
+        <input type="radio" value="男1" v-model="sex">男
+        <input type="radio" value="女1" v-model="sex">女
+       <h4> 性别:{{sex}}</h4>
+
+        爱好：
+        <input type="checkbox" value="篮球" v-model='hobbys'>篮球
+        <input type="checkbox" value="排球" v-model='hobbys'>排球
+        <input type="checkbox" value="铅球" v-model='hobbys'>铅球
+        <h4>爱好：{{hobbys}}</h4>
+
+
+        学校：
+        <select name="" id="" v-model="school">
+            <option value="黑大">黑大</option>
+            <option value="农大" >农大</option>
+            <option value="林大" >林大</option>
+            <option value="理工" >理工</option>
+        </select>
+        <h4>学校：{{school}}</h4>
+
+        自我介绍：
+        <textarea name="" id="" cols="30" rows="10" v-model.number="text">
+            <!--也可以输入字符串-->
+
+        </textarea>
+        <h4>  自我介绍：{{text}}</h4>
+    </form>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            username:'',
+            sex:'',
+            hobbys:[],//选择多个用数组
+            school:'',
+            text:'',
+            age:'12',
+        },
+
+
+    })
+</script>
+</body>
+</html>
