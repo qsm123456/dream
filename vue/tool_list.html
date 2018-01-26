@@ -8,18 +8,27 @@
             margin: 0;
             padding: 0;
         }
+        #app{
+            width: 250px;
+            height: 600px;
+            margin: 0 auto;
+        }
         h3{
             width: 200px;
             height: 40px;
             background: #000;
             color: white;
         }
-        #count,li{
+        li{
             width: 200px;
             height: 30px;
-
             margin-top: 5px;
             cursor: pointer;
+            list-style: none;
+        }
+        #count{
+            height: 20px;
+            width: 20px;
         }
         .aa{
             background: #b89f7a;
@@ -49,8 +58,11 @@
    </ul>
     <button id="btn1" @click="clickClear()">删除所选的选项</button>
     <br>
-    总计：<div id="count">{{count}}</div>元
-
+    总计：<div id="count" v-text="newarr"></div>元
+    <br>
+    <button id="add" @click="clickAdd()">add</button>
+    <br>
+    筛选：<input type="text" @keyup="keyupSelect()">
 </div>
 <script src="vue.js"></script>
 <script>
@@ -59,7 +71,6 @@
         el:'#app',
         data:{
            toolist:'toolist',
-           count:0,
            arr: [
                {
                    aa:'裤子',
@@ -89,11 +100,11 @@
             clickHandler(obj){
                 obj.isAa = ! obj.isAa;
 
-                if(obj.isAa){
+            /*    if(obj.isAa){
                     this.count+=obj.money;
                 }else{
                     this.count-=obj.money;
-                }
+                }*/
 
 
             },
@@ -106,8 +117,24 @@
                     if(obj.isInput==false){
                         return obj;
                     }
+                });
+
+            },
+            clickAdd(){
+                this.arr.push({
+                    aa:'手机',money:500,isAa:false, isInput:false,
                 })
             },
+            keyupSelect(){
+//                console.log(this.arr.obj)
+                for(item of this.arr){
+//                    console.log(this)
+                    let p;
+                    p = this.arr.item.filters
+                }
+
+            },
+
 
 
 
@@ -116,6 +143,15 @@
 
         },
         computed:{
+            newarr(){
+                let count=0;
+                 for(item of this.arr){
+                    if(item.isAa==true){
+                        count+=item.money;
+                    }
+                }
+                return count;
+            },
 
         }
 
