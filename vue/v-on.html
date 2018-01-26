@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background:#00ff00;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button  @click="clickhandler(2)">btn</button>
+    <!--$event是固定的-->
+    <h1 v-text="num"></h1>
+
+    <button v-on = '{mousedown:doThis,mouseup:doThat}'>btn2</button>
+    <!--绑定两个事件-->
+
+    <div id="div1"  @click="clickDiv1">
+        <div id="div2" @click.stop="clickDiv2($event)"></div><!--.stop阻止事件冒泡-->
+    </div>
+    <!--.stop阻止事件冒泡-->
+
+    <a href="http://www.baudu.com" @click.prevent="baiduClick($event)">baidu</a>
+    <!--.prevent阻止默认行为-->
+
+    <input type="text" @keyup.enter= 'keyupHandler($event)'>
+    <!--绑定enter键  两种方法-->
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            num:0,
+        },
+        methods:{
+            clickhandler(n){
+                this.num+=n;
+            },
+            doThis(){
+                console.log('dothis')
+            },
+            doThat(){
+                console.log('do that')
+            },
+            clickDiv1(){
+                console.log('div1')
+            },
+            clickDiv2(){
+                console.log('div2')
+            },
+            baiduClick(e){
+//                return false;  啥意思？
+//                e.preventDefault();
+                // 阻止默认行为
+            console.log(123)
+            },
+            keyupHandler(e){
+//                if(e.keyCode==13){ //绑定enter键
+                    console.log(123);
+//                }
+            }
+
+        }
+    })
+</script>
+</body>
+</html>
