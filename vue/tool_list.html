@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            width: 200px;
+            height: 40px;
+            background: #000;
+            color: white;
+        }
+        #count,li{
+            width: 200px;
+            height: 30px;
+
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .aa{
+            background: #b89f7a;
+        }
+        #div1{
+            float: left;
+        }
+        #div2{
+            float: right;
+        }
+        #btn{
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <h3 v-text="toolist"></h3>
+   <ul>
+       <li v-for="(obj,key) in arr" @click="clickHandler(obj)" :class="{aa:obj.isAa}" >
+           <button id="btn" @click.stop="clickClose(key)">X</button>
+           <div id="div1">{{obj.aa}}</div>
+           <div id="div2">{{obj.money}}</div>
+           <input type="checkbox"  @click.stop  v-model="obj.isInput">
+       </li>
+   </ul>
+    <button id="btn1" @click="clickClear()">删除所选的选项</button>
+    <br>
+    总计：<div id="count">{{count}}</div>元
+
+</div>
+<script src="vue.js"></script>
+<script>
+    let array=[];
+    let vm = new Vue({
+        el:'#app',
+        data:{
+           toolist:'toolist',
+           count:0,
+           arr: [
+               {
+                   aa:'裤子',
+                   money:30,
+                   isAa:false,
+                   isInput:false,
+               },{
+                   aa:'上衣',
+                   money:40,
+                   isAa:false,
+                   isInput:false,
+
+               },{
+                   aa:'裙子',
+                   money:50,
+                   isAa:false,
+                   isInput:false,
+
+               },{
+                   aa:'鞋子',
+                   money:60,
+                   isAa:false,
+                   isInput:false,
+               }]
+        },
+        methods:{
+            clickHandler(obj){
+                obj.isAa = ! obj.isAa;
+
+                if(obj.isAa){
+                    this.count+=obj.money;
+                }else{
+                    this.count-=obj.money;
+                }
+
+
+            },
+            clickClose(key){
+                this.arr.splice(key, 1);
+            },
+
+            clickClear(obj){
+                this.arr = this.arr.filter(function (obj) {
+                    if(obj.isInput==false){
+                        return obj;
+                    }
+                })
+            },
+
+
+
+
+
+
+        },
+        computed:{
+
+        }
+
+    })
+</script>
+</body>
+</html>
