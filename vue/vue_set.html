@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button @click="chang">change</button>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+            el:'#app',
+            data:{
+                //根级属性
+                arr:['a','b','c'],
+                obj:{
+                    name:lisi
+                }
+            },
+            methods:{
+                chang(){
+                   Vue.set(this.arr,2,'e');
+                   Vue.set(this.obj,'age',25)
+                }
+            },
+        })
+</body>
+</html>
