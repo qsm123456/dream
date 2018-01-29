@@ -23,8 +23,9 @@ export default new Router({
     },
         {
           path:'/text',
-          name:'/text',
+          name:'text',
           component:Text,
+          alias:'/abc',
           children:[
               {
                   path:'/text/text1',
@@ -37,14 +38,20 @@ export default new Router({
                   component:Text2,
               },
               {
-                  path: '/url/:userId(\\d+)/:username',
+                  path: '/text/url/:userId(\\d+)/:username',
                   name:'url',
                   component:Url,
               },
               {
-                  path: '/home/:userId(\\d+)/:username',
-                  redirect: '/testUrl/:userId(\\d+)/:username'
-              },
+                  path:'/home',
+                  redirect:'/'
+              }
+              ,
+              {
+                  path:'/home/:userId(\\d+)/:username',
+                  redirect:'/text/url/:userId(\\d+)/:username'
+              }
+
           ]
       }
   ]
