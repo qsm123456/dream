@@ -15,6 +15,7 @@ import Url from '@/components/Url'
 Vue.use(Router);
 
 export default new Router({
+    mode:'history',
   routes: [
     {
       path: '/',
@@ -28,17 +29,17 @@ export default new Router({
           alias:'/abc',
           children:[
               {
-                  path:'/text/text1',
-                  name:'text1',
+                  path:'text1',
+                  name:'/text/text1',
                   component:Text1,
               },
               {
-                  path:'/text/text2',
-                  name:'text2',
+                  path:'text2',
+                  name:'/text/text2',
                   component:Text2,
               },
               {
-                  path: '/text/url/:userId(\\d+)/:username',
+                  path: '/url/:userId(\\d+)/:username',
                   name:'url',
                   component:Url,
               },
