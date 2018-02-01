@@ -1,31 +1,27 @@
 <template>
-    <div>
-        <common-header bgcolor='rgb(33, 150, 000)'>
-            <span>首页</span>
-            <h3 slot="title">Music</h3>
-        </common-header>
 
-        <common-footer bgcolor='rgb(33, 150, 000)'>
-            <ul>
-              <li>电影</li>
-              <li>音乐</li>
-              <li>书籍</li>
-              <li>图片</li>
-            </ul>
-        </common-footer>
-    </div>
 </template>
 
 <script>
-  import CommonHeader from '@/components/common/Header';
-  import CommonFooter from '@/components/common/Footer';
-
-  export default {
-    components:{
-      CommonHeader,
-      CommonFooter,
+  import axios from 'axios';
+    export default{
+        data(){
+            return {
+              musicList:[]
+            }
+        },
+        created(){
+          axios
+            .post(API_PROXY + 'http://music.163.com/api/search/get/web?csrf_token=')
+            .then(res=>{
+                console.log(res);
+//               this.musicList =
+            })
+            .catch(res=>{
+                alert('出错了')
+            })
+        }
     }
-  }
 </script>
 
 
