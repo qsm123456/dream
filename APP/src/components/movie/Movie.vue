@@ -1,7 +1,7 @@
 <template>
   <div>
       <ul class="list" >
-          <li  class='movie' v-for="movie in movieList" >
+          <li @click="getDetail(movie.id)" class='movie' v-for="movie in movieList" :key="movie.id" >
               <div class="movie-img">
                 <img :src="movie.img" alt="">
               </div>
@@ -12,8 +12,8 @@
                 <p>{{movie.rt}}</p>
               </div>
           </li>
-        <div class="loading" v-show><img src="../../assets/img/loading.gif" alt=""></div>
-        <div class="tip" v-show>没有数据了</div>
+        <div class="loading" v-show="isLoading"><img src="../../assets/img/load3.gif" alt=""></div>
+        <div class="tip" v-show="isEnd">没有数据了</div>
     </ul>
   </div>
 </template>
@@ -29,11 +29,11 @@ export default {
         }
     },
     methods:{
-       getData(){
+      getData(){
          axios
            .get(API_PROXY +  `http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`)
            .then(res =>{
-  //             console.log(res)
+//               console.log(res)
              let list =  res.data.data.movies;
              if(list<10){
                 this.isEnd=true;
@@ -43,7 +43,11 @@ export default {
              }
            }).catch(res=>{   alert('加载失败')})
     },
+      getDetail(movieId) {
+           this.$router.push(`/moviedetail/${movieId}`);
+       }
     },
+
     created(){
           this.getData();
          },
@@ -52,9 +56,10 @@ export default {
       let scrollTop = document.documentElement.scrollTop;
       let clientHeight = document.documentElement.clientHeight;
       let scrollHeight = document.documentElement.scrollHeight;
-      if (scrollTop + clientHeight == scrollHeight && !this.isEnd) {
+      console.log(scrollTop ,clientHeight,scrollHeight);
+      if (scrollTop + clientHeight ==scrollHeight && !this.isEnd) {
         this.isLoading = true;
-
+        this.getData();
       }
     };
   }
@@ -65,7 +70,7 @@ export default {
 
 <style scoped>
   .list{
-    margin: 1rem 0;
+    /*margin: 1rem 0;*/
   }
   .movie{
     display: flex;
@@ -90,5 +95,6 @@ export default {
     bottom: 1rem;
     left: 50%;
     transform: translate(-50%);
+    opacity: 0.8;
   }
 </style>
