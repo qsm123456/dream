@@ -10,7 +10,7 @@
             height: 280px;
             width: 520px;
             margin: 0 auto;
-            /*overflow: hidden;*/
+            overflow: hidden;
         }
         .pic{
             height: 280px;
@@ -63,7 +63,7 @@
     </transition-group>
 
     <ul>
-        <li :class="{selected:index==nowIndex}"  @mouseover="nowIndex = index"  v-for="(item,index) in imgs.length">{{item}}</li>
+        <li :class="{selected:index==nowIndex}"  @mouseover="mouseover(index)"  v-for="(item,index) in imgs.length">{{item}}</li>
     </ul>
 </div>
 
@@ -87,11 +87,16 @@
         },
         methods: {
             mousein(){
-              clearInterval(this.timer)
+              clearInterval(timer)
+
             },
             mouseleave(){
                 this.play();
             },
+            mouseover(index){
+                this.nowIndex = index;
+            }
+            ,
             play(){
                 timer=setInterval(()=>{
                     this.nowIndex++;
