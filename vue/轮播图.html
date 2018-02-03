@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            position: relative;
+            border: 1px solid #000;
+            height: 280px;
+            width: 520px;
+            margin: 0 auto;
+        }
+        .pic{
+            height: 280px;
+            width: 520px;
+            float: left;
+            position: absolute;
+            /*display: none;*/
+        }
+        ul{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        li{
+            list-style: none;
+            float: left;
+            height: 20px;
+            width: 20px;
+            border: 1px solid;
+            margin-right: 2px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .selected{
+            background: #ff6700;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="app" @mouseover="mousein" @mouseout="mouseleave">
+    <img class="pic"  v-show="index==nowIndex" v-for='(item,index) in imgs' :src="item" alt="">
+    <ul>
+        <li :class="{selected:index==nowIndex}"  @mouseover="nowIndex = index"  v-for="(item,index) in imgs.length">{{item}}</li>
+    </ul>
+</div>
+
+
+<script src='Vue.js'></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            imgs: [
+                'bookImg/1.jpg',
+                'bookImg/2.jpg',
+                'bookImg/3.jpg',
+                'bookImg/4.jpg',
+            ],
+            nowIndex: 0,
+            timer:0,
+        },
+        methods: {
+            mousein(){
+              clearInterval(this.timer)
+            },
+            mouseleave(){
+                this.timer=setInterval(()=>{
+                    this.nowIndex++;
+                    if(this.nowIndex==this.imgs.length){
+                        this.nowIndex=0;
+                    }
+                },1000)
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
