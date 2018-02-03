@@ -1,34 +1,43 @@
 <template>
-    <div>
-      <ul class="music-menu">
-        <li class="newsong"><router-link to="/newsong">新歌</router-link></li>
-        <li class="ranking">排行</li>
-        <li class="playlist">歌单</li>
-        <li class="singer">歌手</li>
-      </ul>
-    </div>
+
+    <ul>
+      <li class='pic' v-for="item in musicpic" :key="item.id">
+        <router-link :to="'/newsong/'+ item.id">
+          <img :src="item.bg" alt="">
+        </router-link>
+      </li>
+    </ul>
+
 </template>
 
 <script>
-export default{
-
+  import axios from 'axios';
+  export default{
+    data(){
+      return {
+        musicpic:[],
+      }
+    },
+    created(){
+      axios
+        .get('/static/data/musiclist.json')
+        .then(res=>{
+//          console.log(res);
+          this.musicpic = res.data.albums;
+        })
+        .catch(res=>{
+          alert('出错了')
+        })
+    }
 }
 </script>
 
 
 
 <style scoped>
-  .music-menu{
-    height: 1rem;
-    /*background: #b89f7a;*/
-    width: 100%;
-    display: flex;
-  }
-  .music-menu li{
-    float: left;
-    flex-grow: 1;
-    font-size: .4rem;
-    line-height: 1rem;
-    /*border-bottom: .1rem solid ;*/
-  }
+.pic img{
+  float: left;
+  width: 50%;
+
+}
 </style>
