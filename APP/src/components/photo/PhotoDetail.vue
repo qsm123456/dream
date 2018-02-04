@@ -1,6 +1,6 @@
 <template>
-    <v-touch  v-on:swipeleft="callbackl"  v-on:swiperight="callbackr" >
-      <div class="picDetail">
+    <v-touch  v-on:swipeleft="callbackl"  v-on:swiperight="callbackr"  v-on:tap="onTap">
+      <div class="picDetail" >
         <img  :src="'/static/img1/' + nowIndex  + '.jpg'" alt="">
       </div>
     </v-touch>
@@ -29,6 +29,9 @@ export default{
           this.nowIndex = 24;
         }
       },
+      onTap(){
+        this.$router.push('/Photo')
+      }
     }
 }
 </script>
