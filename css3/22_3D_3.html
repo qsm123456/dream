@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            perspective: 1000px;
+            position: relative;
+            transition: all 2s ease;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            transform: rotateY(180deg) translateZ(1px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div1">div1
+        <div id="div2">div2</div>
+    </div>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        
+        var i = 1;
+        oDiv1.onclick = function(){
+            console.log('div1');
+            oDiv1.style.transform = 'rotateY('+ i * 180 +'deg)';
+            i++;
+        };
+        oDiv2.onclick = function(){
+            console.log('div2');
+        };
+    </script>
+</body>
+</html>
