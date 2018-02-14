@@ -26,18 +26,26 @@
         oCvs.onmousedown  = function (e) {
             ctx.beginPath();
             ctx.moveTo = (e.clientX,e.clientY);
-
+            //鼠标在dom结构移动
             oCvs.onmousemove = function (e) {
                 ctx.lineTo(e.clientX,e.clientY);
                 ctx.stroke();
             };
         };
-
+    //鼠标松开
         oCvs.onmouseup = function () {
             oCvs.onmousedown = null;
         }
 
     };
+
+
+
+    效果图
+
+
+
+
 </script>
 </body>
 </html>
