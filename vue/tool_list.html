@@ -42,7 +42,11 @@
         #btn{
             float: left;
         }
-
+     /*   #add{
+            width: 30px;
+            height: 20px;
+            background: #1b6d85;
+        }*/
     </style>
 </head>
 <body>
@@ -51,18 +55,19 @@
    <ul>
        <li v-for="(obj,key) in arr" @click="clickHandler(obj)" :class="{aa:obj.isAa}" >
            <button id="btn" @click.stop="clickClose(key)">X</button>
-           <div id="div1">{{obj.aa}}</div>
+           <div id="div1">{{obj.name}}</div>
            <div id="div2">{{obj.money}}</div>
            <input type="checkbox"  @click.stop  v-model="obj.isInput">
        </li>
    </ul>
     <button id="btn1" @click="clickClear()">删除所选的选项</button>
     <br>
-    总计：<div id="count" v-text="newarr"></div>元
+    总计：<div id="count" v-text="newarr"></div>
     <br>
     <button id="add" @click="clickAdd()">add</button>
+    <input type="text" >
     <br>
-    筛选：<input type="text" @keyup="keyupSelect()">
+    关键字：<input type="text" @keyup="keyupSelect()">
 </div>
 <script src="vue.js"></script>
 <script>
@@ -73,24 +78,23 @@
            toolist:'toolist',
            arr: [
                {
-                   aa:'裤子',
+                   name:'裤子',
                    money:30,
                    isAa:false,
                    isInput:false,
                },{
-                   aa:'上衣',
+                   name:'上衣',
                    money:40,
                    isAa:false,
                    isInput:false,
-
                },{
-                   aa:'裙子',
+                   name:'裙子',
                    money:50,
                    isAa:false,
                    isInput:false,
 
                },{
-                   aa:'鞋子',
+                   name:'鞋子',
                    money:60,
                    isAa:false,
                    isInput:false,
@@ -122,7 +126,7 @@
             },
             clickAdd(){
                 this.arr.push({
-                    aa:'手机',money:500,isAa:false, isInput:false,
+                    name:'手机',money:500,isAa:false, isInput:false,
                 })
             },
             keyupSelect(){
@@ -143,7 +147,8 @@
 
         },
         computed:{
-            newarr(){
+            newarr(){//data属性变化自动变化  与methods 不一样  ，methods要自己调用
+//                this.num = 0;  不能用
                 let count=0;
                  for(item of this.arr){
                     if(item.isAa==true){
