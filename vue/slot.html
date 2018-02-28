@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <comp>
+        <span slot="username">张三</span>
+        <span slot="age">18</span>
+    </comp>
+    <comp>
+
+    </comp>
+</div>
+<template id="temp">
+    <div>
+        <p>
+            具名插槽
+            用户名：<slot name="username">默认名字</slot>
+        </p>
+        <p>
+            年龄：<slot name="age">默认年龄</slot>
+        </p>
+    </div>
+</template>
+<script src=""></script>
+<script>
+
+</script>
+</body>
+</html>
