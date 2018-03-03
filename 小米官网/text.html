@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        #nav-list-left{
+            position: absolute;
+            right: 100px;
+            top: 0;
+        }
+        #nav-list-left li{
+            display: block;
+            float: left;
+            color: white;
+            line-height: 40px;
+        }
+        #cart{
+            width: 120px;
+            height: 40px;
+            background: #424242;
+            text-align: center;
+            margin: 0 10px;
+        }
+        #cart:hover{
+            background: #b0b0b0;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="nav-list-left">
+    <li><a href="#">消息</a><span class="sep">|</span></li>
+    <li><a href="#">注册</a><span class="sep">|</span></li>
+    <li><a href="#">消息通知</a></li>
+    <li id="cart">
+        <a href="#">购物车（0）</a>
+    </li>
+    <li>11</li>
+    <ul/>
+</body>
+</html>
