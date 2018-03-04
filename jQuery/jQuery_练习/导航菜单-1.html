@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航菜单-1</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .main{
+            float: left;
+            /*width: 130px;*/
+            /*position: relative;*/
+        }
+        .selected{
+            background: #ccc;
+            width: 130px;
+        }
+        #one li,#two li,#three li{
+            width: 130px;
+            height: 26px;
+            background: #424242;
+            /*position: absolute;*/
+
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li class="main">
+        <a href="#" class="selected">菜单项1</a>
+        <ul id="one">
+            <li>
+                <a href="#">子菜单11</a>
+            </li>
+            <li>
+                <a href="#">子菜单12</a>
+            </li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#" class="selected">菜单项2</a>
+        <ul id="two">
+            <li>
+                <a href="#">子菜单21</a>
+            </li>
+            <li>
+                <a href="#">子菜单22</a>
+            </li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#" class="selected">菜单项3</a>
+        <ul id="three">
+            <li>
+                <a href="#">子菜单31</a>
+            </li>
+            <li>
+                <a href="#">子菜单32</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+</ul>
+</body>
+</html>
