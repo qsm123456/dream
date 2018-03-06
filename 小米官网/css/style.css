@@ -14,7 +14,7 @@ a{
 }
 .wrapper{
     margin: 0 auto;
-    width: 1324px;
+    width: 1124px;
 }
 /*公共样式*/
 /*site-bn-bar开始*/
@@ -30,7 +30,7 @@ a{
     position: relative;
 }
 #nav a{
-    font-size: 15px;
+    font-size: 10px;
     color:#b0b0b0;
 }
 #nav a:hover{
@@ -52,7 +52,7 @@ a{
 }
 #nav-list-left{
     position: absolute;
-    right: 100px;
+    right: 50px;
     top: 0;
 }
 #nav-list-left li{
@@ -89,7 +89,6 @@ a{
 /*site-header开始*/
 #site-header{
     height: 100px;
-
 }
 #site-header .wrapper{
     position: relative;
@@ -113,12 +112,12 @@ a{
 #site-header-list {
     position: absolute;
     top: 35px;
-    left: 250px;
+    left: 150px;
 }
 #site-header-list li{
     display: block;
     float: left;
-    font-size: 20px;
+    font-size: 15px;
     margin-right: 20px;
 }
 #site-header-list li:hover{
@@ -130,10 +129,18 @@ a{
      /*border:1px solid;*/
      border-color: #b0b0b0;
      position: absolute;
-     right: -80px;
+     right: 0;
      top: 25px;
+ }
+ #set-hot-words{
 
  }
+#set-hot-words li{
+    float: left;
+    font-size: 13px;
+    margin-right: 10px;
+    background: #eee;
+}
  #search-input{
      width: 245px;
      height: 48px;
