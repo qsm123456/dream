@@ -132,9 +132,7 @@ a{
      right: 0;
      top: 25px;
  }
- #set-hot-words{
 
- }
 #set-hot-words li{
     float: left;
     font-size: 13px;
@@ -148,6 +146,10 @@ a{
      text-indent: 10px;
      /*border-left: none;*/
  }
+#set-hot-words{
+    transition: transform(-50% -50%);
+    /*margin-top: -50%;*/
+}
  #back-pic{
      /*background: url('../img/search.png') no-repeat center;*/
      width: 50px;
