@@ -1,7 +1,10 @@
 <?php
 	if(isset($_POST['sub'])){
 		// $_POST()
-		echo 123;
+		// echo 123;
+		echo '<pre>';
+		var_dump($_POST);
+		echo '</pre>';
 		
 	}
 ?>
