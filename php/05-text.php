@@ -1,7 +1,9 @@
 <?php
-	
-	
-
+	if(isset($_POST['sub'])){
+		// $_POST()
+		echo 123;
+		
+	}
 ?>
 	<meta charset="UTF-8">	
 	<form action='05-text.php' method='post'>
@@ -10,3 +12,7 @@
 	<input type='text' name='content'>	
 	<input type='submit' name='reset' value='重置'>
 	</form>
+	
+<script>
+	
+</script>
