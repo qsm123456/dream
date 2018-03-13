@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- v-bind 可简写成：   表示动态 -->
+    <img v-bind:src="imgSrc" v-bind:alt="tip">
+
+    <!--控制一个元素显示还是不显示-->
+    <div :class="{aa:isAa,bb:isBb}">
+    <div :style="styleobj:styleObj"></div>
+</div>
+<script src="vue.js"></script>
+<script>
+    let vm = Vue({
+        el:'#app',
+        data:{
+            imgSrc:'http://。。。',
+            tip:'加载失败',
+            clsName:aa,
+            isAa:true,
+            styleObj:{
+                width:'100px',
+                height:'100px',
+                'background':red
+            },
+        }
+    })
+</script>
+</body>
+</html>
