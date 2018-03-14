@@ -58,21 +58,23 @@
                 </ul>
                 <div id="back-pic"><i class="iconfont icon-sousuo" id="search"></i></div>
                 <div id="search-text-list">
-                    <li>小米6</li>
-                    <li>路由器</li>
-                    <li>充电宝</li>
-                    <li>红米note</li>
-                    <li>小米mac</li>
+                    <li><a href="">小米6</a></li>
+                    <li><a href="">路由器</a></li>
+                    <li><a href="">充电宝</a></li>
+                    <li><a href="">红米note</a></li>
+                    <li><a href="">小米mac</a></li>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <script src="jquery-3.2.1.js"></script>
     <script>
-        var oSearchTextList=document.getElementById('search-text-list');
-        oSearchTextList.onclick=function () {
+        var oSearchInput=document.getElementById('search-input');
 
+        oSearchInput.onclick=function () {
+            $(this).siblings('#set-hot-words').addClass('chos');
+            $(this).siblings('#search-text-list').css('display','block');
         }
 
     </script>
