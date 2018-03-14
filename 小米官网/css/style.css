@@ -139,6 +139,12 @@ a{
     margin-right: 10px;
     background: #eee;
 }
+#set-hot-words li:hover{
+    background: #ff6700;
+}
+#set-hot-words li:hover a{
+    color: #ffffff;
+}
  #search-input{
      width: 245px;
      height: 48px;
@@ -147,8 +153,9 @@ a{
      /*border-left: none;*/
  }
 #set-hot-words{
-    transition: transform(-50% -50%);
-    /*margin-top: -50%;*/
+    position: absolute;
+    top:19px;
+    right: 50px;
 }
  #back-pic{
      /*background: url('../img/search.png') no-repeat center;*/
@@ -160,6 +167,7 @@ a{
      border: 1px solid;
      border-left:none;
      border-color: #b0b0b0;
+     cursor: pointer;
  }
  #search{
      display: block;
@@ -171,12 +179,27 @@ a{
     background-color: #ff6700;
     color: white;
 }
+.chos {
+    display: none;
+}
 #search-text-list{
     width: 247px;
-    height: 300px;
+    height: 200px;
     border-left: 1px solid #b0b0b0;
     border-bottom:1px solid #b0b0b0;
     border-right: 1px solid #b0b0b0;
     display: none;
+}
+#search-text-list li{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+}
+#search-text-list li a{
+    font-size: 12px;
+    color: #000000;
+}
+#search-text-list li:hover{
+    background: #e0e0e0;
 }
 /*site-header结束*/
