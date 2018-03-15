@@ -184,22 +184,30 @@ a{
 }
 #search-text-list{
     width: 247px;
-    height: 200px;
+    height: 250px;
     border-left: 1px solid #b0b0b0;
     border-bottom:1px solid #b0b0b0;
     border-right: 1px solid #b0b0b0;
     display: none;
+    position: relative;
 }
 #search-text-list li{
     height: 30px;
     line-height: 30px;
     text-indent: 10px;
 }
+#search-text-list li span{
+    font-size:11px ;
+    position: absolute;
+    right: 10px;
+    color: #939393;
+}
 #search-text-list li a{
-    font-size: 12px;
+    font-size: 11px;
     color: #000000;
 }
 #search-text-list li:hover{
-    background: #e0e0e0;
+    background: #eee;
+
 }
 /*site-header结束*/
