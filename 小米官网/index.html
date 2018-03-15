@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/iconfont.css">
 </head>
-<body>
+<body id="body">
     <div id="site-bn-bar">
     </div>
     <div id="nav">
@@ -58,11 +58,13 @@
                 </ul>
                 <div id="back-pic"><i class="iconfont icon-sousuo" id="search"></i></div>
                 <div id="search-text-list">
-                    <li><a href="">小米6</a></li>
-                    <li><a href="">路由器</a></li>
-                    <li><a href="">充电宝</a></li>
-                    <li><a href="">红米note</a></li>
-                    <li><a href="">小米mac</a></li>
+                    <li><a href="">小米手机6</a><span>约有29件</span></li>
+                    <li><a href="">小米手机5X</a><span>约有8件</span></li>
+                    <li><a href="">红米note 4X</a><span>约有14件</span></li>
+                    <li><a href="">红米手机4X</a><span>约有9件</span></li>
+                    <li><a href="">小米Max 2</a><span>约有5件</span></li>
+                    <li><a href="">小米电视4C</a><span>约有2件</span></li>
+                    <li><a href="">电视32英寸</a><span>约有1件</span></li>
                 </div>
             </div>
         </div>
@@ -70,13 +72,17 @@
 
     <script src="jquery-3.2.1.js"></script>
     <script>
-        var oSearchInput=document.getElementById('search-input');
-
+        let oSearchInput = document.getElementById('search-input');
+        let oBody = document.getElementById('body');
         oSearchInput.onclick=function () {
-            $(this).siblings('#set-hot-words').addClass('chos');
-            $(this).siblings('#search-text-list').css('display','block');
+                $(this).siblings('#set-hot-words').addClass('chos');
+                $(this).siblings('#search-text-list').css('display', 'block');
+                $(this).siblings('#search-text-list').css('border-color', '#ff6700');
+        };
+        oBody.onclick=function () {
+            $('#set-hot-words').removeClass('chos');
+            $('#search-text-list').css('display', 'none').css('border-color', '#b0b0b0');
         }
-
     </script>
 </body>
 </html>
