@@ -78,11 +78,11 @@
                 <li><img src="img/xm5X.jpg" alt=""></li>
             </ul>
             <ul id="bottom">
-                <li>小米mix2</li>
-                <li>小米note3 </li>
-                <li>小米6 </li>
-                <li>小米max2 </li>
-                <li>小米5 </li>
+                <li>小米mix2 <span>2900</span></li>
+                <li>小米note3 <span>1799</span></li>
+                <li>小米 6<span>2299</span></li>
+                <li>小米max2 <span>1399起</span></li>
+                <li>小米5 <span>1299起</span></li>
             </ul>
         </div>
     </div>
@@ -108,7 +108,8 @@
        };
 
         oXm.onmouseover = function () {
-
+            $(this).css('transition','all 0.5s linear');
+            this.style.height = '0';
         }
     </script>
 </body>
