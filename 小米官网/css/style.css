@@ -123,6 +123,12 @@ a{
     top: 260px;
     border: 1px solid #e0e0e0;
 }
+
+@-webkit-keyframes myfirst{
+from {height: 200px;}
+to {height:0;}
+}
+
 #xm img{
     width: 150px;
     height: 120px;
@@ -138,14 +144,19 @@ a{
 }
 #site-header  #bottom{
     position: absolute;
-    left: 30px;
+    left: 15px;
     bottom: 10px;
+}
+#site-header  #bottom span{
+    color:#ff6700;
+    display: block;
+    text-align: center;
 }
 #site-header  #bottom li{
     height: 20px;
     width: 60px;
     font-size: 12px;
-    margin-right: 90px;
+    margin-right: 100px;
     margin-left: 55px;
 }
 #site-header-list li{
