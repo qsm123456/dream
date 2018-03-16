@@ -4,43 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        li{
-            list-style: none;
+
+        *{
+            margin: 0;
         }
-        #nav-list-left{
-            position: absolute;
-            right: 100px;
-            top: 0;
+        #div1{
+            border: 1px solid;
+            background: #e0e0e0;
+            height: 100px;
+
+           /* animation: myfirst 5s;
+            -moz-animation: myfirst 5s;	!* Firefox *!
+            -webkit-animation: myfirst 5s;	!* Safari 和 Chrome *!
+            -o-animation: myfirst 5s;	!* Opera *!*/
+            /*transition: all 0.5s linear;*/
+            -webkit-animation: myfirst 5s;
         }
-        #nav-list-left li{
-            display: block;
-            float: left;
-            color: white;
-            line-height: 40px;
-        }
-        #cart{
-            width: 120px;
-            height: 40px;
-            background: #424242;
-            text-align: center;
-            margin: 0 10px;
-        }
-        #cart:hover{
-            background: #b0b0b0;
+        #div1 li:hover{
             cursor: pointer;
+            height: 0;
+        }
+        #div1 li a:hover{
+            color: #ff6700;
+        }
+        @-webkit-keyframes myfirst{
+            from {height: 100px;}
+            to {height:0;}
         }
 
     </style>
 </head>
 <body>
-<ul id="nav-list-left">
-    <li><a href="#">消息</a><span class="sep">|</span></li>
-    <li><a href="#">注册</a><span class="sep">|</span></li>
-    <li><a href="#">消息通知</a></li>
-    <li id="cart">
-        <a href="#">购物车（0）</a>
-    </li>
-    <li>11</li>
-    <ul/>
+<div id="div1">
+    <ul>
+        <li>11</li>
+        <li>22</li>
+    </ul>
+</div>
+<script src="jquery-3.2.1.js"></script>
+<script src="js/fastClick.min.js"></script>
+<script>
+    let oDiv= document.getElementById('div1');
+    oDiv.onmouseover = function () {
+//        $(this).css('animation','all 2s ease');
+        this.style.height = '0';
+        console.log(123)
+    }
+</script>
+
 </body>
 </html>
