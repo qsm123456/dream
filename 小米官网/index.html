@@ -39,16 +39,17 @@
         <div class="wrapper">
             <a href="#" id="header-logo"></a>
             <ul id="site-header-list">
-                <li>小米手机</li>
-                <li>红米</li>
-                <li>笔记本</li>
-                <li>电视</li>
-                <li>盒子</li>
-                <li>新品</li>
-                <li>路由器</li>
-                <li>智能硬件</li>
-                <li>服务</li>
-                <li>社区</li>
+                <li><a href="">小米手机</a>
+                </li>
+                <li><a href="">红米</a></li>
+                <li><a href="">笔记本</a></li>
+                <li><a href="">电视</a></li>
+                <li><a href="">盒子</a></li>
+                <li><a href="">新品</a></li>
+                <li><a href="">路由器</a></li>
+                <li><a href="">智能硬件</a></li>
+                <li><a href="">服务</a></li>
+                <li><a href="">社区</a></li>
             </ul>
             <div id="search-text">
                 <input type="text" id="search-input">
@@ -68,20 +69,46 @@
                 </div>
             </div>
         </div>
+        <div  id="xm">
+            <ul>
+                <li><img src="img/MIX2.png" alt=""></li>
+                <li><img src="img/Note_3.png" alt=""></li>
+                <li><img src="img/xm6.png" alt=""></li>
+                <li><img src="img/xmMax2.png" alt=""></li>
+                <li><img src="img/xm5X.jpg" alt=""></li>
+            </ul>
+            <ul id="bottom">
+                <li>小米mix2</li>
+                <li>小米note3 </li>
+                <li>小米6 </li>
+                <li>小米max2 </li>
+                <li>小米5 </li>
+            </ul>
+        </div>
     </div>
 
     <script src="jquery-3.2.1.js"></script>
+    <script src="js/fastClick.min.js"></script>
     <script>
-        let oSearchInput = document.getElementById('search-input');
+        let oXm = document.getElementById('xm');
         let oBody = document.getElementById('body');
-        oSearchInput.onclick=function () {
-                $(this).siblings('#set-hot-words').addClass('chos');
-                $(this).siblings('#search-text-list').css('display', 'block');
-                $(this).siblings('#search-text-list').css('border-color', '#ff6700');
-        };
+        document.querySelector('#search-input').addEventListener('click',function (e) {
+            e.stopPropagation();
+            $(this).siblings('#set-hot-words').addClass('chos');
+            $(this).siblings('#search-text-list').css('display', 'block');
+            $(this).siblings('#search-text-list').css('border-color', '#ff6700');
+            $(this).siblings('#back-pic').css('border-color', '#ff6700');
+            $(this).css('border-color','#ff6700')
+        },false);
         oBody.onclick=function () {
+            $('#search-text-list').css('display','none').css('border-color', '#b0b0b0');
             $('#set-hot-words').removeClass('chos');
-            $('#search-text-list').css('display', 'none').css('border-color', '#b0b0b0');
+            $('#back-pic').css('border-color', '#b0b0b0');
+            $('#search-input').css('outline','none').css('border-color', '#b0b0b0')
+       };
+
+        oXm.onmouseover = function () {
+
         }
     </script>
 </body>
