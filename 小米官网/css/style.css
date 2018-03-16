@@ -109,18 +109,56 @@ a{
     height: 55px;
     display: block;
 }
-#site-header-list {
+#site-header-list{
     position: absolute;
     top: 35px;
     left: 150px;
+}
+#xm{
+    width:100%;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 260px;
+    border: 1px solid #e0e0e0;
+}
+#xm img{
+    width: 150px;
+    height: 120px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+#xm ul{
+    position: absolute;
+    bottom: 40px;
+}
+#xm li{
+    float: left;
+}
+#site-header  #bottom{
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+#site-header  #bottom li{
+    height: 20px;
+    width: 60px;
+    font-size: 12px;
+    margin-right: 90px;
+    margin-left: 55px;
 }
 #site-header-list li{
     display: block;
     float: left;
     font-size: 15px;
     margin-right: 20px;
+    cursor: pointer;
 }
-#site-header-list li:hover{
+#site-header-list li a{
+    color: #000000;
+}
+#site-header-list li a:hover{
     color: #ff6700;
 }
  #search-text {
@@ -195,6 +233,7 @@ a{
     height: 30px;
     line-height: 30px;
     text-indent: 10px;
+
 }
 #search-text-list li span{
     font-size:11px ;
@@ -208,6 +247,5 @@ a{
 }
 #search-text-list li:hover{
     background: #eee;
-
 }
 /*site-header结束*/
