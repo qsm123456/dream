@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            height: 200px;
+            width: 200px;
+            background: #ff6700;
+            position: absolute;
+        }
+    </style>
+</head>
+<body id="body">
+<div id="div1">
+</div>
+<script src="jquery-3.2.1.js"></script>
+<script  src='js/fastClick.min.js'></script>
+<script >
+    document.querySelector("#div1").addEventListener("click",function(e){
+        e.stopPropagation();
+        console.log('div1');
+    },false);
+    document.querySelector("#body").addEventListener("click",function(){
+        console.log('body');
+    },false)
+</script>
+</body>
+</html>
