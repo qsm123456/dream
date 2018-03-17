@@ -39,17 +39,33 @@
         <div class="wrapper">
             <a href="#" id="header-logo"></a>
             <ul id="site-header-list">
-                <li><a href="">小米手机</a>
+                <li class="nav-item"><a href="">小米手机</a>
+                    <div  id="xm">
+                        <ul>
+                            <li><img src="img/MIX2.png" alt=""></li>
+                            <li><img src="img/Note_3.png" alt=""></li>
+                            <li><img src="img/xm6.png" alt=""></li>
+                            <li><img src="img/xmMax2.png" alt=""></li>
+                            <li><img src="img/xm5X.jpg" alt=""></li>
+                        </ul>
+                        <ul id="bottom">
+                            <li>小米mix2 <span>2900</span></li>
+                            <li>小米note3 <span>1799</span></li>
+                            <li>小米 6<span>2299</span></li>
+                            <li>小米max2 <span>1399起</span></li>
+                            <li>小米5 <span>1299起</span></li>
+                        </ul>
+                    </div>
                 </li>
-                <li><a href="">红米</a></li>
-                <li><a href="">笔记本</a></li>
-                <li><a href="">电视</a></li>
-                <li><a href="">盒子</a></li>
-                <li><a href="">新品</a></li>
-                <li><a href="">路由器</a></li>
-                <li><a href="">智能硬件</a></li>
-                <li><a href="">服务</a></li>
-                <li><a href="">社区</a></li>
+                <li class="nav-item"><a href="">红米</a></li>
+                <li class="nav-item"><a href="">笔记本</a></li>
+                <li class="nav-item"><a href="">电视</a></li>
+                <li class="nav-item"><a href="">盒子</a></li>
+                <li class="nav-item"><a href="">新品</a></li>
+                <li class="nav-item"><a href="">路由器</a></li>
+                <li class="nav-item"><a href="">智能硬件</a></li>
+                <li class="nav-item"><a href="">服务</a></li>
+                <li class="nav-item"><a href="">社区</a></li>
             </ul>
             <div id="search-text">
                 <input type="text" id="search-input">
@@ -69,28 +85,45 @@
                 </div>
             </div>
         </div>
-        <div  id="xm">
-            <ul>
-                <li><img src="img/MIX2.png" alt=""></li>
-                <li><img src="img/Note_3.png" alt=""></li>
-                <li><img src="img/xm6.png" alt=""></li>
-                <li><img src="img/xmMax2.png" alt=""></li>
-                <li><img src="img/xm5X.jpg" alt=""></li>
-            </ul>
-            <ul id="bottom">
-                <li>小米mix2 <span>2900</span></li>
-                <li>小米note3 <span>1799</span></li>
-                <li>小米 6<span>2299</span></li>
-                <li>小米max2 <span>1399起</span></li>
-                <li>小米5 <span>1299起</span></li>
-            </ul>
+
+    </div>
+    <div id="home">
+        <div class="wrapper">
+            <div id="home-flash">
+                <ul id="home-pic">
+                    <li><img src="img/home1.jpg" alt=""></li>
+                    <li><img src="img/home2.jpg" alt=""></li>
+                    <li><img src="img/home3.jpg" alt=""></li>
+                    <li><img src="img/home4.jpg" alt=""></li>
+                    <li><img src="img/home5.jpg" alt=""></li>
+                </ul>
+                <ul id="home-g">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul id="home-menu">
+                    <li><a href="">手机 电话卡</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">电视 盒子</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">笔记本</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">智能 家电</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">健康 家居</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">出行 儿童</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">路由器 手机配件</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">移动电源 插线板</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">耳机 音箱</a><img src="img/more.png" alt=""></li>
+                    <li><a href="">生活 米兔</a><img src="img/more.png" alt=""></li>
+                </ul>
+            </div>
+
         </div>
     </div>
-
     <script src="jquery-3.2.1.js"></script>
     <script src="js/fastClick.min.js"></script>
     <script>
-        let oXm = document.getElementById('xm');
+
         let oBody = document.getElementById('body');
         document.querySelector('#search-input').addEventListener('click',function (e) {
             e.stopPropagation();
@@ -107,10 +140,9 @@
             $('#search-input').css('outline','none').css('border-color', '#b0b0b0')
        };
 
-        oXm.onmouseover = function () {
-            $(this).css('transition','all 0.5s linear');
-            this.style.height = '0';
-        }
+
+
+
     </script>
 </body>
 </html>
