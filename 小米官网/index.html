@@ -134,13 +134,16 @@
             $(this).css('border-color','#ff6700')
         },false);
         oBody.onclick=function () {
-            $('#search-text-list').css('display','none').css('border-color', '#b0b0b0');
+            $('#search-text-list').css({
+                'z-index': '1',
+                'border-color': '#b0b0b0',
+                'display': 'none',
+                'background': 'white'
+            });
             $('#set-hot-words').removeClass('chos');
             $('#back-pic').css('border-color', '#b0b0b0');
             $('#search-input').css('outline','none').css('border-color', '#b0b0b0')
        };
-
-
 
 
     </script>
