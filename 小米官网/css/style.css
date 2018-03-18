@@ -114,6 +114,7 @@ a{
     position: absolute;
     top: 35px;
     left: 150px;
+    z-index: 1;
 }
 
 #xm{
@@ -276,7 +277,7 @@ a{
 
 /*home开始*/
 #home-flash {
-    position: relative;
+    position: absolute;
 }
 
 #home-pic {
