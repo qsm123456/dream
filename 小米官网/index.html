@@ -128,8 +128,12 @@
         document.querySelector('#search-input').addEventListener('click',function (e) {
             e.stopPropagation();
             $(this).siblings('#set-hot-words').addClass('chos');
-            $(this).siblings('#search-text-list').css('display', 'block');
-            $(this).siblings('#search-text-list').css('border-color', '#ff6700');
+            $(this).siblings('#search-text-list').css({
+                'border-color': '#ff6700',
+                'display': 'block',
+                'z-index': '1',
+                'background': 'white',
+            });
             $(this).siblings('#back-pic').css('border-color', '#ff6700');
             $(this).css('border-color','#ff6700')
         },false);
@@ -138,7 +142,7 @@
                 'z-index': '1',
                 'border-color': '#b0b0b0',
                 'display': 'none',
-                'background': 'white'
+                'background': 'white',
             });
             $('#set-hot-words').removeClass('chos');
             $('#back-pic').css('border-color', '#b0b0b0');
