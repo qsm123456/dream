@@ -30,7 +30,7 @@
             }.json`
         )
         .then(res => {
-          console.log(res)
+          console.log(res);
           this.detail = res.data.data.MovieDetailModel;
         })
         .catch(res => {

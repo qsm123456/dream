@@ -6,7 +6,7 @@
                 <img :src="movie.img" alt="">
               </div>
               <div class="movie-detail">
-                <h3> {{movie.nm}} </h3>
+                <h3>{{movie.nm}}</h3>
                 <p>{{movie.ver}}</p>
                 <p>{{movie.star}}</p>
                 <p>{{movie.rt}}</p>

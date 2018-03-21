@@ -4,12 +4,14 @@ import Movie from '@/components/movie/Movie'
 import Music from '@/components/music/Music'
 import Book from '@/components/book/Book'
 import Photo from '@/components/photo/Photo'
+
 import MovieDetail from '@/components/movie/MovieDetail'
-
-
-Vue.use(Router)
+import Newsong from '@/components/music/Newsong'
+import PhotoDetail from '@/components/photo/PhotoDetail'
+Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,29 +21,20 @@ export default new Router({
     {
       path: '/music',
       name: 'Music',
-      component: Music,
-      beforeEnter(to, from, next){
-        from.name === null ? next('/') : next();
-      }
-    },
-    {
-      path: '/Book',
+      component: Music
+    }, {
+      path: '/book',
       name: 'Book',
-      component: Book,
-      beforeEnter(to, from, next){
-        from.name === null ? next('/') : next();
-      }
-    },
-    {
-      path: '/Photo',
+      component: Book
+    }, {
+      path: '/photo',
       name: 'Photo',
-      component: Photo,
-      beforeEnter(to, from, next){
-        from.name === null ? next('/') : next();
-      }
+      component: Photo
     },{
-      path:'/moviedetail/:movieId',
-      component:MovieDetail,
+      path: '/moviedetail:movie.id',
+      name: 'moviedetail',
+      component: MovieDetail
     }
+
   ]
 })
