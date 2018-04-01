@@ -74,19 +74,21 @@
 	  <span class="time"><?php echo $blog -> post_time?></span>
 	  <span class="catalog">分类: <a href="#">工作日志</a></span>
 	  <span class="stat">统计: 1评/4阅</span>
-	  	  <span class="blog_admin">( <a href="newBlog.htm">修改</a> | <a href="javascript:delete_blog(24027)">删除</a> )</span>	  
-	  	</div>
+	  <span class="blog_admin">( <a href="newBlog.htm">修改</a> | <a href="javascript:delete_blog(24027)">删除</a> )</span>	  
+	  </div>
+
 		<div class="TextContent" >
 		<?php echo $blog -> content ?>
 		<div class="fullcontent"><a href="viewPost_comment.htm">阅读全文...</a></div>
-			</div>
+		</div>
 	  </li>
+
 <?php } ?>
 
-
+<?php echo $links; ?>
 
 <div class="clear"></div>
-	</div>
+</div>
 <div class="BlogMenu"><div class="admin SpaceModule">
   <strong>博客管理</strong>
   <ul class="LinkLine">
