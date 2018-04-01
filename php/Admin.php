@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-
 	public function  index(){
 		$user = $this -> session ->userdata('user'); 
 		if($user){
@@ -27,7 +26,13 @@ class Admin extends CI_Controller {
 			redirect('welcome/login');
 		}
 	}
-	 
+
+
+
+	public function blog_comment(){
+		$this -> load -> view('blog_comments');
+	}	 
+
 
 
 	public function  index_logined(){
@@ -35,22 +40,25 @@ class Admin extends CI_Controller {
 
 		//加载分页类
 		$this->load->library('pagination');
-		$this -> load ->model('user_model');
-				
-		$total_rows = $this -> user_model -> get_blog_id_total($user ->user_id)
-		$config['base_url'] = 'http://localhost/php/admin/index_logined';
-		$config['total_rows'] = $total_rows ;
 		$config['per_page'] = 3;
+		$this -> load ->model('user_model');
+
+		$user_blogs = $this-> user_model ->get_blog_count_by_user($user ->user_id);
+
+		$total_rows = $this -> user_model -> get_blog_id_total(
+			$user ->user_id,$this -> uri ->segment(3),$config['per_page']
+		);
+		$config['base_url'] = 'http://localhost/php/admin/index_logined';
+
+		$config['total_rows'] = count($user_blogs);
+		
 		$this->pagination->initialize($config);
 
-
-		
-		$user_blogs = $this-> user_model ->get_blog_count_by_user($user ->user_id);
-		
-		
+		$link = $this ->pagination ->create_links();
 
 		$this -> load ->view('index_logined',array(
-			'user_blogs' =>$user_blogs 
+			'user_blogs' =>$user_blogs,
+			'links'=>$link,
 		));
 	}
 
