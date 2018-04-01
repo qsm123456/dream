@@ -57,16 +57,18 @@ class User_model extends CI_Model {
  		return   $user_blogs->result();
 	}
 
-	public function get_blog_count_type_blog(){
-		$this -> db -> select('b.*');
-		$this -> db -> from('t_blog b');
-		$this -> db -> join('t_type_blog bt','b.type_id = bt.type_id');
-		$this -> db -> where('bt.user_id',$user_id);
-		$this -> db -> limit($num,$offset);
-	    $same_type_id = $this ->db ->get();
- 		return   $same_type_id ->result();
+	public function get_blog_id_total($user_id,$per_page,$offset){
+			$this -> db -> select('b.*');
+			$this -> db -> from('t_blog b');
+			$this -> db -> join('t_type_blog bt','b.type_id = bt.type_id');
+			$this -> db -> where('bt.user_id',$user_id);
+			$this -> db -> limit($per_page,$offset);
+			$blog_id = $this ->db ->get();
+			return   $blog_id ->result();
+		}
 	}
 
 
 
-}
+
+
