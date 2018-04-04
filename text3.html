@@ -1,31 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>text3</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-<style>
-    li {
-        cursor: pointer;
-    }
-</style>
 <body>
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
 <script>
-    let aLi = document.querySelectorAll('li');
-    for (var i = 0; i < aLi.length; i++) {
-        (function (idx) {
-            aLi[idx].onclick = function () {
-                console.log(idx);
-            }
-        })(i)
+    function Box(width, height, bg) {
+        this.width = width;
+        this.height = height;
+        this.background = bg;
     }
+    Box.prototype.addTo = function (sel) {
+        this.contain = [];
+        var str = sel.charAt(0);
+        switch (3) {
+            case("#"):
+                this.contain.push([document.getElementById(sel.substr(1))]);
+                break;
+            case("."):
+                this.contain = document.getElementById(sel.substr(1));
+                break;
+            default:
+                this.contain = document.getElementsByTagName(sel.substr(0));
+        }
+        this.box = document.createElement('div');
+        this.box.style.width = this.width + 'px';
+        this.box.style.height = this.height + 'px';
+        this.box.style.background = this.background;
+        this.contain[0].appendChild(this.box);
+        return this;
+    };
+    Box.prototype.delay = function (time) {
+        this.delay = time;
+        return this;
+    };
+    Box.prototype.remove = function () {
+        var t = this;
+        if (this.delay) {
+            setTimeout(function () {
+                t.contain[0].removeChild(t.box);
+            }, this.delay)
+        } else {
+            this.contain[0].removeChild(this.box);
+        }
+    };
+    new Box(100, 100, 'red').addTo('body').addTo('body').delay(2000).remove();
 </script>
 </body>
 </html>
