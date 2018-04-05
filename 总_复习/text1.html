@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--<h1>1111a.com</h1>-->
+<!--<img src="http://img.taopic.com/uploads/allimg/120727/201995-120HG1030762.jpg">-->
+<!--<iframe id='ifm' src="http://www.b.com/index.html" ></iframe>-->
+
+
+<script>
+    //        function foo(){
+    //            alert(123)
+    //        }
+    //
+    //
+    //        let oIfm = document.querySelector("#ifm");
+    //        oIfm.onload = function () {
+    //            let win = oIfm.contentWindow;
+    //            win.postMessage({
+    //                name:'zs',
+    //                age:18
+    //            }, 'http://www.b.com/index.html')
+    //        }
+    function getSomething() {
+        return "something";
+    }
+    async function testAsync() {
+        return Promise.resolve("hello async");
+    }
+    async function test() {
+        const v1 = await getSomething();
+        const v2 = await testAsync();
+        console.log(v1, v2);
+    }
+
+    test();
+</script>
+
+<!--<script src="http://www.b.com/index1.php?username='zs'&callback=foo"></script>-->
+
+
+</body>
+</html>
