@@ -2,9 +2,7 @@
 
     <ul>
       <li class='pic' v-for="item in musicpic" :key="item.id">
-        <router-link :to="'/newsong/'+ item.id">
-          <img :src="item.bg" alt="">
-        </router-link>
+        <img :src="item.bg" alt="" @click="getNewsong(item.id)">
       </li>
     </ul>
 
@@ -24,10 +22,21 @@
         .then(res=>{
 //          console.log(res);
           this.musicpic = res.data.albums;
+
         })
         .catch(res=>{
           alert('出错了')
         })
+
+    },
+    methods: {
+      getNewsong(movieId){
+        if (movieId == 3779629) {
+          this.$router.push(`/newsong/${movieId}`);
+        } else {
+          this.$router.push(`/${movieId}`);
+        }
+      }
     }
 }
 </script>
@@ -38,6 +47,5 @@
 .pic img{
   float: left;
   width: 50%;
-
 }
 </style>

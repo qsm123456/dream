@@ -16,7 +16,7 @@
         return{
             photoList:[],
         }
-    } ,
+    },
     created(){
        axios
         .get('/static/data/photodata.json')
@@ -42,7 +42,6 @@
     content: '';
     display: block;
     clear: both;
-
 }
   .photo{
     width: 50%;

@@ -1,21 +1,26 @@
 <template>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
   <div>
-      <ul class="list" >
-          <li @click="getDetail(movie.id)" class='movie' v-for="movie in movieList" :key="movie.id" >
-              <div class="movie-img">
-                <img :src="movie.img" alt="">
-              </div>
-              <div class="movie-detail">
-                <h3>{{movie.nm}}</h3>
-                <p>{{movie.ver}}</p>
-                <p>{{movie.star}}</p>
-                <p>{{movie.rt}}</p>
-              </div>
-          </li>
-        <div class="loading" v-show="isLoading"><img src="../../assets/img/load3.gif" alt=""></div>
-        <div class="tip" v-show="isEnd">没有数据了</div>
+    <ul class="list" >
+      <li @click="getDetail(movie.id)" class='movie' v-for="movie in movieList" :key="movie.id" >
+        <div class="movie-img">
+          <img :src="movie.img" alt="">
+        </div>
+        <div class="movie-detail">
+          <h3>{{movie.nm}}</h3>
+          <p>{{movie.ver}}</p>
+          <p>{{movie.star}}</p>
+          <p>{{movie.rt}}</p>
+        </div>
+      </li>
+      <div class="loading" v-show="isLoading"><img src="../../assets/img/load3.gif" alt=""></div>
+      <div class="tip" v-show="isEnd">没有数据了</div>
     </ul>
   </div>
+  </html>
 </template>
 
 <script>
@@ -52,11 +57,11 @@ export default {
           this.getData();
          },
     mounted() {
-    window.onscroll = () => {
+      window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
       let clientHeight = document.documentElement.clientHeight;
       let scrollHeight = document.documentElement.scrollHeight;
-      console.log(scrollTop ,clientHeight,scrollHeight);
+//      console.log(scrollTop ,clientHeight,scrollHeight);
       if (scrollTop + clientHeight ==scrollHeight && !this.isEnd) {
         this.isLoading = true;
         this.getData();

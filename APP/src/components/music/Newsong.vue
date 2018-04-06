@@ -1,11 +1,10 @@
 <template>
       <!--<h1>{{$route.params.musicId}}</h1>-->
-      <aplay autoplay  :music='musicList' :showlrc="true" v-if="load" ></aplay>
-
+  <aplay id="music" :musicList='musicList' :iNow='iNow' :isPlay='isPlay'></aplay>
 </template>
 
 <script>
-  import aplay from 'vue-aplayer'
+  import aplay from 'vue-music-component'
   import axios from 'axios';
   export default{
     components: {
@@ -15,22 +14,30 @@
       return {
         musicList:[],
         load:false,
+        iNow: null,
+        isPlay: false
       }
     },
     created(){
       axios
-        .get('/static/data/musicdata.json')
+        .get('/static/data/musicdata.json',
+        )
         .then(res=>{
-          console.log(res);
-          res.data.musicData.forEach(element=>{
-              this.musicList.push(
-              {title : element.title,
-              author :element.author,
-              pic:element.musicImgSrc,
-              url:element.src,
-              lrc : '/static/'+element.lrc})
-          }),
-            this.load = true
+//          console.log(res);
+          res.data.musicData.forEach(element => {
+            this.musicList.push(
+              {
+                album_title: element.title,
+                artist_name: element.author,
+                pic_small: element.musicImgSrc,
+                src: element.src,
+                id: element.js_id,
+                lrcSrc: '/static/' + element.lrc
+              })
+          });
+          this.load = true;
+//            console.log(this.musicList);
+          this.iNow = 0;
         })
         .catch(res=>{
           alert('出错了')
@@ -39,10 +46,9 @@
   }
 </script>
 
-
-
 <style scoped>
-  .aplayer.content.aplayer-withlist{
-   margin: 1rem 0;
- }
+  #music {
+    width: 6.4rem;
+    height: 9.4rem;
+  }
 </style>

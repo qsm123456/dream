@@ -30,7 +30,7 @@
             }.json`
         )
         .then(res => {
-          console.log(res);
+//          console.log(res);
           this.detail = res.data.data.MovieDetailModel;
         })
         .catch(res => {
@@ -61,6 +61,5 @@
     .starring{
       text-align: left;
       margin-top: .5rem;
-
     }
 </style>
