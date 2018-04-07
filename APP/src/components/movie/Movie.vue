@@ -37,8 +37,8 @@ export default {
       getData(){
          axios
            .get(API_PROXY +  `http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`)
-           .then(res =>{
-//               console.log(res)
+           .then(res => {
+//               console.log(res);
              let list =  res.data.data.movies;
              if(list<10){
                 this.isEnd=true;
@@ -46,7 +46,9 @@ export default {
                 this.movieList = this.movieList.concat(list);
                 this.isLoading = false;
              }
-           }).catch(res=>{   alert('加载失败')})
+           }).catch(res => {
+           alert('加载失败')
+         })
     },
       getDetail(movieId) {
            this.$router.push(`/moviedetail/${movieId}`);

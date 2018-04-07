@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Movie from '@/components/movie/Movie'
-import Music from '@/components/music/Music'
+// import Music from '@/components/music/Music'
 import Book from '@/components/book/Book'
-import Photo from '@/components/photo/Photo'
+import Constellation from '@/components/constellation/Constellation'
 
 import MovieDetail from '@/components/movie/MovieDetail'
 import Newsong from '@/components/music/Newsong'
-import PhotoDetail from '@/components/photo/PhotoDetail'
+
 
 Vue.use(Router);
 
@@ -17,16 +17,9 @@ export default new Router({
     {
       path: '/',
       name: 'Movie',
-      component: Movie
+      component: Movie,
     },
     {
-      path: '/music',
-      name: 'Music',
-      component: Music,
-      beforeEnter(to, from, next){
-        from.name === null ? next('/') : next();
-      }
-    }, {
       path: '/book',
       name: 'Book',
       component: Book,
@@ -34,9 +27,9 @@ export default new Router({
         from.name === null ? next('/') : next();
       }
     }, {
-      path: '/photo',
-      name: 'Photo',
-      component: Photo,
+      path: '/constellation',
+      name: 'Constellation',
+      component: Constellation,
       beforeEnter(to, from, next){
         from.name === null ? next('/') : next();
       }
@@ -48,16 +41,12 @@ export default new Router({
         from.name === null ? next('/') : next();
       }
     }, {
-      path: '/newsong/:musicId',
+      path: '/newsong',
       name: 'Newsong',
       component: Newsong,
       beforeEnter(to, from, next){
-        from.name === null ? next('/music') : next();
+        from.name === null ? next('/') : next();
       }
-    }, {
-      path: '/photodetail/:photoId',
-      name: 'PhotoDetail',
-      component: PhotoDetail
     },
 
   ]

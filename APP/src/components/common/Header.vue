@@ -16,6 +16,7 @@
 <script>
   export default{
     props: ['bgColor'],
+
   }
 </script>
 
@@ -25,6 +26,8 @@
     font-size: 0.3rem;
     color: white;
     line-height: 1rem;
+    position: relative;
+    z-index: 1;
   }
 .head{
   height: 1rem;

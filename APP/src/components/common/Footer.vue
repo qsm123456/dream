@@ -4,10 +4,10 @@
       <router-link to="/" @click.native="$emit('change', 'movie')">电影</router-link>
     </li>
     <li>
-      <router-link to="/music" @click.native="$emit('change', 'music')">音乐</router-link>
+      <router-link to="/newsong" @click.native="$emit('change', 'music')">音乐</router-link>
     </li>
     <li>
-      <router-link to="/photo" @click.native="$emit('change', 'photo')">图片</router-link>
+      <router-link to="/constellation" @click.native="$emit('change', 'Constellation')">星座</router-link>
     </li>
     <li>
       <router-link to="/book" @click.native="$emit('change', 'book')">书籍</router-link>
