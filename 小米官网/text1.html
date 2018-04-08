@@ -31,38 +31,54 @@
         }
 
         img {
-            width: 900px;
+            width: 1000px;
             height: 400px;
             border: 0;
             position: absolute;
             top: 0;
             left: 0;
+            display: none;
         }
+
+        .sel {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
 <div>
     <div id="home-pic">
-        <img src="img/home1.jpg" alt="">
-        <img src="img/home2.jpg" alt="">
-        <img src="img/home3.jpg" alt="">
-        <img src="img/home4.jpg" alt="">
-        <img src="img/home5.jpg" alt="">
+        <img class="chos sel" src="img/home1.jpg" alt="">
+        <img class="chos" src="img/home2.jpg" alt="">
+        <img class="chos" src="img/home3.jpg" alt="">
+        <img class="chos" src="img/home4.jpg" alt="">
+        <img class="chos" src="img/home5.jpg" alt="">
     </div>
     <ul id="home-g">
-        <li class="chos"></li>
-        <li class="chos"></li>
-        <li class="chos"></li>
-        <li class="chos"></li>
-        <li class="chos"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
 </div>
 <script src="jquery-3.2.1.js"></script>
 <script>
-    let aHomeG = document.getElementsByClassName('chos');
-    aHomeG.onmousemove = function () {
-        aHomeG[i].index = i;
+    var aImg = document.getElementsByClassName('chos');
+
+    for (var i = 0; i < 5; i++) {
+        aImg[i].index = i;
+//        console.log(aImg[i].index;)
+        aImg[i].className = '';
+        nowindex = this.index;
+        setInterval(function () {
+            aImg[nowindex].className = '';
+        }, 1000)
+
     }
+
+
 </script>
 </body>
 </html>
