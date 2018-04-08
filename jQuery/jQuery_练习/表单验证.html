@@ -7,7 +7,8 @@
         label{
             font-size: 10px;
         }
-        #sign{
+
+        .namsign, .emlsign {
             color: red;
         }
         #sub input{
@@ -15,18 +16,20 @@
             margin-top: 10px;
         }
 
+        .chos::after {
+
+        }
     </style>
 </head>
 <body>
 <form action="" id="table">
-    <div id="int">
-        <label for="name">用户名：</label>
-        <input type="text" id="name">
+    <div id="username_">
+        <label for="username">用户名：</label>
+        <input type="text" id="username"><span class="namsign">*</span><span class="chos"></span>
     </div>
-
-    <div id="int">
+    <div id="email_">
         <label for="email">邮件：</label>
-        <input type="text" id="email">
+        <input type="text" id="email"><span class="emlsign">*</span>
     </div>
 
     <div id="int">
@@ -40,56 +43,27 @@
 </form>
 <script src="../jquery-3.2.1.js"></script>
 <script>
-    //插星号
-    $('form #name,#email').each(function () {
-        var $q = $('<strong id="sign">*</strong>');
-        $(this).after($q);
-    }).blur(function () {
-        $(this).nextAll('.formtips').remove();
-
+    $('#username').blur(function () {
         //验证用户名
-        if( $(this).is('#name') ){
-            if( this.value=="" || this.value.length < 6 ){
-                var errorMsg = '请输入至少6位的用户名.';
-                $(this).next().after('<span class="formtips onError">'+errorMsg+'</span>');
-            }else{
-                var okMsg = '输入正确.';
-                $(this).next().after('<span class="formtips onSuccess">'+okMsg+'</span>');
-            }
+        console.log(456);
+//            if($(this).value=''||$(this).val().length<6){
+//                $('.namsign').after('不能为空且至少6位');
+//            }
+    }).focus(function () {
+        //验证用户名
+        console.log(123);
+        if ($(this).value = '' || $(this).val().length < 6) {
+            $('.chos').after({
+                'content': '',
+                'display': 'block',
+                'width': '20px',
+                'height': '20px',
+                'background': 'url(img/error.gif)'
+            })
+        } else {
+
         }
-
-
-        if( $(this).is('#email') ){
-            if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) ){
-                var errorMsg = '请输入正确的E-Mail地址.';
-                $(this).next().after('<span class="formtips onError">'+errorMsg+'</span>');
-            }else{
-                var okMsg = '输入正确.';
-                $(this).next().after('<span class="formtips onSuccess">'+okMsg+'</span>');
-            }
-        }
-
-    }).on('keyup',function(){
-        $(this).triggerHandler("blur");
-    }).on('focus',function(){
-        $(this).triggerHandler("blur");
-    });//end blur
-
-
-    $('#sub_').on('click',function(){
-        $("form :input.required").trigger('blur');
-        var numError = $('form .onError').length;
-        if(numError){
-            return false;
-        }
-        alert("注册成功,密码已发到你的邮箱,请查收.");
     });
-
-    //重置
-    $('#res_').on('click',function(){
-        $(".formtips").remove();
-    });
-
 </script>
 </body>
 </html>
