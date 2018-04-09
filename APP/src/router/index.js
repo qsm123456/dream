@@ -3,11 +3,11 @@ import Router from 'vue-router'
 import Movie from '@/components/movie/Movie'
 // import Music from '@/components/music/Music'
 import Book from '@/components/book/Book'
-import Constellation from '@/components/constellation/Constellation'
+import Ticket from '@/components/ticket/Ticket'
 
 import MovieDetail from '@/components/movie/MovieDetail'
 import Newsong from '@/components/music/Newsong'
-
+import Ticket_s from '@/components/ticket/Ticket_s'
 
 Vue.use(Router);
 
@@ -27,9 +27,9 @@ export default new Router({
         from.name === null ? next('/') : next();
       }
     }, {
-      path: '/constellation',
-      name: 'Constellation',
-      component: Constellation,
+      path: '/ticket',
+      name: 'Ticket',
+      component: Ticket,
       beforeEnter(to, from, next){
         from.name === null ? next('/') : next();
       }
@@ -48,6 +48,13 @@ export default new Router({
         from.name === null ? next('/') : next();
       }
     },
-
+    {
+      path: '/ticket_s',
+      name: 'TicketS',
+      component: Ticket_s,
+      beforeEnter(to, from, next){
+        from.name === null ? next('/') : next();
+      }
+    }
   ]
 })

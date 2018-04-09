@@ -30,18 +30,15 @@
   export default{
     data(){
       return {
-        List: [],
-        Price: []
+        List: []
       }
     },
     created(){
       axios
-        .get(API_PROXY + 'http://apis.juhe.cn/train/s2swithprice?start=' + encodeURI("哈尔滨") + '&end=' + encodeURI("北京") + '&date=&dtype=&key=a51972d9bf3e52ad3607effb24e829f3')
+        .get(API_PROXY + 'http://apis.juhe.cn/train/s2swithprice?start=' + encodeURI(this.$route.params.v1) + '&end=' + encodeURI(this.$route.params.v2) + '&date=&dtype=&key=a51972d9bf3e52ad3607effb24e829f3')
         .then(res => {
-          console.log(res);
+//          console.log(res);
           this.List = res.data.result.list;
-          this.Price = res.data.result.list.price_list;
-
         })
         .catch(res => {
           alert('出错了')
@@ -55,6 +52,7 @@
 <style scoped>
   #total .ticket {
     border: 1px solid #2aabd2;
+    text-indent: 10px;
   }
 
   #train_no {
