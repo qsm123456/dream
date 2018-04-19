@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var a = "0101";
+    var b = "???";
+    var arr = [];
+    arr.push(b);
+
+    var bflag = true;
+    while (bflag) {
+        for (var i = 0; i < arr.length; i++) {
+            var str = arr.shift();
+            var str1 = str;
+            var index = str.indexOf('?');
+            if (index != -1) {
+                str = str.replace(str[index], "0");
+                str1 = str1.replace(str1[index], "1");
+                arr.push(str, str1);
+            } else {
+                arr.push(str);
+                bflag = false;
+            }
+        }
+    }
+
+    var num = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (a.indexOf(arr[i]) != -1) {
+            num++;
+        }
+    }
+
+    console.log(num);
+</script>
+</body>
+</html>
