@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<div id="div1">div1</div>
+<div class="div2 div3">div2</div>
+<script>
+    var oBody = document.getElementById('body');
+
+    oBody.onclick = function (e) {
+//        console.log(e.target);
+        console.log(getElement(e.target));
+    };
+
+
+    function getElement() {
+        var arr = [];
+
+        function getName(elem) {
+            if (arguments[0].id == '') {
+                if (arguments[0].className == '') {
+                    arr.push(elem.tagName.toLowerCase());
+                } else {
+                    var sClassname = elem.className.split(" ").join(" .");
+                    arr.push("." + sClassname);
+                }
+            } else {
+                arr.push("#" + elem.id);
+            }
+            var parent = elem.parentNode;
+            if (parent.tagName == "BODY") {
+                arr.push("body", "html");
+            } else {
+                getName(parent);
+            }
+        }
+
+        getName(arguments[0]);
+        return arr.reverse().join(" //");
+    }
+    ;
+
+</script>
+</body>
+</html>
