@@ -5,36 +5,41 @@
     <title>Title</title>
     <style>
         body {
-            /*margin: 0;*/
+            margin: 0;
         }
 
-        .aa {
-            float: left;
-            width: 200px;
-            height: 200px;
-            background: #ff0000;
-            /*_margin-right:-3px;*/
+        #div1 {
+            width: 100px;
+            height: 100px;
+            border: 1px dashed;
         }
 
-        .bb {
-            width: 200px;
-            height: 200px;
-            /*float: left;*/
-            background: #0000ff;
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: All 0.4s ease-in-out;
+            -webkit-transition: All 0.4s ease-in-out;
+            -moz-transition: All 0.4s ease-in-out;
+            -o-transition: All 0.4s ease-in-out;
+        }
+
+        #div2:hover {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
         }
     </style>
 </head>
 <body>
-<div class="aa">
-    <div/>
-    <div class="bb">
-        <div/>
+<div id="div1">
+    <div id="div2">div2</div>
+</div>
+<script>
 
-        <!--<div id="div1">-->
+</script>
 
-    </div>
-    <script>
-
-    </script>
 </body>
 </html>
