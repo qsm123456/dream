@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6</title>
+</head>
+<body>
+<script>
+
+    /*function isArray(arr){
+     if(arr instanceof Array){
+     return true
+     }else{
+     return false;
+     }
+     }*/
+    function isArray(arr) {
+        return arr.constructor == Array ? true : false;
+    }
+    arr1 = [1, 2, 3]
+    console.log(isArray(arr1))
+
+</script>
+</body>
+</html>
