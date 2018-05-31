@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* var map = [{
+     key : "百度",
+     value : "李彦宏"  },
+     {
+     key : "阿里巴巴",
+     value : "马云"  },
+     ];
+
+     for(var key in map) {
+     console.log(map[key]);
+     }*/
+    //    输出结果
+    /*    Object {key : "百度", value : "李彦宏"}
+     Object {key : "阿里巴巴", value : "马云"}*/
+    /*var m = new Map();
+     m.set(1, "black");
+     m.set(2, "red");
+     m.set("colors", 2);
+     //方法一：
+     m.forEach(function (item) {
+     console.log(item.toString());
+     });*/
+    //function big(a){
+    //    return a>=2;
+    //}
+    //arr = [1,2,3,];
+    //console.log(arr.filter(big));
+    var numbers = [1, 5, 6, 7, 2, 9];
+    /*   function mul(num) {
+     return num * 2;
+     }
+     var foo = numbers.map(mul);
+     console.log(foo);
+     /!*  for(var key in foo) {
+     console.log(foo[key]);
+     }*!/*/
+    function getSum(total, num) {
+        return total + num;
+    }
+    /*for(var key in numbers){
+     console.log(numbers[key].reduce(getSum));
+     }*/
+    console.log(numbers.reduce(getSum));
+</script>
+</body>
+</html>
