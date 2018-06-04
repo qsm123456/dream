@@ -68,13 +68,36 @@
      sum+=val;
      });
      console.log(sum);*/
-    var arr = [1, 5, 6, 4];
+    /*var arr = [1, 5, 6, 4];
     var sum = 0;
     function getsum(val, index, arr) {
         return sum += val;
     }
     arr.filter(getsum);
-    console.log(sum)
+     console.log(sum)*/
+
+    let obj1 = {
+        name: 'lisi',
+        age: '19',
+        dad: {
+            name: 'lisan',
+            age: '40'
+        }
+    };
+    //    obj1.name = 'zs';
+    obj1.dad.name = 'ww';
+    let obj2 = clone(obj1);
+    console.log(obj1);
+    console.log(obj2);
+
+
+    function clone(obj) {
+        let newObj = {};
+        for (var p in obj) {
+            newObj[p] = obj[p];
+        }
+        return newObj;
+    }
 </script>
 </body>
 </html>
