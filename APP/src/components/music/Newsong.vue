@@ -1,6 +1,12 @@
 <template>
-      <!--<h1>{{$route.params.musicId}}</h1>-->
-  <aplay id="music" :musicList='musicList' :iNow='iNow' :isPlay='isPlay'></aplay>
+  <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <aplay id="music" :musicList='musicList' :iNow='iNow' :isPlay='isPlay'></aplay>
+  </html>
+
+
 </template>
 
 <script>

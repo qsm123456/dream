@@ -30,7 +30,7 @@
 
 <style scoped>
   input {
-    margin-top: 5px;
+    margin-top: 20px;
   }
 
   #search {
@@ -41,7 +41,13 @@
   #search {
     display: block;
     height: 30px;
-    width: 30px;
+    width: 50px;
     background: blue;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+  }
+  label{
+    font-size: 17px;
   }
 </style>

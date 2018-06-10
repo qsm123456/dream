@@ -4,6 +4,7 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
     //入口设置
     entry: {
@@ -35,13 +36,27 @@ module.exports = {
                 }
             }]
 
-        }
+        },{
+            test:/\.(htm|html)$/i,
+            loader:'html-withimg-loader'
+            }, {
+            test: /\.scss$/,
+            use:ExtractTextPlugin.extract({
+               use: [
+            {
+                loader: 'css-loader'
+            },
+            {
+                loader: 'sass-loader'
+            }],
+               fallback:"style-loader"
+            })
 
-        ]
-
+        }],
     },
 
-    plugins: [
+
+    plugins:[
         new HtmlPlugin({
             minify: {
                 removeAttributeQuotes: true
@@ -50,12 +65,20 @@ module.exports = {
             template: './src/index.html',
         }),
         new ExtractTextPlugin('css/index.css'),
-
+        new webpack.BannerPlugin('hahhaha')
     ], //是一个数组
-    devServer: {
+
+    devServer:{
         contentBase: path.resolve(__dirname, 'dist'),
         host: 'localhost',
         port: "8081", //确认不冲突
         compress: true, //服务器压缩
     },
-};
+
+
+
+
+
+
+
+    };

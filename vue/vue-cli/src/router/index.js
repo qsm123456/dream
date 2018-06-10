@@ -10,7 +10,7 @@ import Text2 from '@/components/Text2'
 
 import Url from '@/components/Url'
 
-
+import Count from '@/components/Count'
 
 Vue.use(Router);
 
@@ -29,31 +29,38 @@ export default new Router({
           alias:'/abc',
           children:[
               {
-                  path:'text1',
-                  name:'/text/text1',
+                  path:'/text/text1',
+                  name:'text1',
                   component:Text1,
-              },
+              }
+              ,
               {
-                  path:'text2',
-                  name:'/text/text2',
+                  path:'/text/text2',
+                  name:'text2',
                   component:Text2,
-              },
-              {
-                  path: '/url/:userId(\\d+)/:username',
-                  name:'url',
-                  component:Url,
-              },
+              }
+              ,
               {
                   path:'/home',
                   redirect:'/'
               }
               ,
               {
-                  path:'/home/:userId(\\d+)/:username',
-                  redirect:'/text/url/:userId(\\d+)/:username'
+                  path:'/home2/:userId(\\d+)/:username',
+                  redirect:'/url/:userId(\\d+)/:username'
               }
-
           ]
       }
+      ,
+    {
+      path: '/url/:userId(\\d+)/:username',
+      name:'url',
+      component:Url,
+    },
+    {
+      path:'/count',
+      name:'/count',
+      component:Count,
+    }
   ]
 })

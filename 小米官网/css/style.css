@@ -111,26 +111,24 @@ a{
     display: block;
 }
 #site-header-list{
-    position: absolute;
-    top: 35px;
-    left: 150px;
+    height: 100px;
+    margin-left: 100px;
+    line-height: 100px;
+    width: 50%;
     z-index: 1;
 }
 
 #xm{
-    width: 1324px;
-    /*height: 200px;*/
-    background: white;
-
+    width: 1340px;
+     background: white;
     position: absolute;
-    left: -200px;
-    top: 65px;
-    /*border: 1px solid;*/
-    /*display: none;*/
+    left: -110px;
+    top: 100px;
+
     height: 0;
     overflow: hidden;
     transition: height .5s ease-out;
-    box-shadow: .5px .5px .2px #888;
+    box-shadow: .2px .2px .2px #888;
     z-index: 1;
 }
 #xm img{
@@ -139,10 +137,7 @@ a{
     margin-right: 25px;
     margin-left: 20px;
 }
-#xm ul{
-    position: absolute;
-    bottom: 40px;
-}
+
 #xm li{
     float: left;
 }
@@ -155,13 +150,15 @@ a{
     border-top: 1px solid #e0e0e0;
     border-left: 0;
 }
-#site-header  #bottom{
-    position: absolute;
-    left: 15px;
-    bottom: 10px;
-
+#site-header-list li{
+    height: 100px;
 }
-#site-header  #bottom span{
+#xm  #bottom{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+#xm  #bottom span{
     color:#ff6700;
     display: block;
     text-align: center;
@@ -189,7 +186,6 @@ a{
  #search-text {
      width: 300px;
      height: 50px;
-     /*border:1px solid;*/
      border-color: #b0b0b0;
      position: absolute;
      right: 0;
@@ -215,7 +211,6 @@ a{
      height: 48px;
      outline: none;
      text-indent: 10px;
-     /*border-left: none;*/
  }
 #set-hot-words{
     position: absolute;
@@ -223,7 +218,6 @@ a{
     right: 50px;
 }
  #back-pic{
-     /*background: url('../img/search.png') no-repeat center;*/
      width: 50px;
      height: 50px;
      position: absolute;
@@ -260,7 +254,6 @@ a{
     height: 30px;
     line-height: 30px;
     text-indent: 10px;
-
 }
 #search-text-list li span{
     font-size:11px ;

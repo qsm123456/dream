@@ -8,6 +8,7 @@
 
 <script>
   import axios from 'axios'
+
 export default{
     data(){
         return {nowIndex:0};
@@ -16,11 +17,14 @@ export default{
       this.nowIndex = parseInt(this.$route.params.photoIndex) + 1
     },
     methods:{
+
       callbackl(){
+        console.log(123),
         this.nowIndex ++;
 //        console.log($route.params.photoIndex)
         if(this.nowIndex == 24){
           this.nowIndex=1
+
         }
       },
       callbackr(){
@@ -30,7 +34,7 @@ export default{
         }
       },
       onTap(){
-        this.$router.push('/Photo')
+        this.$router.push('/photo')
       }
     }
 }

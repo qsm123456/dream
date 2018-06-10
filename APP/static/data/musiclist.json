@@ -1,0 +1,9 @@
+{
+  "albums": [
+    {
+      "name": "新歌榜",
+      "id": 3779629,
+      "bg": "static/img/new_music.jpg"
+    }
+  ]
+}

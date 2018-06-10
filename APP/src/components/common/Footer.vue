@@ -10,7 +10,7 @@
       <router-link to="/ticket_s" @click.native="$emit('change', 'ticket')">车票查询</router-link>
     </li>
     <li>
-      <router-link to="/book" @click.native="$emit('change', 'book')">书籍</router-link>
+      <router-link to="/photo" @click.native="$emit('change', 'photo')">图片</router-link>
     </li>
     </ul>
 </template>

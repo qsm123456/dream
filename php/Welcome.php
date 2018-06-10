@@ -7,7 +7,10 @@ class Welcome extends CI_Controller {
 		$this -> load -> view('login');
 	}
 	
+
 	public function reg(){
 		$this -> load -> view('reg');
 	}
+
+	
 }

@@ -44,7 +44,6 @@
           alert('出错了')
         })
     },
-    methods: {}
   }
 </script>
 

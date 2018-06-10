@@ -1,5 +1,4 @@
 <template>
-
   <div class="head" :style='{backgroundColor:bgColor}'>
         <span @click="$emit('home')" :style='{backgroundColor:bgColor}'>
           <router-link to="/" class="idx">首页</router-link>
@@ -8,15 +7,12 @@
       <slot name="title">默认</slot>
     </h2>
   </div>
-
-
 </template>
 
 
 <script>
   export default{
     props: ['bgColor'],
-
   }
 </script>
 

@@ -1,11 +1,11 @@
 /**
  * Created by xiecheng on 2017/12/3.
  */
-requirejs.config({
+/*requirejs.config({
     paths: {
         jquery: 'jquery-3.2.1'
     }
-});
+});*/
 define(['jquery'], function ($) {
     function Dialog(){
         this.defaultSettings = {

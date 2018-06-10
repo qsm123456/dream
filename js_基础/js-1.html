@@ -7,7 +7,7 @@
 <body>
 
 
-<script>
+    <script>
 
 //        function getMath() {
 //        return x>y?x:y;
@@ -48,7 +48,7 @@
 //        }
 //    };
 //    console.log(obj);
-//    console.log(coding)
+//    console.log(coding);
 //1.编写程序．通过用户输入的年龄判断是哪个年龄段的人
 //（儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40;
 //中年：40＜=年龄＜60;
@@ -111,69 +111,113 @@
 //        console.log(a);
 //    };
 //    num(a);
-
-//编写程序，计算 1!+2!+3!+…..＋10！的结果。
-    var n=10;
-    var sum=0;
-    var a=1;
-    for(i=1;i<=n;i++) {
-        a = a * i;
-        sum = sum + a;
-    }
-console.log(sum);
-
-5.在页面上输出如下数字图案。
-1
-1 2
-1 2 3
-1 2 3 4
-1 2 3 4 5
-document.write("1");
-document.write("</br>");
-document.write("1 2");
-document.write("</br>");
-document.write("1 2 3");
-document.write("</br>");
-document.write("1 2 3 4");
-document.write("</br>");
-document.write("1 2 3 4 5");
-document.write("</br>");
+//    //递归
+//   function fac(num) {
+//      if(num==1) {
+//          return 1;
+//      }
+//      return num*fac(num-1);
+//   };
+//console.log(fac(10));
+////非递归
 
 
-document.write("    *");
-document.write("</br>");
-document.write("   * *");
-document.write("</br>");
-document.write("  * * *");
-document.write("</br>");
-document.write(" * * * *");
-document.write("</br>");
-document.write("* * * * *");
-document.write("</br>");
 
-7.有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
-   function a() {
-       for(i=100;i<1000;i++){
-           if(i%4==2&&i%7==3&&i%9==5){
-               console.log(i);
-           }
-       }
-   }
-   a();
-8.求所有满足条件的四位数ABCD，它是13的倍数，
-且第3位数加上第2位数等于第4位数（即：A=B+C）。
-（提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似）
-    function a() {
-        for (i = 1000; i < 10000; i++) {
-            var num3 = Math.floor(i / 1000);
-            var num2 = Math.floor((i % 1000) / 100);
-            var num1 = Math.floor((i % 100) / 10);
-            if (i % 13 == 0 && (num3 == num1 + num2)) {
-                console.log(i);
-            }
-        }
-        a();
-    }
-</script>
+
+////编写程序，计算 1!+2!+3!+…..＋10！的结果。
+//    var n=10;
+//    var sum=0;
+//    var a=1;
+//    for(i=1;i<=n;i++) {
+//        a = a * i;
+//        sum = sum + a;
+//    }
+//console.log(sum);
+//
+//5.在页面上输出如下数字图案。
+//1
+//1 2
+//1 2 3
+//1 2 3 4
+//1 2 3 4 5
+//document.write("1");
+//document.write("</br>");
+//document.write("1 2");
+//document.write("</br>");
+//document.write("1 2 3");
+//document.write("</br>");
+//document.write("1 2 3 4");
+//document.write("</br>");
+//document.write("1 2 3 4 5");
+//document.write("</br>");
+//
+//function print(num) {
+//    for(var i=1;i<=num;i++){
+//        for(){
+//
+//        }
+//    }
+//
+//
+//}
+//
+//document.write("    *");
+//document.write("</br>");
+//document.write("   * *");
+//document.write("</br>");
+//document.write("  * * *");
+//document.write("</br>");
+//document.write(" * * * *");
+//document.write("</br>");
+//document.write("* * * * *");
+//document.write("</br>");
+//
+//7.有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+//   function a() {
+//       for(i=100;i<1000;i++){
+//           if(i%4==2&&i%7==3&&i%9==5){
+//               console.log(i);
+//           }
+//       }
+//   }
+//   a();
+//8.求所有满足条件的四位数ABCD，它是13的倍数，
+//且第3位数加上第2位数等于第4位数（即：A=B+C）。
+//（提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似）
+//  function num() {
+//      for(var i=1000;i<10000;i++){
+//          var num1=Math.floor(i/1000);
+//          var num2=Math.floor(i/100)%10;
+//          var num3=Math.floor(i/10)%10;
+//          if(i%13==0&&(num1==num2+num3)){
+//              console.log(i);
+//          }
+//      }
+//  }
+//  num();
+
+//    var x=prompt("请输入x","");
+//    var f=4*x*x+3*x+2;
+//    console.log(f);
+//2.编写一个函数Min(x,y)求出x,y这两个数中的最小值，要求x,y的值由用户通过提示对话框输入。
+
+//var min=parseInt(prompt("x,y","  "));
+//function min(x,y) {
+//    if(x>y){
+/*//        console.log(y);
+//    }
+//    else{
+//        console.log(x);
+//    }
+//}
+
+
+    var obj{
+        namae:"wc"
+        age18
+}
+;
+
+    </script>
 </body>
 </html>

@@ -4,20 +4,59 @@
     <meta charset="UTF-8">
     <title>4</title>
     <style>
-
+     /*#div1{
+         height: 100px;
+         width: 100px;
+         background: red;
+         animation:aa 5s linear 1s 2 forwards;
+         !*transition:width 2s ease 1s ;*!
+     }*/
+   /*  #div1:hover{
+         width: 500px;
+     }*/
+/*     @keyframes aa{
+        from{
+            width: 100px;
+        }
+         50%{
+             width: 400px;
+             background: green;
+         }
+         to{
+             width: 600px;
+         }
+     }*/
+     html{
+         /*height: 100%;*/
+     }
+        body{
+            /*height: 100%;*/
+            /*background: url(1.jpg) no-repeat;*/
+            /*background-origin:content-box ;*/
+            /*background-image: -webkit-linear-gradient(30deg,red  0,blue  40%,green 100%);*/
+            /*background:-webkit-gradient(linear,0 50%,100% 50%,from(#ace),to(#f96));*/
+        }
+        #div1 p:nth-child(1){
+            height: 100px;
+            background: red;
+        }
+     #div1 p:nth-of-type(1){
+         height: 100px;
+         background: black;
+     }
+     #div1 p:nth-of-type(2){
+         height: 100px;
+         background: green;
+     }
     </style>
 </head>
 <body>
-<script>
-   /* var obj = {
-        name:'zs',
-        age:'18',
-    };*/
-   function Obj() {
-       this.name = 'zs';
-       this.age = '18'
-   }
-
-</script>
+<div id="div1">
+    <span></span>
+    <p></p>
+    <span></span>
+    <p></p>
+    <span></span>
+</div>
 </body>
 </html>
