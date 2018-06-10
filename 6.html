@@ -76,28 +76,80 @@
     arr.filter(getsum);
      console.log(sum)*/
 
-    let obj1 = {
+/*    let obj1 = {
         name: 'lisi',
         age: '19',
         dad: {
             name: 'lisan',
             age: '40'
         }
-    };
+    };*/
     //    obj1.name = 'zs';
-    obj1.dad.name = 'ww';
-    let obj2 = clone(obj1);
+   /* obj1.dad.name = 'ww';
+    let obj2 = clone1(obj1);
     console.log(obj1);
-    console.log(obj2);
+    console.log(obj2);*/
 
-
+/*
     function clone(obj) {
         let newObj = {};
         for (var p in obj) {
             newObj[p] = obj[p];
         }
         return newObj;
+    }*/
+
+ /*   function clone1(obj) {
+        let newObj = {};
+        for(var p in obj){
+            if(typeof(obj[p])=='object'){
+                newObj[p] = clone1(obj[p]);
+            }else{
+                newObj[p] = obj[p];
+            }
+        }
+        return newObj;
+    }*/
+
+/* function clear(arr) {
+     var len = arr.length;
+     var newarr = [];
+     arr.filter(function (val,idx,array) {
+         var bool = arr.indexOf(val,idx+1);
+         if(bool == -1){
+             newarr.push(val);
+         }
+     });
+     return newarr;
+ }*/
+//    a = [1,1,2,2,3,3];
+//    console.log(clear(a));
+  /*  a=[1,2,3]
+    var bool = a.indexOf(0,0);
+    console.log(bool);*/
+
+    // items = [
+    //     { name: 'USA', value: 'n.金星' },
+    //     { name: 'CHN', value: 'n.保护人，监护人', checked: 'true' },
+    //     { name: 'BRA', value: 'n.忧虑，担忧，害怕' },
+    //     { name: 'JPN', value: 'n.交响乐，交响曲，谐音' },
+    // ];
+
+
+//    arr.forEach(function (v,i,arr) {
+//        var array = Object.keys(v);
+//        if(array.length==3){
+
+//        }
+//     });
+
+
+
+    var arr = [1,3,5,9];
+    function sort(){
+        return a-b;
     }
+    console.log(arr.sort())
 </script>
 </body>
 </html>
