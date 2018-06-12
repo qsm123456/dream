@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 
 import Text from '@/components/Text'
 
@@ -12,16 +12,18 @@ import Url from '@/components/Url'
 
 import Count from '@/components/Count'
 
+import Check from '@/components/Check'
+
 Vue.use(Router);
 
 export default new Router({
     mode:'history',
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // },
         {
           path:'/text',
           name:'text',
@@ -61,6 +63,11 @@ export default new Router({
       path:'/count',
       name:'/count',
       component:Count,
-    }
+    },
+    {
+      path: '/',
+      name: '/check',
+      component: Check,
+    },
   ]
 })
