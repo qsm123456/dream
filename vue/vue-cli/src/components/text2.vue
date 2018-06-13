@@ -1,9 +1,0 @@
-<template>
-    <div>
-    <h1>这是子路由2</h1>
-    <h1>222</h1>
-        <router-view/>
-    </div>
-</template>
-<script>
-</script>
