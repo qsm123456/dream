@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
+  <!--<div id="app">-->
     <!--<img src="./assets/logo.png">-->
     <!--<div>-->
     <!--<button>首页</button>-->
     <!--<button>后退</button>-->
     <!--<button>前进</button>-->
     <!--</div>-->
-    <div>
+  <!--<div>-->
       <!--<router-link to='/'>首页</router-link>-->
       <!--<router-link to='/text'>测试</router-link>-->
       <!--<router-link :to="{name:'text1',params:{name:'qsm',age:'20',school:'nd'}}">text1</router-link>-->
