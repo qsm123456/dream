@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <title>8</title>
+    <style>
+        /*body{*/
+        /*border: 1px solid black;*/
+        /*width: 500px;*/
+        /*height: 500px;*/
+        /*!*display: table;*!*/
+        /*}*/
+        #div1 {
+            /*display: table-cell;*/
+            /*vertical-align:middle ;*/
+            /*text-align: center;*/
+            /*overflow: hidden;*/
+            /*text-overflow: ellipsis;*/
+            /*white-space: nowrap;*/
+        }
+
+        /*p{*/
+        /*background: green;*/
+        /*margin-top: 100px;*/
+        /*margin-bottom: 100px;*/
+        /*!*margin-left: 100px;*!*/
+        /*}*/
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*animation:name 5s linear   ;*/
+        }
+
+        /*transition   需要事件  一下子回到原样*/
+        #div1:hover {
+            width: 200px;
+            height: 200px;
+            transition: all 2s linear;
+        }
+
+        @keyframes name {
+            0% {
+                width: 100px;
+                height: 100px;
+
+            }
+            50% {
+                width: 200px;
+                height: 200px;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
+<div id="div1">
+
+</div>
+<!--<p>hehhe </p>
+<p>jjj</p>
+<p>hxhdgxb</p>
+<div id="div1">
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+</div>-->
 <script>
+
+
     //   var a='bcdef';
     //   console.log(a.indexOf("bc"));
 
@@ -13,9 +80,21 @@
     //    arr.filter(function (val,inx,arr) {
     //        if(val.indexOf())
     //    })
-    var str = '覃孙梅';
-    var reg = RegExp(/覃/);
-    console.log(reg.test(str))
+    //    var str = '覃孙梅';
+    //    var reg = RegExp(/覃/);
+    //    console.log(reg.test(str))
+    /*  let alist  = document.querySelectorAll('p');
+     console.log(alist);
+     Array.from(alist).forEach(function (val,idx) {
+     console.log(val,idx);
+     })*/
+    /*  obj = {
+     name:'zs',
+     age:'18'
+     }
+     console.log(obj.forEach(function (val,idx) {
+     console.log(val,idx);
+     }))*/
 </script>
 </body>
 </html>
