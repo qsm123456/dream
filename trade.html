@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>trade</title>
+    <link rel="stylesheet" href="css/trade.css">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+</head>
+<body>
+<!-- 页头  -->
+<header class="am-header" style="background-image:url(img/header1.jpg);background-size:cover;width:375pt;">
+    <h1 class="am-header-title"
+        style="color: white;font-size: 18pt;margin:0;width:375pt;font-family: PingFang-SC-Medium">RFT交易</h1>
+</header>
+<!-- 内容 -->
+<div class="content">
+    <ul class="title">
+        <li class="selected selected-title">买入</li>
+        <li class="buy_in_li">卖出</li>
+        <li class="orders_li">委托单</li>
+    </ul>
+    <div class="title-content">
+        <aside class="show">
+            <div style="display: none" class="new-price">
+                <div class="new-price-title">
+                    <div class="new-price-left">RFT最新价格</div>
+                    <div class="new-price-right">CNY</div>
+                </div>
+                <div class="new-price-content">
+                    <div class="asset">可用资产</div>
+                    <div class="user-input">
+                        <div class="name">价格 BTC</div>
+                        <input type="text">
+                    </div>
+                    <div class="number_left">
+                        <div class="rft">RFT</div>
+                        <div class="count_rft">0.0</div>
+                    </div>
+                    <div class="number-input">
+                        <div class="name">数量 RFT</div>
+                        <input type="text">
+                    </div>
+                    <div class="sum_left">
+                        <div class="btc">CNY</div>
+                        <div class="count_btc">0.0</div>
+                    </div>
+                    <div class="sum-input">
+                        <div class="name">总额 BTC</div>
+                        <input type="text">
+                    </div>
+                    <div class="buying">买入RFT</div>
+                </div>
+            </div>
+            <div style="display: none" class="market">
+                <div class="market_title">
+                    <div class="market_title">市场挂单</div>
+                    <div class="conclusion">
+                        <div class="market_one">
+                            <div class="market_one_title">
+                                <div class="market_one_title_left">#</div>
+                                <div class="market_one_title_right">数量RGT 价格CNY</div>
+                            </div>
+                        </div>
+                        <div class="market_two">
+                            <div class="market_two_title">
+                                <div class="market_two_title_left">#</div>
+                                <div class="market_two_title_right">数量RGT 价格CNY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="withdrawal">
+                <div class="use">
+                    可用比特币:
+                    <div class="use_money">1000</div>
+                </div>
+                <div class="freeze">
+                    冻结比特币:
+                    <div class="freeze_money">0</div>
+                </div>
+                <!--<div class="wallet">-->
+                <!--钱包地址 <input type="text">-->
+                <!--</div>-->
+                <!--</div>-->
+        </aside>
+        <aside class="buy_in">
+            <div class="new-price">
+                <div class="new-price-title">
+                    <div class="new-price-left">RFT最新价格</div>
+                    <div class="new-price-right">CNY</div>
+                </div>
+                <div class="new-price-content">
+                    <div class="asset">可用资产</div>
+                    <div class="user-input">
+                        <div class="name">价格 BTC</div>
+                        <input type="text">
+                    </div>
+                    <div class="number_left">
+                        <div class="rft">RFT</div>
+                        <div class="count_rft">0.0</div>
+                    </div>
+                    <div class="number-input">
+                        <div class="name">数量 RFT</div>
+                        <input type="text">
+                    </div>
+                    <div class="sum_left">
+                        <div class="btc">CNY</div>
+                        <div class="count_btc">0.0</div>
+                    </div>
+                    <div class="sum-input">
+                        <div class="name">总额 BTC</div>
+                        <input type="text">
+                    </div>
+                    <div class="buying">卖出RFT</div>
+                </div>
+            </div>
+            <div class="market">
+                <div class="market_title">
+                    <div class="market_title">市场挂单</div>
+                    <div class="conclusion">
+                        <div class="market_one">
+                            <div class="market_one_title">
+                                <div class="market_one_title_left">#</div>
+                                <div class="market_one_title_right">数量RGT 价格CNY</div>
+                            </div>
+                        </div>
+                        <div class="market_two">
+                            <div class="market_two_title">
+                                <div class="market_two_title_left">#</div>
+                                <div class="market_two_title_right">数量RGT 价格CNY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </aside>
+        <aside class="orders">
+            <div class="none" style="display: none">暂无数据</div>
+            <div class="orders_rft_trade" style="display: none">
+                <ul class="menu">
+                    <li class="price">价格</li>
+                    <li class="num">数量</li>
+                    <li class="style">类型</li>
+                    <li class="time">时间</li>
+                    <li class="operation">操作</li>
+                </ul>
+                <div class="price_rft">(RFT)</div>
+                <div class="num_btc">(BTC)</div>
+                <ul class="price_list">
+                    <li>100</li>
+                    <li>100</li>
+                </ul>
+                <ul class="num_list">
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+                <ul class="style_list">
+                    <li>买</li>
+                    <li>买</li>
+                </ul>
+                <ul class="time_list">
+                    <li>2018/06/01 10:00</li>
+                    <li>2018/06/01 10:00</li>
+                </ul>
+                <ul class="operation_list">
+                    <li> 撤销</li>
+                    <li>未撤销</li>
+                </ul>
+            </div>
+            <div class="orders_trade_record">
+                <ul class="menu">
+                    <li class="price">价格</li>
+                    <li class="num">数量</li>
+                    <li class="style">类型</li>
+                    <li class="time_success">成交时间</li>
+                </ul>
+                <div class="price_rft">(RFT)</div>
+                <div class="num_btc">(BTC)</div>
+                <ul class="price_list">
+                    <li>100</li>
+                    <li>100</li>
+                </ul>
+                <ul class="num_list">
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+                <ul class="style_list">
+                    <li>买</li>
+                    <li>买</li>
+                </ul>
+                <ul class="time_list_success">
+                    <li>2018/06/01 10:00</li>
+                    <li>2018/06/01 10:00</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+<!-- 页脚 -->
+<div class="am-navbar am-cf am-navbar-default " id="nav-wrap">
+    <ul id="bottom-nav" class="am-navbar-nav am-cf am-avg-sm-4">
+        <li>
+            <a href="index.html" class="">
+                <span class="am-icon"><i class="icon iconfont icon-zixun am-icon"></i></span>
+                <span class="am-navbar-label">資訊</span>
+            </a>
+        </li>
+        <li>
+            <a href="market.html" class="">
+                <span class="am-icon" style="overflow:hidden"><img src="img/business.png" alt=""
+                                                                   style="width:20px;height:20px;margin-top:3px"
+                                                                   class="icon iconfont am-icon"></span>
+                <span class="am-navbar-label" style="color:rgb(92,109,249);">交易</span>
+            </a>
+        </li>
+        <li>
+            <a href="pay.html" class="">
+                <span class="am-icon"><i class="icon iconfont icon-Ankerwebicon- am-icon"></i></span>
+                <span class="am-navbar-label">支付</span>
+            </a>
+        </li>
+        <li>
+            <a href="user.html" class="">
+                <span class="am-icon"><i class="icon iconfont icon-wode am-icon"></i></span>
+                <span class="am-navbar-label">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/trade.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>
